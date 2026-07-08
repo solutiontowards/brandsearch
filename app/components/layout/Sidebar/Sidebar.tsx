@@ -56,6 +56,7 @@ export default function Sidebar() {
                 label={item.label}
                 href={item.href}
                 image={item.image}
+                children={item.children}
                 isActive={item.href === "/dashboard"}
                 isCollapsed={isCollapsed}
               />

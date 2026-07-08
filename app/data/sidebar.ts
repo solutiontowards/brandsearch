@@ -21,7 +21,16 @@ export const menuItems = [
     label: "Brands",
     href: "/brands",
     image: brandsImage,
-    children: [],
+    children: [
+      {
+        label: "Brand Products",
+        href: "/brands/products",
+      },
+      {
+        label: "Brand",
+        href: "/brands/brand",
+      },
+    ],
   },
   {
     label: "Ad Library",
