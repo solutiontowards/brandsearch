@@ -34,152 +34,388 @@ export default function BrandCard({
   onAnalyze,
 }: BrandCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const maxIndex = useMemo(() => bestSellingProducts.length - 1, [bestSellingProducts.length]);
+
+const visibleCount = 4;
+
+const nextSlide = () => {
+  setCurrentIndex((prev) => (prev + 1) % bestSellingProducts.length);
+};
+
+const prevSlide = () => {
+  setCurrentIndex((prev) =>
+    prev === 0
+      ? bestSellingProducts.length - 1
+      : prev - 1
+  );
+};
+
+const visibleProducts = Array.from(
+  { length: visibleCount },
+  (_, index) =>
+    bestSellingProducts[
+      (currentIndex + index) % bestSellingProducts.length
+    ]
+);
 
   return (
     <div className="w-full max-w-sm rounded-[18px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <div className="relative h-12 w-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-            <Image src={logoSrc} alt={brandName} fill sizes="100%" className="object-cover" />
+
+      <div className="flex items-start justify-between">
+        <div className="flex items-start gap-2.5">
+          {/* Logo */}
+          <div className="relative h-[26px] w-[26px] overflow-hidden rounded-full">
+            <Image
+              src={logoSrc}
+              alt={brandName}
+              fill
+              sizes="26px"
+              className="object-cover"
+            />
           </div>
+
+          {/* Brand Info */}
           <div>
-            <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-[#607FF8]">
-              Brand
+            <div className="flex items-center gap-2">
+              <h3 className="font-roboto text-[18px] font-medium leading-6 text-[#141617]">
+                {brandName}
+              </h3>
+
+              <span
+                className="
+            rounded-full
+            bg-[#00C43717]
+            px-[8px]
+            py-[3px]
+            text-[10px]
+            font-normal
+            leading-[10px]
+            text-[#00C438]
+          "
+              >
+                Brand
+              </span>
+            </div>
+
+            <p className="mt-[2px] text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              {industry}
             </p>
-            <h3 className="mt-1 text-[20px] font-semibold text-[#141617]">
-              {brandName}
-            </h3>
-            <p className="text-[13px] leading-[18px] text-[#6B7280]">{industry}</p>
           </div>
         </div>
 
-        <button
-          type="button"
-          aria-label="More actions"
-          className="rounded-full p-2 text-slate-400 transition hover:bg-slate-50 hover:text-slate-600"
-        >
+        <button className="text-[#808B96]">
           <MoreVertical size={18} />
         </button>
       </div>
 
-      <div className="mt-5 rounded-[16px] bg-slate-50 p-4">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-[13px] uppercase tracking-[0.18em] text-[#808B96]">APR traffic</p>
-            <p className="mt-1 text-[28px] font-semibold text-[#141617]">{traffic}</p>
+      <div className="mt-5 flex items-center justify-between">
+        {/* Left */}
+        <div>
+          <div className="flex items-end gap-1">
+            <span className="text-[26px] font-medium leading-[34px] text-[#141617]">
+              {traffic}
+            </span>
+
+            <span className="pb-[4px] text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              apr traffic
+            </span>
           </div>
-          <div className="text-right">
-            <p className="text-[13px] text-[#808B96]">Country</p>
-            <p className="mt-1 text-[16px] font-medium text-[#141617]">{country}</p>
-          </div>
+        </div>
+
+        {/* Graph */}
+        <div className="relative h-[36px] w-[127px] overflow-hidden">
+          <Image
+            src="/image/pink-graph.png"
+            alt="Traffic graph"
+            fill
+            sizes="127px"
+            className="object-contain"
+          />
         </div>
       </div>
 
       <div className="mt-5">
-        <div className="flex items-center justify-between">
-          <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-[#808B96]">
+        <div className="mt-6 flex items-center justify-between">
+          <p className="text-[14px] font-normal leading-6 text-[#141617]">
             Best Selling Products
           </p>
-          <button className="text-[12px] font-medium text-[#607FF8] transition hover:text-[#445ed3]">
-            View all
-          </button>
-        </div>
 
-        <div className="mt-3 relative">
-          <div className="overflow-hidden rounded-[20px] border border-slate-200 bg-slate-50">
-            <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-              {bestSellingProducts.map((src, index) => (
-                <div key={index} className="min-w-full p-4">
-                  <div className="relative h-[140px] overflow-hidden rounded-[24px] bg-slate-100">
-                    <Image src={src} alt={`${brandName} product ${index + 1}`} fill sizes="100%" className="object-cover" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button
-            type="button"
-            aria-label="Previous product"
-            onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))}
-            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-sm transition hover:bg-white"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            type="button"
-            aria-label="Next product"
-            onClick={() => setCurrentIndex((prev) => Math.min(prev + 1, bestSellingProducts.length - 1))}
-            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-sm transition hover:bg-white"
-          >
-            <ChevronRight size={18} />
-          </button>
-
-          <div className="mt-3 flex items-center justify-center gap-2">
-            {bestSellingProducts.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                aria-label={`Go to product ${index + 1}`}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-2.5 w-2.5 rounded-full ${
-                  index === currentIndex ? "bg-[#141617]" : "bg-slate-300"
-                }`}
+          <div className="flex items-center gap-1.5">
+            <div className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[#F5F5F5]">
+              <Image
+                src="/image/facebook.svg"
+                alt=""
+                width={14}
+                height={14}
               />
-            ))}
-          </div>
-        </div>
-      </div>
+            </div>
 
-      <div className="mt-5 grid gap-3 rounded-[18px] border border-slate-200 bg-white p-4">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-[12px] uppercase tracking-[0.2em] text-[#808B96]">GMV</p>
-            <p className="mt-1 text-[18px] font-semibold text-[#141617]">{gmv}</p>
-          </div>
-          <div>
-            <p className="text-[12px] uppercase tracking-[0.2em] text-[#808B96]">Unit Sold</p>
-            <p className="mt-1 text-[18px] font-semibold text-[#141617]">{unitSold}</p>
-          </div>
-        </div>
-        <div className="border-t border-slate-100 pt-4">
-          <p className="text-[13px] font-medium text-[#141617]">Revenue</p>
-          <p className="mt-1 text-[14px] text-[#6B7280]">{revenueRange}</p>
-          <p className="mt-2 text-[12px] uppercase tracking-[0.18em] text-[#808B96]">Live Revenue</p>
-          <p className="mt-1 text-[16px] font-semibold text-[#141617]">{liveRevenue}</p>
-        </div>
-      </div>
+            <div className="flex h-[22px] items-center gap-1 rounded-full bg-[#F5F5F5] px-2">
+              <Image
+                src="/image/instagram.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
 
-      <div className="mt-5 grid gap-3 text-[13px] text-[#141617]">
-        <div className="flex items-center justify-between rounded-[16px] bg-[#F7FAFF] px-4 py-3">
-          <span className="font-medium text-[#141617]">Active Products Sold</span>
-          <span className="font-semibold text-[#141617]">{activeProducts}</span>
-        </div>
-        <div className="flex items-center justify-between rounded-[16px] bg-[#F7FAFF] px-4 py-3">
-          <span className="font-medium text-[#141617]">Influencers with Sales</span>
-          <span className="font-semibold text-[#141617]">{influencerSales}</span>
-        </div>
-      </div>
-
-      <div className="mt-5 grid grid-cols-3 gap-3">
-        {platformMetrics.map((metric) => (
-          <div key={metric.platform} className="rounded-[16px] border border-slate-200 bg-slate-50 p-3 text-center">
-            <div className="mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-2xl bg-white shadow-sm">
-              <span className="relative h-5 w-5">
-                <Image
-                  src={PLATFORM_ICON_SRC[metric.platform]}
-                  alt={metric.platform}
-                  fill
-                  sizes="100%"
-                  className="object-contain"
-                />
+              <span className="text-[10px] text-[#141617]">
+                108.9k
               </span>
             </div>
-            <p className="text-[13px] font-semibold text-[#141617]">{metric.value}</p>
-            <p className="text-[11px] text-[#6B7280]">/{metric.total}</p>
+
+            <div className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[#F5F5F5]">
+              <Image
+                src="/image/x.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
+            </div>
+
+            <div className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[#F5F5F5]">
+              <Image
+                src="/image/tiktok.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
+            </div>
           </div>
+        </div>
+        <div className="relative mt-4">
+
+  {/* Previous Button */}
+
+  <button
+    type="button"
+    onClick={prevSlide}
+    className="absolute -left-[10px] top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[#F5F5F5] shadow hover:bg-[#ECECEC]"
+  >
+    <ChevronLeft
+      size={12}
+      className="text-[#808B96]"
+    />
+  </button>
+
+  {/* Products */}
+
+  <div className="flex items-center justify-center gap-2 overflow-hidden">
+
+    {visibleProducts.map((src, index) => (
+
+      <div
+        key={index}
+        className="relative h-[60px] w-[60px] shrink-0 overflow-hidden rounded-[15px] border border-[#00000033]"
+      >
+
+        <Image
+          src={src}
+          alt={`Product ${index + 1}`}
+          fill
+          sizes="60px"
+          className="object-cover transition-transform duration-300 hover:scale-105"
+        />
+
+      </div>
+
+    ))}
+
+  </div>
+
+  {/* Next Button */}
+
+  <button
+    type="button"
+    onClick={nextSlide}
+    className="absolute -right-[10px] top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[#607FF8] shadow hover:bg-[#4F6EF4]"
+  >
+    <ChevronRight
+      size={12}
+      className="text-white"
+    />
+  </button>
+
+</div>
+
+        
+      </div>
+
+      <div className="mt-5">
+
+        {/* GMV + Unit Sold */}
+
+        <div className="flex items-center justify-between">
+
+          <div>
+            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              GMV:
+            </p>
+
+            <p className="mt-[2px] text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
+              {gmv}
+            </p>
+          </div>
+
+          <div className="text-right">
+            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              Unit Sold:
+            </p>
+
+            <p className="mt-[2px] text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
+              {unitSold}
+            </p>
+          </div>
+
+        </div>
+
+
+
+        {/* Revenue */}
+
+        <div className="mt-5 flex items-start justify-between">
+
+          <div>
+
+            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              Revenue
+            </p>
+
+            <h3 className="mt-1 text-[20px] font-medium leading-[26px] text-[#141617]">
+              {revenueRange}
+            </h3>
+
+            {/* Country */}
+
+            <div className="mt-2 flex items-center gap-2">
+
+              <Image
+                src="/image/us-logo.png"
+                alt=""
+                width={18}
+                height={18}
+              />
+
+              <span className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+                {country}
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          {/* Revenue Graph */}
+
+          <div className="relative h-[36px] w-[87px]">
+
+            <Image
+              src="/image/blue-graph.png"
+              alt=""
+              fill
+              sizes="87px"
+              className="object-contain"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+      <div className="my-4 border-t border-[#00000014]" />
+
+      <div className="space-y-3">
+
+        <div className="flex items-center justify-between">
+
+          <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+            Live Revenue:
+          </p>
+
+          <p className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+            {liveRevenue}
+          </p>
+
+        </div>
+
+        <div className="relative h-[6px] rounded-full bg-[#ECECEC]">
+
+          <div
+            className="absolute left-0 top-0 h-full rounded-full bg-[#607FF8]"
+            style={{ width: "92%" }}
+          />
+
+          <div className="absolute right-0 top-1/2 h-[12px] w-[12px] -translate-y-1/2 rounded-full bg-[#607FF8] ring-2 ring-white" />
+
+        </div>
+
+      </div>
+
+      <div className="my-4 border-t border-[#00000014]" />
+      <div className="flex items-center justify-between">
+
+        <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+          Number of Active Products Sold:
+        </p>
+
+        <p className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+          {activeProducts}
+        </p>
+
+      </div>
+      <div className="my-4 border-t border-[#00000014]" />
+      <div className="flex items-center justify-between">
+
+        <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+          Number of Influencers with Sales:
+        </p>
+
+        <p className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+          {influencerSales}
+        </p>
+
+      </div>
+      <div className="mt-4 border-t border-[#00000014]" />
+      <div className="mt-5 grid grid-cols-3 gap-4">
+
+        {platformMetrics.map((metric) => (
+
+          <div key={metric.platform}>
+
+            {/* Icon + Name */}
+
+            <div className="flex items-center justify-center gap-1">
+
+              <Image
+                src={PLATFORM_ICON_SRC[metric.platform]}
+                alt={metric.platform}
+                width={14}
+                height={14}
+              />
+
+              <span className="text-[12px] font-normal leading-[12px] tracking-[0.03em] text-[#808B96]">
+                {metric.platform}
+              </span>
+
+            </div>
+
+            {/* Numbers */}
+
+            <div className="mt-[6px] flex items-end justify-center gap-1">
+
+              <span className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+                {metric.value}
+              </span>
+
+              <span className="text-[12px] font-normal leading-[12px] tracking-[0.03em] text-[#808B96]">
+                /{metric.total}
+              </span>
+
+            </div>
+
+          </div>
+
         ))}
+
       </div>
 
       <div className="mt-5 flex items-center justify-between gap-3">
