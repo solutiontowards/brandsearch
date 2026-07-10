@@ -28,7 +28,7 @@ export default function TopPerformingAdCard(ad: TopPerformingAd) {
           <div className="relative h-[26px] w-[26px] overflow-hidden rounded-full">
 
             <Image
-              src={ad.logoSrc}
+              src={ad.image}
               alt={ad.brandName}
               fill
               sizes="26px"
