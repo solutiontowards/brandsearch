@@ -32,7 +32,7 @@ export default function TopPerformingAdCard(ad: TopPerformingAd) {
               alt={ad.brandName}
               fill
               sizes="26px"
-              className="object-cover"
+              className="object-cover newImgError"
             />
 
           </div>

@@ -1,6 +1,7 @@
 export type TopPerformingAd = {
   id: number;
   brandName: string;
+  logoSrc: string;
   category: string;
   period: string;
   days: string;
@@ -22,6 +23,7 @@ export const topPerformingAds: TopPerformingAd[] = [
   {
     id: 1,
     brandName: "TYMO-BEAUTY",
+    logoSrc: "/image/brand-logo.png",
     category: "Skin Care Kits",
     period: "Oct 3 - Present",
     days: "30d",
@@ -42,6 +44,7 @@ export const topPerformingAds: TopPerformingAd[] = [
   {
     id: 2,
     brandName: "LUNA-LOOK",
+    logoSrc: "/image/brand-logo.png",
     category: "Makeup Drops",
     period: "Sep 28 - Present",
     days: "25d",
@@ -62,6 +65,7 @@ export const topPerformingAds: TopPerformingAd[] = [
   {
     id: 3,
     brandName: "SOLÉRE STYLE",
+    logoSrc: "/image/brand-logo.png",
     category: "Haircare Essentials",
     period: "Oct 1 - Present",
     days: "29d",
@@ -82,6 +86,7 @@ export const topPerformingAds: TopPerformingAd[] = [
   {
     id: 4,
     brandName: "BYOMA BEAUTY",
+    logoSrc: "/image/brand-logo.png",
     category: "Face Serum",
     period: "Oct 5 - Present",
     days: "27d",
