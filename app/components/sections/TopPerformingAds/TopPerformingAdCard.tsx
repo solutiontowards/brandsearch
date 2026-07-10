@@ -185,13 +185,15 @@ export default function TopPerformingAdCard(ad: TopPerformingAd) {
         {/* Presented By Meta */}
 
         <div className="absolute bottom-4 right-4 flex h-8 items-center gap-2 rounded-full bg-white px-3 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-
-          <Image
-            src="/image/meta-logo.svg"
-            alt="Meta"
-            width={22}
-            height={22}
-          />
+          <div className="relative h-[22px] w-[22px] flex-shrink-0">
+            <Image
+              src="/image/meta-logo.svg"
+              alt="Meta"
+              fill
+              sizes="22px"
+              className="object-contain"
+            />
+          </div>
 
           <span className="text-[12px] font-normal leading-[15px] text-[#141617]">
             Presented By
@@ -212,6 +214,7 @@ export default function TopPerformingAdCard(ad: TopPerformingAd) {
             width={16}
             height={16}
             className="mr-[11px]"
+            style={{ width: "16px", height: "16px" }}
           />
 
           <span className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">

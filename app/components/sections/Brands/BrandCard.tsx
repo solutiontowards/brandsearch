@@ -292,6 +292,7 @@ const visibleProducts = Array.from(
                 alt=""
                 width={18}
                 height={18}
+                style={{ width: "18px", height: "18px" }}
               />
 
               <span className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
