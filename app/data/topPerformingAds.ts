@@ -11,7 +11,9 @@ export type TopPerformingAd = {
   totalAdsLabel: string;
   totalAdsValue: string;
   sparkline: number[];
-  image: string;
+
+  images: string[]; // <-- instead of image
+
   presentedBy: string;
   country: string;
   publishDate: string;
@@ -33,7 +35,14 @@ export const topPerformingAds: TopPerformingAd[] = [
     totalAdsLabel: "Total Ads",
     totalAdsValue: "12",
     sparkline: [10, 18, 21, 24, 31, 27, 35],
-    image: "/image/trending-pro1.png",
+
+    images: [
+      "/image/trending-pro1.png",
+      "/image/trending-pro2.png",
+      "/image/trending-pro3.png",
+      "/image/trending-pro1.png",
+    ],
+
     presentedBy: "Presented By",
     country: "United States",
     publishDate: "2026-03-09",
@@ -54,12 +63,19 @@ export const topPerformingAds: TopPerformingAd[] = [
     totalAdsLabel: "Total Ads",
     totalAdsValue: "9",
     sparkline: [8, 16, 20, 22, 28, 32, 38],
-    image: "/image/trending-pro2.png",
+
+    images: [
+      "/image/trending-pro2.png",
+      "/image/trending-pro3.png",
+      "/image/trending-pro1.png",
+      "/image/trending-pro2.png",
+    ],
+
     presentedBy: "Presented By",
     country: "United States",
     publishDate: "2026-04-01",
     description:
-      "Smooth edges and rich coverage make this routine perfect for quick creator content. #beautycheck #makeuproutine #creatorlaunch #viralbeauty",
+      "Smooth edges and rich coverage make this routine perfect for quick creator content.",
     link: "https://www.lunalook.com",
   },
   {
@@ -75,12 +91,19 @@ export const topPerformingAds: TopPerformingAd[] = [
     totalAdsLabel: "Total Ads",
     totalAdsValue: "15",
     sparkline: [12, 20, 25, 28, 34, 31, 40],
-    image: "/image/trending-pro3.png",
+
+    images: [
+      "/image/trending-pro3.png",
+      "/image/trending-pro1.png",
+      "/image/trending-pro2.png",
+      "/image/trending-pro3.png",
+    ],
+
     presentedBy: "Presented By",
     country: "United States",
     publishDate: "2026-04-05",
     description:
-      "Creators are showing how this hydration serum keeps the glow without the heaviness. #skincarehack #serumreview #creatorinsight",
+      "Creators are showing how this hydration serum keeps the glow without the heaviness.",
     link: "https://www.solerebeauty.com",
   },
   {
@@ -96,12 +119,19 @@ export const topPerformingAds: TopPerformingAd[] = [
     totalAdsLabel: "Total Ads",
     totalAdsValue: "11",
     sparkline: [14, 19, 23, 27, 33, 36, 39],
-    image: "/image/trending-pro1.png",
+
+    images: [
+      "/image/trending-pro1.png",
+      "/image/trending-pro2.png",
+      "/image/trending-pro3.png",
+      "/image/trending-pro1.png",
+    ],
+
     presentedBy: "Presented By",
     country: "United States",
     publishDate: "2026-04-08",
     description:
-      "This formula is trending with creators for hydrated skin and natural glow content. #skincarelifestyle #creatorrated #weekendglow",
+      "This formula is trending with creators for hydrated skin and natural glow content.",
     link: "https://www.byomabeauty.com",
   },
 ];

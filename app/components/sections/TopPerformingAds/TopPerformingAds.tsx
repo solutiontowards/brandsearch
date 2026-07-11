@@ -17,8 +17,11 @@ export default function TopPerformingAds() {
 
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {topPerformingAds.map((ad) => (
-          <TopPerformingAdCard key={ad.id} {...ad} />
-        ))}
+  <TopPerformingAdCard
+    key={ad.id}
+    ad={ad}
+  />
+))}
       </div>
     </section>
   );
