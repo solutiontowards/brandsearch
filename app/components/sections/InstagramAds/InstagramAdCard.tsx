@@ -49,7 +49,7 @@ export default function InstagramAdCard({ ad }: Props) {
 
                         <div className="flex items-center gap-2">
 
-                            <h3 className="text-[18px] font-medium leading-6 text-[#141617]">
+                            <h3 className="text-[15px] min-[1660px]:text-[18px] font-medium leading-6 text-[#141617]">
 
                                 {ad.brandName}
 
@@ -128,7 +128,7 @@ export default function InstagramAdCard({ ad }: Props) {
             {/* Caption */}
 
             <div className="mt-5">
-                <h3 className="text-[18px] font-medium leading-6 text-[#141617]">
+                <h3 className="text-[15px] min-[1660px]:text-[18px] font-medium leading-6 text-[#141617]">
                     {ad.title}
                 </h3>
 

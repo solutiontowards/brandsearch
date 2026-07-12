@@ -55,11 +55,11 @@ const DEFAULT_THUMBNAILS = ["/image/trending-pro2.png", "/image/trending-pro3.pn
 function Sparkline({ data }: { data: number[] }) {
   const max = Math.max(...data);
   return (
-    <div className="flex h-10 items-end gap-[3px]">
+    <div className="flex h-8 min-[1660px]:h-10 items-end gap-[1px] min-[1660px]:gap-[3px]">
       {data.map((value, i) => (
         <div
           key={i}
-          className="w-1.5 rounded-full bg-emerald-500"
+          className="w-1 min-[1660px]:w-1.5 rounded-full bg-emerald-500"
           style={{ height: `${Math.max(12, (value / max) * 100)}%` }}
         />
       ))}
@@ -99,14 +99,14 @@ export default function TrendingProductCard({
   } as const;
 
   return (
-    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-lg">
+    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:p-5 transition hover:-translate-y-0.5 hover:shadow-lg">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-[10px]">
-          <div className="relative h-[26px] w-[26px] overflow-hidden rounded-full border border-slate-200 bg-slate-50">
+        <div className="flex items-center gap-[5px] min-[1660px]:gap-[10px]">
+          <div className="relative h-[20px] w-[20px] basis-[20px] min-[1660px]:h-[26px] min-[1660px]:w-[26px] shrink-0 grow-0 min-[1660px]:basis-[26px] overflow-hidden rounded-full border border-slate-200 bg-slate-50">
             <Image src={avatarSrc} alt="NORDIC BEAUTY" fill sizes="100%" className="object-cover" />
           </div>
-          <h3 className="text-[18px] leading-6 font-medium text-[#141617]">{store}</h3>
+          <h3 className="text-[15px] min-[1660px]:text-[18px] leading-6 font-medium text-[#141617]">{store}</h3>
         </div>
         <button
           type="button"
@@ -121,10 +121,11 @@ export default function TrendingProductCard({
       <div className="mt-3 flex items-center gap-2">
         <span className="text-[#808B96] text-[14px] leading-[20px] font-normal">
           Unit Sold:
+          <span className="text-[#141617] text-[14px] leading-[20px] font-normal">
+           {unitSold}
         </span>
-        <span className="text-[#141617] text-[14px] leading-[20px] font-normal">
-          {unitSold}
         </span>
+        
         <span className="rounded-full bg-[#00C43717] px-[10px] py-[6px] text-[10px] font-normal text-[#00C438]">
           {category}
         </span>
@@ -132,22 +133,22 @@ export default function TrendingProductCard({
 
       {/* Traffic + sparkline */}
       <div className="mt-3 flex items-center justify-between">
-        <p className="text-[26px] leading-[34px] font-medium text-[#141617]">
+        <p className="text-[18px] min-[1660px]:text-[26px] leading-[34px] font-medium text-[#141617]">
           {trafficDisplay}{" "}
-          <span className="text-[14px] leading-[20px] font-normal text-[#808B96]">{trafficLabel}</span>
+          <span className="text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal text-[#808B96]">{trafficLabel}</span>
         </p>
         <Sparkline data={sparkline} />
       </div>
 
       {/* Image + thumbnails */}
-      <div className="mt-4 grid  grid-cols-[2fr_1fr] grid-rows-2 gap-3">
-        <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[24px] border border-black/20 bg-slate-100 h-[145px]">
+      <div className="mt-4 grid  grid-cols-[2fr_1fr] grid-rows-2 gap-1.5 min-[1660px]:gap-3">
+        <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[24px] border border-black/20 bg-slate-100 h-[120px] min-[1660px]:h-[145px]">
           <Image src={image} alt={productName} fill sizes="100%" className="object-cover" />
         </div>
         {thumbnails.slice(0, 2).map((thumb, i) => (
           <div
             key={i}
-            className="relative overflow-hidden rounded-[20px] border border-black/20 bg-slate-100 h-[70px]"
+            className="relative overflow-hidden rounded-[20px] border border-black/20 bg-slate-100 h-[57px] min-[1660px]:h-[70px]"
           >
             <Image
               src={thumb}
@@ -175,7 +176,7 @@ export default function TrendingProductCard({
       <div className="my-3 border-t border-slate-100" />
 
       {/* GMV */}
-      <div className="flex items-center justify-between text-[14px] leading-[20px] font-normal">
+      <div className="flex items-center justify-between text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal">
         <span className="text-[#808B96]">
           GMV <span className="font-normal text-[#38CA6E]">{gmv}</span>
         </span>
@@ -188,7 +189,7 @@ export default function TrendingProductCard({
 
       {/* Daily range + growth */}
       <div className="flex items-center justify-between">
-        <p className="text-[20px] leading-[26px] font-medium text-[#141617]">{dailyRange}</p>
+        <p className="text-[18px] min-[1660px]:text-[20px] leading-[26px] font-medium text-[#141617]">{dailyRange}</p>
         <span className="flex items-center gap-0.5 text-[14px] leading-[20px] font-normal text-[#38CA6E]">
           <FaCaretUp size={14} />
           {growthPercent}
@@ -206,11 +207,11 @@ export default function TrendingProductCard({
       <div className="my-3 border-t border-slate-100" />
 
       {/* Platform metrics */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-2 min-[1660px]:gap-3">
         {platformMetrics.map((metric) => (
           <div key={metric.platform}>
             <div className="flex items-center gap-1.5">
-              <span className="relative grid h-7 w-7">
+              <span className="relative grid h-7 w-7 basis-5 min-[1660px]:basis-7">
                 <Image
                   src={PLATFORM_ICON_SRC[metric.platform]}
                   alt={platformLabel[metric.platform]}
@@ -219,12 +220,12 @@ export default function TrendingProductCard({
                   className="object-contain p-1"
                 />
               </span>
-              <span className="text-[12px] leading-none font-normal text-[#808B96]">
+              <span className="text-[10px] min-[1660px]:text-[12px] leading-none font-normal text-[#808B96]">
                 {platformLabel[metric.platform]}
               </span>
             </div>
-            <p className="mt-1.5 text-[12px] leading-[12px] font-normal tracking-[3%] text-[#808B96]">
-              <span className="font-bold text-[14px] leading-[20px] text-[#141617]">{metric.value}</span>
+            <p className="mt-1.5 text-[9px] min-[1660px]:text-[12px] leading-[12px] font-normal tracking-[3%] text-[#808B96]">
+              <span className="font-bold text-[11px] min-[1660px]:text-[14px] leading-[20px] text-[#141617]">{metric.value}</span>
               /{metric.total}
             </p>
           </div>

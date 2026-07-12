@@ -43,15 +43,15 @@ export default function TopPerformingAdCard({
   };
 
   return (
-    <div className="w-full max-w-sm rounded-[20px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+    <div className="w-full max-w-sm rounded-[20px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
 
       {/* ================= HEADER ================= */}
 
       <div className="flex items-start justify-between">
 
-        <div className="flex items-start gap-2.5">
+        <div className="flex items-start gap-0.5 min-[1660px]:gap-2.5">
 
-          <div className="relative h-[26px] w-[26px] overflow-hidden rounded-full">
+          <div className="relative h-[18px] min-[1660px]:h-[26px] w-[18px] min-[1660px]:w-[26px] shrink-0 grow-0 basis-[18px] min-[1660px]:basis-[26px] overflow-hidden rounded-full">
 
             <Image
               src={ad.logoSrc}
@@ -65,14 +65,14 @@ export default function TopPerformingAdCard({
 
           <div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-0.5 min-[1660px]:gap-2">
 
-              <h3 className="text-[18px] font-medium leading-6 text-[#141617]">
+              <h3 className="text-[12px] min-[1660px]:text-[18px] font-medium leading-6 text-[#141617]">
                 {ad.brandName}
               </h3>
 
               <span
-                className={`rounded-full px-2 py-[3px] text-[10px] leading-[10px]
+                className={`rounded-full px-2 py-[1px] min-[1660px]:py-[3px] text-[5px] min-[1660px]:text-[10px] leading-[10px]
                 ${variant === "default"
                     ? "bg-[#F2347917] text-[#F23479]"
                     : "bg-[#F5F5F5] text-[#808B96]"
@@ -87,11 +87,11 @@ export default function TopPerformingAdCard({
 
               {variant === "default" ? (
                 <>
-                  <span className="text-[14px] leading-5 tracking-[0.03em] text-[#141617]">
+                  <span className="text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#141617]">
                     {ad.period}
                   </span>
 
-                  <span className="rounded-full bg-[#F5F5F5] px-[8px] py-[4px] text-[10px] font-medium leading-[10px] text-[#3C3D51]">
+                  <span className="rounded-full bg-[#F5F5F5] px-[8px] py-[4px] text-[8px] min-[1660px]:text-[10px] font-medium leading-[10px] text-[#3C3D51]">
                     {ad.days}
                   </span>
                 </>
@@ -167,7 +167,7 @@ export default function TopPerformingAdCard({
               className="text-[#808B96]"
             />
 
-            <span className="text-[10px] text-[#808B96]">
+            <span className="text-[8px] min-[1660px]:text-[10px] text-[#808B96]">
 
               Scaling
 
@@ -182,7 +182,7 @@ export default function TopPerformingAdCard({
               className="text-[#808B96]"
             />
 
-            <span className="text-[10px] text-[#808B96]">
+            <span className="text-[8px] min-[1660px]:text-[10px] text-[#808B96]">
 
               Testing
 
@@ -197,7 +197,7 @@ export default function TopPerformingAdCard({
               className="text-[#00C438]"
             />
 
-            <span className="text-[10px] text-[#00C438]">
+            <span className="text-[8px] min-[1660px]:text-[10px] text-[#00C438]">
 
               Winning
 
@@ -273,13 +273,13 @@ export default function TopPerformingAdCard({
 
           {/* Revenue */}
 
-          <div>
+          <div className="flex items-center gap-0.5">
 
-            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+            <p className="text-[11px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               Revenue:
             </p>
 
-            <p className="mt-[2px] text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
+            <p className="mt-[2px] text-[11px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
               {ad.revenueValue}
             </p>
 
@@ -287,13 +287,13 @@ export default function TopPerformingAdCard({
 
           {/* Total Ads */}
 
-          <div className="text-right">
+          <div className="text-right flex items-center gap-0.5  ">
 
-            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+            <p className="text-[11px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               Total Ads:
             </p>
 
-            <p className="mt-[2px] text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
+            <p className="mt-[2px] text-[11px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
               {ad.totalAdsValue}
             </p>
 
@@ -357,7 +357,7 @@ export default function TopPerformingAdCard({
         {variant === "default" ? (
 
           <>
-            <div className="relative h-[288px] w-full">
+            <div className="relative h-[170px] min-[1660px]:h-[288px] w-full">
 
               <Image
                 src={ad.images[0]}
@@ -371,9 +371,9 @@ export default function TopPerformingAdCard({
 
             {/* Presented by Meta */}
 
-            <div className="absolute bottom-4 right-4 flex h-8 items-center gap-2 rounded-full bg-white px-3 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+            <div className="absolute bottom-4 right-4 flex h-6 min-[1660px]:h-8 items-center gap-1 min-[1660px]:gap-2 rounded-full bg-white px-3 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
 
-              <div className="relative h-[22px] w-[22px]">
+              <div className="relative h-[16px] min-[1660px]:h-[22px] w-[16px] min-[1660px]:w-[22px]">
 
                 <Image
                   src="/image/meta-logo.svg"
@@ -385,7 +385,7 @@ export default function TopPerformingAdCard({
 
               </div>
 
-              <span className="text-[12px] text-[#141617]">
+              <span className="text-[9px] min-[1660px]:text-[12px] text-[#141617]">
 
                 Presented By
 
@@ -487,11 +487,11 @@ export default function TopPerformingAdCard({
                 alt="USA"
                 width={16}
                 height={16}
-                className="mr-[11px]"
+                className="mr-[5px] min-[1660px]:mr-[11px] rounded-full"
                 style={{ width: "16px", height: "16px" }}
               />
 
-              <span className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              <span className="text-[8px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
 
                 {ad.country}
 
@@ -501,13 +501,13 @@ export default function TopPerformingAdCard({
 
             <div className="flex items-center gap-1">
 
-              <span className="text-[12px] leading-5 tracking-[0.03em] text-[#808B96]">
+              <span className="text-[8px] min-[1660px]:text-[12px] leading-5 tracking-[0.03em] text-[#808B96]">
 
                 Publish Date:
 
               </span>
 
-              <span className="text-[14px] leading-5 tracking-[0.03em] text-[#141617]">
+              <span className="text-[8px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#141617]">
 
                 {ad.publishDate}
 

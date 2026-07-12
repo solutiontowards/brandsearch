@@ -38,3 +38,29 @@ body {
   background-position: center center;
   background-size: cover;
 } */
+
+.custom-calendar .rdp-chevron {
+  fill: #111827;
+}
+
+.custom-calendar .rdp-button_previous,
+.custom-calendar .rdp-button_next {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #E5E7EB;
+  border-radius: 9999px;
+}
+
+.custom-calendar .rdp-day_selected,
+.custom-calendar .rdp-day_selected:hover {
+  background: #4F46E5 !important;
+  color: white !important;
+}
+
+.custom-calendar .rdp-day:hover:not(.rdp-day_selected) {
+  background: #EEF2FF;
+}
+
+.custom-calendar .rdp-outside {
+  color: #D1D5DB;
+}

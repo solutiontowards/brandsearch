@@ -47,7 +47,7 @@ export const topPerformingAds: TopPerformingAd[] = [
     country: "United States",
     publishDate: "2026-03-09",
     description:
-      "My pin straight hair is going to see this tool ALOT😄 #hairtock #hairwaver #hairtolls #wayvhair #volumehair #creatorscaninsights #ttssbeautybesties",
+      "My pin striaght hair is going to see this tool ALOT😂#hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights #ttsbeautybesties",
     link: "https://www.ryzesuperfoods.com",
   },
   {
@@ -75,7 +75,7 @@ export const topPerformingAds: TopPerformingAd[] = [
     country: "United States",
     publishDate: "2026-04-01",
     description:
-      "Smooth edges and rich coverage make this routine perfect for quick creator content.",
+      "My pin striaght hair is going to see this tool ALOT😂#hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights #ttsbeautybesties",
     link: "https://www.lunalook.com",
   },
   {
@@ -103,7 +103,7 @@ export const topPerformingAds: TopPerformingAd[] = [
     country: "United States",
     publishDate: "2026-04-05",
     description:
-      "Creators are showing how this hydration serum keeps the glow without the heaviness.",
+      "My pin striaght hair is going to see this tool ALOT😂#hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights #ttsbeautybesties",
     link: "https://www.solerebeauty.com",
   },
   {
@@ -131,7 +131,7 @@ export const topPerformingAds: TopPerformingAd[] = [
     country: "United States",
     publishDate: "2026-04-08",
     description:
-      "This formula is trending with creators for hydrated skin and natural glow content.",
+      "My pin striaght hair is going to see this tool ALOT😂#hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights #ttsbeautybesties",
     link: "https://www.byomabeauty.com",
   },
 ];

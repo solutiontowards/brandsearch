@@ -2,8 +2,7 @@ interface NavbarStatItemProps {
   imageSrc: string;
   imageShadow?: string;
   boxBg?: string;
-  imageWidth?: number | string;
-  imageHeight?: number | string;
+  imageClassName?: string;
   imageTop?: number | string;
   imageRight?: number | string;
   value: string;
@@ -15,8 +14,7 @@ export default function NavbarStatItem({
   imageSrc,
   imageShadow,
   boxBg,
-  imageWidth,
-  imageHeight,
+  imageClassName, // ✅ Add this
   imageTop,
   imageRight,
   value,
@@ -25,7 +23,7 @@ export default function NavbarStatItem({
 }: NavbarStatItemProps) {
   return (
     <div
-      className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#57df8f] via-[#2fc673] to-[#1ca25b] pt-[20px] pb-[20px] pl-[32px] pr-[30px] text-white shadow-lg transition-all hover:shadow-xl min-h-[169px]"
+      className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#57df8f] via-[#2fc673] to-[#1ca25b] pt-[15px] min-[1660px]:pt-[20px] pb-[15px] min-[1660px]:pb-[20px] pl-[15px] min-[1660px]:pl-[32px] pr-[15px] min-[1660px]:pr-[30px] text-white shadow-lg transition-all hover:shadow-xl min-h-[169px]"
       style={{
         background: boxBg
           ? boxBg
@@ -51,7 +49,7 @@ export default function NavbarStatItem({
             {badge}
           </span>
 
-          <h3 className="mt-[21px] mb-[6px] max-w-[115px] text-[29px] leading-[29px] font-semibold text-white">
+          <h3 className="mt-[21px] mb-[6px] max-w-[115px] text-[20px] min-[1660px]:text-[29px] leading-[29px] font-semibold text-white">
             {value}
           </h3>
 
@@ -67,10 +65,8 @@ export default function NavbarStatItem({
             />
           </div>
         <div
-            className="absolute rounded-[1.5rem]"
+            className={`absolute rounded-[1.5rem] ${imageClassName}`}
             style={{
-              width: imageWidth ?? 'auto',
-              height: imageHeight ?? 'auto',
               top: imageTop ?? '50%',
               right: imageRight ?? '5px',
               transform: 'translateY(-50%)',
