@@ -6,22 +6,21 @@ interface Props {
 
 export default function ProductImages({ images }: Props) {
   return (
-    <div className="flex gap-3">
-
+    <div className="flex gap-[5px]">
       {images.slice(0, 3).map((image, index) => (
         <div
           key={index}
-          className="relative h-[78px] w-[78px] overflow-hidden rounded-2xl border border-[#ECECEC] bg-[#F7F7F7] shadow-sm"
+          className="relative h-[54px] w-[56px] overflow-hidden rounded-[15px] border border-[#00000033] bg-[#F7F7F7] shadow-sm"
         >
           <Image
             src={image}
-            alt=""
+            alt={`Product ${index + 1}`}
             fill
+            sizes="56px"
             className="object-cover"
           />
         </div>
       ))}
-
     </div>
   );
 }

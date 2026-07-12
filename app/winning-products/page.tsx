@@ -25,7 +25,7 @@ export default function WinningProductsPage() {
         </div>
 
         {/* Pagination */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex justify-end">
           <BrandPagination />
         </div>
       </main>
