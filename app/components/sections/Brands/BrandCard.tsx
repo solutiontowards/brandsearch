@@ -35,35 +35,35 @@ export default function BrandCard({
 }: BrandCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-const visibleCount = 4;
+  const visibleCount = 4;
 
-const nextSlide = () => {
-  setCurrentIndex((prev) => (prev + 1) % bestSellingProducts.length);
-};
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % bestSellingProducts.length);
+  };
 
-const prevSlide = () => {
-  setCurrentIndex((prev) =>
-    prev === 0
-      ? bestSellingProducts.length - 1
-      : prev - 1
-  );
-};
+  const prevSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === 0
+        ? bestSellingProducts.length - 1
+        : prev - 1
+    );
+  };
 
-const visibleProducts = Array.from(
-  { length: visibleCount },
-  (_, index) =>
-    bestSellingProducts[
+  const visibleProducts = Array.from(
+    { length: visibleCount },
+    (_, index) =>
+      bestSellingProducts[
       (currentIndex + index) % bestSellingProducts.length
-    ]
-);
+      ]
+  );
 
   return (
-    <div className="w-full max-w-sm rounded-[18px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+    <div className="w-full max-w-sm rounded-[18px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
 
       <div className="flex items-start justify-between">
-        <div className="flex items-start gap-2.5">
+        <div className="flex items-start gap-1.5 min-[1660px]:gap-2.5">
           {/* Logo */}
-          <div className="relative h-[26px] w-[26px] overflow-hidden rounded-full">
+          <div className="relative h-[20px] min-[1660px]:h-[26px] w-[20px] min-[1660px]:w-[26px] shrink-0 grow-0 basis-[20px] min-[1660px]:basis-[26px] border-[0.3px] border-[#000000] overflow-hidden rounded-full">
             <Image
               src={logoSrc}
               alt={brandName}
@@ -76,7 +76,7 @@ const visibleProducts = Array.from(
           {/* Brand Info */}
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-roboto text-[18px] font-medium leading-6 text-[#141617]">
+              <h3 className="font-roboto text-[14px] min-[1660px]:text-[18px] font-medium leading-6 text-[#141617]">
                 {brandName}
               </h3>
 
@@ -96,7 +96,7 @@ const visibleProducts = Array.from(
               </span>
             </div>
 
-            <p className="mt-[2px] text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+            <p className="mt-[2px] text-[11px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               {industry}
             </p>
           </div>
@@ -111,18 +111,18 @@ const visibleProducts = Array.from(
         {/* Left */}
         <div>
           <div className="flex items-end gap-1">
-            <span className="text-[26px] font-medium leading-[34px] text-[#141617]">
+            <span className="text-[18px] min-[1660px]:text-[26px] font-medium leading-[34px] text-[#141617]">
               {traffic}
             </span>
 
-            <span className="pb-[4px] text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+            <span className="pb-[4px] text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               apr traffic
             </span>
           </div>
         </div>
 
         {/* Graph */}
-        <div className="relative h-[36px] w-[127px] overflow-hidden">
+        <div className="relative h-[36px] w-[60px] min-[1660px]:w-[127px] overflow-hidden">
           <Image
             src="/image/pink-graph.png"
             alt="Traffic graph"
@@ -134,8 +134,8 @@ const visibleProducts = Array.from(
       </div>
 
       <div className="mt-5">
-        <div className="mt-6 flex items-center justify-between">
-          <p className="text-[14px] font-normal leading-6 text-[#141617]">
+        <div className="mt-6 flex items-start min-[1660px]:items-center justify-between flex-col min-[1660px]:flex-row">
+          <p className="text-[12px] min-[1660px]:text-[14px] font-normal leading-6 text-[#141617]">
             Best Selling Products
           </p>
 
@@ -183,60 +183,60 @@ const visibleProducts = Array.from(
         </div>
         <div className="relative mt-4">
 
-  {/* Previous Button */}
+          {/* Previous Button */}
 
-  <button
-    type="button"
-    onClick={prevSlide}
-    className="absolute -left-[10px] top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[#F5F5F5] shadow hover:bg-[#ECECEC]"
-  >
-    <ChevronLeft
-      size={12}
-      className="text-[#808B96]"
-    />
-  </button>
+          <button
+            type="button"
+            onClick={prevSlide}
+            className="absolute -left-[10px] top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[#F5F5F5] shadow hover:bg-[#ECECEC]"
+          >
+            <ChevronLeft
+              size={12}
+              className="text-[#808B96]"
+            />
+          </button>
 
-  {/* Products */}
+          {/* Products */}
 
-  <div className="flex items-center justify-center gap-2 overflow-hidden">
+          <div className="flex items-center justify-center gap-2 overflow-hidden">
 
-    {visibleProducts.map((src, index) => (
+            {visibleProducts.map((src, index) => (
 
-      <div
-        key={index}
-        className="relative h-[60px] w-[60px] shrink-0 overflow-hidden rounded-[15px] border border-[#00000033]"
-      >
+              <div
+                key={index}
+                className="relative h-[60px] w-[60px] shrink-0 overflow-hidden rounded-[15px] border border-[#00000033]"
+              >
 
-        <Image
-          src={src}
-          alt={`Product ${index + 1}`}
-          fill
-          sizes="60px"
-          className="object-cover transition-transform duration-300 hover:scale-105"
-        />
+                <Image
+                  src={src}
+                  alt={`Product ${index + 1}`}
+                  fill
+                  sizes="60px"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                />
 
-      </div>
+              </div>
 
-    ))}
+            ))}
 
-  </div>
+          </div>
 
-  {/* Next Button */}
+          {/* Next Button */}
 
-  <button
-    type="button"
-    onClick={nextSlide}
-    className="absolute -right-[10px] top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[#607FF8] shadow hover:bg-[#4F6EF4]"
-  >
-    <ChevronRight
-      size={12}
-      className="text-white"
-    />
-  </button>
+          <button
+            type="button"
+            onClick={nextSlide}
+            className="absolute -right-[10px] top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[#607FF8] shadow hover:bg-[#4F6EF4]"
+          >
+            <ChevronRight
+              size={12}
+              className="text-white"
+            />
+          </button>
 
-</div>
+        </div>
 
-        
+
       </div>
 
       <div className="mt-5">
@@ -245,22 +245,22 @@ const visibleProducts = Array.from(
 
         <div className="flex items-center justify-between">
 
-          <div>
-            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+          <div className="flex items-center">
+            <p className="text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               GMV:
             </p>
 
-            <p className="mt-[2px] text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
+            <p className="mt-[2px] text-[12px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
               {gmv}
             </p>
           </div>
 
-          <div className="text-right">
-            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+          <div className="text-right flex items-center">
+            <p className="text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               Unit Sold:
             </p>
 
-            <p className="mt-[2px] text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
+            <p className="mt-[2px] text-[12px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
               {unitSold}
             </p>
           </div>
@@ -271,15 +271,15 @@ const visibleProducts = Array.from(
 
         {/* Revenue */}
 
-        <div className="mt-5 flex items-start justify-between">
+        <div className="mt-5 flex items-center justify-between">
 
           <div>
 
-            <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+            <p className="text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
               Revenue
             </p>
 
-            <h3 className="mt-1 text-[20px] font-medium leading-[26px] text-[#141617]">
+            <h3 className="mt-1 text-[14px] min-[1660px]:text-[20px] font-medium leading-[26px] text-[#141617]">
               {revenueRange}
             </h3>
 
@@ -292,9 +292,11 @@ const visibleProducts = Array.from(
                 alt=""
                 width={18}
                 height={18}
+                className="rounded-full"
+                style={{ width: "18px", height: "18px" }}
               />
 
-              <span className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+              <span className="text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
                 {country}
               </span>
 
@@ -306,7 +308,7 @@ const visibleProducts = Array.from(
 
           {/* Revenue Graph */}
 
-          <div className="relative h-[36px] w-[87px]">
+          <div className="relative h-[36px] w-[50px] min-[1660px]:w-[87px]">
 
             <Image
               src="/image/blue-graph.png"
@@ -325,7 +327,7 @@ const visibleProducts = Array.from(
 
       <div className="space-y-3">
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-start gap-1">
 
           <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
             Live Revenue:
@@ -351,27 +353,29 @@ const visibleProducts = Array.from(
       </div>
 
       <div className="my-4 border-t border-[#00000014]" />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-start gap-1">
 
-        <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+        <p className="text-[10px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
           Number of Active Products Sold:
+          <span className="ms-1 text-[9px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+            {activeProducts}
+          </span>
         </p>
 
-        <p className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
-          {activeProducts}
-        </p>
+
 
       </div>
       <div className="my-4 border-t border-[#00000014]" />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-start gap-0.1">
 
-        <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
+        <p className="text-[10px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
           Number of Influencers with Sales:
+          <span className="ms-1 text-[9px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+            {influencerSales}
+          </span>
         </p>
 
-        <p className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
-          {influencerSales}
-        </p>
+
 
       </div>
       <div className="mt-4 border-t border-[#00000014]" />
@@ -392,7 +396,7 @@ const visibleProducts = Array.from(
                 height={14}
               />
 
-              <span className="text-[12px] font-normal leading-[12px] tracking-[0.03em] text-[#808B96]">
+              <span className="text-[8px] min-[1660x]:text-[12px] font-normal leading-[12px] tracking-[0.03em] text-[#808B96]">
                 {metric.platform}
               </span>
 
@@ -402,11 +406,11 @@ const visibleProducts = Array.from(
 
             <div className="mt-[6px] flex items-end justify-center gap-1">
 
-              <span className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
+              <span className="text-[12px] min-[1660x]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
                 {metric.value}
               </span>
 
-              <span className="text-[12px] font-normal leading-[12px] tracking-[0.03em] text-[#808B96]">
+              <span className="text-[8px] min-[1660x]:text-[12px] font-normal leading-[12px] tracking-[0.03em] text-[#808B96]">
                 /{metric.total}
               </span>
 

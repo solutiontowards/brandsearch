@@ -77,7 +77,7 @@ export default function SidebarItem({
       </Link>
 
       {children && children.length > 0 && !isCollapsed && (
-        <div className="pointer-events-none absolute left-full top-0 z-20 hidden min-w-[220px] rounded-[14px] border border-white/10 bg-slate-950/95 p-2 shadow-xl transition-all duration-200 group-hover:block group-hover:pointer-events-auto">
+        <div className="pointer-events-none absolute left-0 top-auto z-20 hidden min-w-[220px] w-full rounded-[14px] border border-white/10 bg-slate-950/95 p-2 shadow-xl transition-all duration-200 group-hover:block group-hover:pointer-events-auto">
           {children.map((child) => (
             <Link
               key={child.label}

@@ -15,7 +15,7 @@ export default function Brands() {
         </button>
       </div>
 
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-3 min-[1660px]:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {brandCards.map((brand) => (
           <BrandCard key={brand.id} {...brand} />
         ))}

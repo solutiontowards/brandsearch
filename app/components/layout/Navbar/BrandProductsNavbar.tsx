@@ -1,37 +1,38 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   BarChart3,
-  Camera,
   Check,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
   Clock3,
   Copy,
-  DollarSign,
-  Globe2,
-  Mail,
   Minus,
-  Music,
   Package,
-  RefreshCcw,
   Search,
   SlidersHorizontal,
   TrendingUp,
   Plus,
 } from "lucide-react";
+import { BiReset, BiSort  } from "react-icons/bi";
+import { IoIosGlobe } from "react-icons/io";
+import { AiOutlineDollar } from "react-icons/ai";
+import { TfiAnnouncement } from "react-icons/tfi";
+import { LuFacebook } from "react-icons/lu";
+import { PiTiktokLogo, PiIntersectSquare } from "react-icons/pi";
+import { FaInstagram } from "react-icons/fa";
+import { CiCalendar } from "react-icons/ci";
+import { FaCaretDown } from "react-icons/fa";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
 
 const platforms = [
-  { label: "Meta", icon: Globe2, active: true },
-  { label: "TikTok", icon: Music, active: false },
-  { label: "Instagram", icon: Camera, active: false },
-  { label: "Emails", icon: Mail, active: false },
+  { label: "Meta", icon: LuFacebook, active: true },
+  { label: "TikTok", icon: PiTiktokLogo, active: false },
+  { label: "Instagram", icon: FaInstagram, active: false },
 ];
 
 const sortOptions = [
-  { label: "Scalers", icon: BarChart3, selected: true },
+  { label: "Scalers", icon: PiIntersectSquare, selected: true },
   { label: "Top Rank", icon: TrendingUp },
   { label: "Longest Running", icon: Clock3 },
   { label: "Most Duplicates", icon: Copy },
@@ -42,17 +43,18 @@ const sortOptions = [
 ];
 
 const stats = [
-  { label: "Resets", icon: RefreshCcw },
+  { label: "Resets", icon: BiReset },
   { label: "Traffic", icon: TrendingUp },
-  { label: "Ad Count", icon: Package },
-  { label: "Market", icon: Globe2 },
-  { label: "Revenue", icon: DollarSign },
+  { label: "Ad Count", icon: TfiAnnouncement },
+  { label: "Market", icon: IoIosGlobe },
+  { label: "Revenue", icon: AiOutlineDollar },
   { label: "Item Sold", icon: Package },
 ];
 
 export default function BrandProductsNavbar() {
   const [isDateOpen, setIsDateOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
+const [selected, setSelected] = useState<Date | undefined>(new Date());
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const sortRef = useRef<HTMLDivElement | null>(null);
 
@@ -86,168 +88,214 @@ export default function BrandProductsNavbar() {
       <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-[18px] bg-[#F6F8FF] text-[#3C3D51] shadow-sm">
-              <Package size={22} />
-            </div>
-            <div>
-              <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#6B7280]">
+            <div className="inline-flex items-center justify-center gap-1">
+              <Image
+                src="/image/brands.png"
+                alt="Brands"
+                width={30}
+                height={37}
+                className="object-contain"
+                style={{
+                  width: "30px",
+                  height: "37px",
+                }}
+              />
+              <h1 className="text-[20px] font-semibold text-[#141617]">
                 Brands
-              </p>
-              <h1 className="text-[26px] font-semibold text-[#141617]">
-                Brand Products
               </h1>
             </div>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            {platforms.map((platform) => {
-              const Icon = platform.icon;
-              return (
-                <button
-                  key={platform.label}
-                  type="button"
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    platform.active
-                      ? "bg-[#1D4ED8] text-white shadow-[0_10px_30px_rgba(59,130,246,0.16)]"
-                      : "bg-[#F4F5F8] text-[#3C3D51] hover:bg-[#E5E7EB]"
-                  }`}
-                >
-                  <Icon size={14} />
-                  {platform.label}
-                </button>
-              );
-            })}
+            <div className="flex flex-wrap gap-2 bg-[#F1F1F1] rounded-[36px] px-[7px] py-[5px]">
+              {platforms.map((platform) => {
+                const Icon = platform.icon;
+                return (
+                  <button
+                    key={platform.label}
+                    type="button"
+                    className={`inline-flex items-center gap-1 min-[1660px]:gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${platform.active
+                      ? "bg-[#FFFFFF] text-[#060317] text-[14px] min-[1660px]:text-[16px]"
+                      : "text-[#808B96] text-[14px] hover:text-[#060317]"
+                      }`}
+                  >
+                    <Icon size={14} />
+                    {platform.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div
+          {/* <div
             className="relative"
             ref={dropdownRef}
             onMouseEnter={() => setIsDateOpen(true)}
             onMouseLeave={() => setIsDateOpen(false)}
-          >
+          > */}
+          <div
+  className="relative"
+  ref={dropdownRef}
+>
             <button
               type="button"
               onClick={() => setIsDateOpen((prev) => !prev)}
-              className="inline-flex items-center gap-2 rounded-[12px] border border-[#E5E7EB] bg-[#F8FAFB] px-4 py-3 text-[14px] font-semibold text-[#3C3D51] transition hover:bg-white"
+              className="inline-flex items-center gap-2 rounded-[14px] border border-[#fff] px-4 py-3 text-[16px] font-medium text-[#060317] transition hover:border-[#F23479]"
             >
+              <CiCalendar size={20} />
               Creation Date
-              <ChevronDown size={16} />
+              <FaCaretDown color="#808B96" size={16} />
             </button>
 
             {isDateOpen && (
-              <div className="absolute left-0 top-full z-30 mt-3 w-[900px] rounded-[30px] border border-[#E5E7EB] bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
-                <div className="grid gap-6 xl:grid-cols-[1.1fr_1.1fr_1.4fr]">
-                  <div className="rounded-[24px] border border-[#E5E7EB] bg-[#FAFBFD] p-5">
-                    <p className="text-sm font-semibold text-[#111827]">Filter by</p>
-                    <button className="mt-4 inline-flex items-center justify-between w-full rounded-[14px] border border-[#E5E7EB] bg-white px-4 py-3 text-left text-sm font-semibold text-[#111827] transition hover:border-[#6366F1]">
-                      Creative
-                      <Check size={16} className="text-[#10B981]" />
-                    </button>
-                    <div className="mt-5 space-y-3">
-                      {['Brand', 'Fb Page'].map((item) => (
-                        <button
-                          key={item}
-                          type="button"
-                          className="flex w-full items-center justify-between rounded-[14px] bg-white px-4 py-3 text-left text-sm font-medium text-[#111827] transition hover:bg-[#F3F4F6]"
-                        >
-                          {item}
-                          {item === 'Brand' ? <Check size={16} className="text-[#10B981]" /> : null}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+  <div className="absolute left-1/2 top-full z-[9999] mt-3 w-[810px] -translate-x-1/2 rounded-[30px] border border-[#E8ECF2] bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+    <div className="grid grid-cols-[210px_240px_1fr] overflow-hidden rounded-[24px] border border-[#EDF1F5] bg-[#FCFDFE]">
 
-                  <div className="rounded-[24px] border border-[#E5E7EB] bg-[#FAFBFD] p-5">
-                    <p className="text-sm font-semibold text-[#111827]">Filter by</p>
-                    <button className="mt-4 inline-flex items-center justify-between w-full rounded-[14px] border border-[#E5E7EB] bg-white px-4 py-3 text-left text-sm font-semibold text-[#111827] transition hover:border-[#6366F1]">
-                      Last 7 Days
-                      <Check size={16} className="text-[#10B981]" />
-                    </button>
-                    <div className="mt-5 space-y-3">
-                      {dateFilters.map((item, index) => (
-                        <button
-                          key={item}
-                          type="button"
-                          className={`flex w-full items-center justify-between rounded-[14px] px-4 py-3 text-left text-sm font-medium transition ${
-                            index === 0 ? "bg-white text-[#111827]" : "bg-transparent text-[#6B7280] hover:bg-[#F3F4F6]"
-                          }`}
-                        >
-                          {item}
-                          {index === 0 && <Check size={16} className="text-[#10B981]" />}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+      {/* LEFT COLUMN */}
+      <div className="border-r border-[#EDF1F5] p-5">
+        <p className="text-[18px] font-semibold text-[#111827]">
+          Filter by
+        </p>
 
-                  <div className="rounded-[24px] border border-[#E5E7EB] bg-[#FAFBFD] p-5">
-                    <div className="flex items-center justify-between text-sm font-semibold text-[#111827]">
-                      <span>May 2026</span>
-                      <div className="inline-flex items-center gap-2 text-[#6B7280]">
-                        <button type="button" className="rounded-full border border-[#E5E7EB] p-2 hover:bg-white">
-                          <ChevronLeft size={16} />
-                        </button>
-                        <button type="button" className="rounded-full border border-[#E5E7EB] p-2 hover:bg-white">
-                          <ChevronRight size={16} />
-                        </button>
-                      </div>
-                    </div>
-                    <div className="mt-5 grid grid-cols-7 gap-2 text-center text-xs font-semibold uppercase tracking-[0.24em] text-[#9CA3AF]">
-                      {['SU','MO','TU','WE','TH','FR','SA'].map((day) => (
-                        <span key={day}>{day}</span>
-                      ))}
-                    </div>
-                    <div className="mt-4 grid grid-cols-7 gap-2 text-sm text-[#111827]">
-                      {[
-                        '30','1','2','3','4','5','6',
-                        '7','8','9','10','11','12','13',
-                        '14','15','16','17','18','19','20',
-                        '21','22','23','24','25','26','27',
-                        '28','29','30','31','1','2','3',
-                      ].map((date, index) => {
-                        const isSelected = date === '7';
-                        const isMuted = index < 1 || index > 31;
-                        return (
-                          <button
-                            key={`${date}-${index}`}
-                            type="button"
-                            className={`h-11 rounded-[14px] ${
-                              isSelected
-                                ? 'bg-[#4338CA] text-white'
-                                : isMuted
-                                ? 'text-[#D1D5DB]'
-                                : 'hover:bg-[#EEF2FF] text-[#111827]'
-                            }`}
-                          >
-                            {date}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+        <button
+          type="button"
+          className="mt-5 flex h-[40px] w-full items-center justify-between rounded-[12px] border border-[#E6EAF0] bg-white px-4 text-[15px] font-semibold text-[#111827]"
+        >
+          Creative
+          <Check size={14} strokeWidth={3} className="text-[#22C55E]" />
+        </button>
+
+        <div className="mt-4 space-y-2">
+          {["Brand", "Fb Page"].map((item) => (
+            <button
+              key={item}
+              className="flex h-[40px] w-full items-center justify-between rounded-[12px] px-4 text-left text-[15px] font-medium text-[#111827] transition hover:bg-white"
+            >
+              {item}
+              {item === "Brand" && (
+                <Check
+                  size={14}
+                  strokeWidth={3}
+                  className="text-[#22C55E]"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* MIDDLE COLUMN */}
+      <div className="border-r border-[#EDF1F5] p-5">
+        <p className="text-[18px] font-semibold text-[#111827]">
+          Filter by
+        </p>
+
+        <button
+          type="button"
+          className="mt-5 flex h-[40px] w-full items-center justify-between rounded-[12px] border border-[#E6EAF0] bg-white px-4 text-[15px] font-semibold text-[#111827]"
+        >
+          Last 7 Days
+          <Check size={14} strokeWidth={3} className="text-[#22C55E]" />
+        </button>
+
+        <div className="mt-4 space-y-2">
+          {dateFilters.map((item, index) => (
+            <button
+              key={item}
+              className={`flex h-[40px] w-full items-center justify-between rounded-[12px] px-4 text-left text-[15px] font-medium transition ${
+                index === 0
+                  ? "bg-white text-[#111827]"
+                  : "text-[#6B7280] hover:bg-white"
+              }`}
+            >
+              {item}
+
+              {index === 0 && (
+                <Check
+                  size={14}
+                  strokeWidth={3}
+                  className="text-[#22C55E]"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* CALENDAR */}
+      {/* CALENDAR */}
+<div className="p-5">
+  <DayPicker
+    mode="single"
+    selected={selected}
+    onSelect={setSelected}
+    showOutsideDays
+    className="custom-calendar"
+    modifiersClassNames={{
+      selected: "selected-day",
+      today: "today",
+    }}
+    styles={{
+      months: {
+        display: "flex",
+      },
+      month: {
+        width: "100%",
+      },
+      caption: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: "18px",
+      },
+      caption_label: {
+        fontSize: "20px",
+        fontWeight: "600",
+      },
+      head_cell: {
+        color: "#9CA3AF",
+        fontSize: "12px",
+        fontWeight: "600",
+      },
+      cell: {
+        textAlign: "center",
+        padding: "4px",
+      },
+      day: {
+        width: "38px",
+        height: "38px",
+        borderRadius: "9999px",
+        fontSize: "15px",
+      },
+    }}
+  />
+</div>
+    </div>
+  </div>
+)}
           </div>
 
-          <div
+          {/* <div
             className="relative"
             ref={sortRef}
             onMouseEnter={() => setIsSortOpen(true)}
             onMouseLeave={() => setIsSortOpen(false)}
-          >
+          > */}
+          <div
+  className="relative"
+  ref={sortRef}
+>
             <button
               type="button"
               onClick={() => setIsSortOpen((prev) => !prev)}
-              className="inline-flex items-center gap-2 rounded-[12px] border border-[#E5E7EB] bg-[#F8FAFB] px-4 py-3 text-[14px] font-semibold text-[#3C3D51] transition hover:bg-white"
+              className="inline-flex items-center gap-2 rounded-[12px] border border-[#F1F1F1] px-4 py-3 text-[14px] font-semibold text-[#3C3D51] transition hover:border-[#F23479]"
             >
-              Sort: Last Update
-              <ChevronDown size={16} />
+              <BiSort size={12} />
+              Sort: <span className="text-[#808B96] font-normal">Last Update</span>
+              <FaCaretDown color="#808B96" size={16} />
             </button>
 
             {isSortOpen && (
-              <div className="absolute right-0 top-full z-40 mt-3 w-[260px] rounded-[24px] border border-[#E5E7EB] bg-white p-3 shadow-[0_20px_40px_rgba(15,23,42,0.12)]">
+              <div className="absolute right-0 top-full z-40 mt-3 w-[201px] rounded-[10px] border border-[#E5E7EB] bg-white py-[22px] px-[17px] shadow-[5px_5px_27px_0px_rgba(0,0,0,0.25)]">
                 <div className="rounded-[20px] border border-[#E5E7EB] bg-[#F8FAFB] p-3 text-sm font-semibold text-[#111827]">
                   <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-[#111827] shadow-sm">
                     <BarChart3 size={16} />
@@ -262,11 +310,10 @@ export default function BrandProductsNavbar() {
                       <button
                         key={option.label}
                         type="button"
-                        className={`flex w-full items-center gap-3 rounded-[18px] px-4 py-3 text-left text-sm font-medium transition ${
-                          option.selected
-                            ? "bg-[#F3F4FF] text-[#111827]"
-                            : "text-[#111827] hover:bg-[#F8FAFB]"
-                        }`}
+                        className={`flex w-full items-center gap-3 rounded-[18px] px-4 py-3 text-left text-sm font-medium transition ${option.selected
+                          ? "bg-[#F3F4FF] text-[#111827]"
+                          : "text-[#111827] hover:bg-[#F8FAFB]"
+                          }`}
                       >
                         <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F8FAFB] text-[#3C4E84]">
                           <Icon size={18} />
@@ -284,26 +331,26 @@ export default function BrandProductsNavbar() {
       </div>
 
       <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div className="grid flex-1 auto-cols-auto grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
+        <div className="flex flex-1 auto-cols-auto grid-cols-2 gap-[20px] min-[1660px]:gap-[35px] sm:grid-cols-3 xl:grid-cols-6">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div key={stat.label} className="flex items-center gap-2 rounded-[14px] border border-[#E5E7EB] bg-[#F8F9FC] px-4 py-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-[#2563EB] shadow-sm">
+              <div key={stat.label} className="flex items-center w-fit">
+                <span className="inline-flex items-center justify-center text-[#060317] mr-[7px]">
                   <Icon size={18} />
                 </span>
-                <span className="text-sm font-medium text-[#3C3D51]">{stat.label}</span>
+                <span className="text-[12px] min-[1660px]:text-[16px] font-medium">{stat.label}</span>
               </div>
             );
           })}
         </div>
 
-        <div className="relative max-w-md flex-1">
+        <div className="relative max-w-[300px] min-[1660px]:max-w-[482px] flex-1">
           <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]" />
           <input
             type="search"
             placeholder="Search brands and products"
-            className="h-12 w-full rounded-[14px] border border-[#E5E7EB] bg-[#F8F9FC] px-14 text-sm text-[#3C3D51] outline-none transition focus:border-[#2563EB] focus:bg-white"
+            className="h-10 w-full rounded-[26px] border border-[#E5E7EB] bg-[#F1F1F1] px-10 min-[1660px]:px-14 text-sm text-[#3C3D51] outline-none transition focus:border-[#2563EB] focus:bg-white"
           />
         </div>
       </div>
