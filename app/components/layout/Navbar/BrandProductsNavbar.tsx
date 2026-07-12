@@ -247,28 +247,33 @@ export default function BrandProductsNavbar() {
                         months: {
                           display: "flex",
                         },
+
                         month: {
                           width: "100%",
                         },
-                        caption: {
+
+                        month_caption: {
                           display: "flex",
                           justifyContent: "space-between",
                           alignItems: "center",
                           marginBottom: "18px",
                         },
+
                         caption_label: {
                           fontSize: "20px",
                           fontWeight: "600",
                         },
-                        head_cell: {
+
+                        weekdays: {
+                          marginBottom: "8px",
+                        },
+
+                        weekday: {
                           color: "#9CA3AF",
                           fontSize: "12px",
-                          fontWeight: "600",
+                          fontWeight: 600,
                         },
-                        cell: {
-                          textAlign: "center",
-                          padding: "4px",
-                        },
+
                         day: {
                           width: "38px",
                           height: "38px",
@@ -305,8 +310,8 @@ export default function BrandProductsNavbar() {
 
             {isSortOpen && (
               <div className="absolute right-0 top-full z-40 mt-3 w-[201px] rounded-[10px] border border-[#E5E7EB] bg-white py-[22px] px-[17px] shadow-[5px_5px_27px_0px_rgba(0,0,0,0.25)]">
-                <div className="rounded-[20px] border border-[#E5E7EB] bg-[#F8FAFB] p-3 text-sm font-semibold text-[#111827]">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-[#111827] shadow-sm">
+                <div className="rounded-[10px] border border-[#00000029] px-[18px] py-[5px] text-sm font-semibold text-[#111827]">
+                  <div className="inline-flex items-center gap-2 ">
                     <BarChart3 size={16} />
                     Scalers
                     <Check size={16} className="text-[#10B981]" />
