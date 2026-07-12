@@ -17,15 +17,15 @@ export default function AdsLibraryPage() {
         {/* Cards */}
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {topPerformingAds.map((ad) => (
-            <TopPerformingAdCard
-              key={ad.id}
-              {...ad}
-            />
-          ))}
+  <TopPerformingAdCard
+    key={ad.id}
+    ad={ad}
+  />
+))}
         </div>
 
         {/* Pagination */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex justify-end">
           <BrandPagination />
         </div>
       </main>

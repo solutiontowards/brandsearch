@@ -17,7 +17,7 @@ export default function AdLibraryTikTokPage() {
 
         <TikTokAds />
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex justify-end">
           <BrandPagination />
         </div>
 

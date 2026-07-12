@@ -13,7 +13,7 @@ import {
   TrendingUp,
   Plus,
 } from "lucide-react";
-import { BiReset, BiSort  } from "react-icons/bi";
+import { BiReset, BiSort } from "react-icons/bi";
 import { IoIosGlobe } from "react-icons/io";
 import { AiOutlineDollar } from "react-icons/ai";
 import { TfiAnnouncement } from "react-icons/tfi";
@@ -54,7 +54,7 @@ const stats = [
 export default function BrandProductsNavbar() {
   const [isDateOpen, setIsDateOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
-const [selected, setSelected] = useState<Date | undefined>(new Date());
+  const [selected, setSelected] = useState<Date | undefined>(new Date());
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const sortRef = useRef<HTMLDivElement | null>(null);
 
@@ -133,9 +133,9 @@ const [selected, setSelected] = useState<Date | undefined>(new Date());
             onMouseLeave={() => setIsDateOpen(false)}
           > */}
           <div
-  className="relative"
-  ref={dropdownRef}
->
+            className="static"
+            ref={dropdownRef}
+          >
             <button
               type="button"
               onClick={() => setIsDateOpen((prev) => !prev)}
@@ -147,131 +147,140 @@ const [selected, setSelected] = useState<Date | undefined>(new Date());
             </button>
 
             {isDateOpen && (
-  <div className="absolute left-1/2 top-full z-[9999] mt-3 w-[810px] -translate-x-1/2 rounded-[30px] border border-[#E8ECF2] bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
-    <div className="grid grid-cols-[210px_240px_1fr] overflow-hidden rounded-[24px] border border-[#EDF1F5] bg-[#FCFDFE]">
+              <div className="absolute right-[65px] top-[115px] z-[9999] mt-3 w-[800px] min-[1660px]:w-[909px] h-[476px] rounded-[10px] border border-[#E8ECF2] bg-white px-[20px] py-[27px] shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                <span className="absolute left-[229px] bottom-0 h-[410px] w-px bg-[#0000001F]" />
+                <span className="absolute left-[474px] bottom-0 h-[410px] w-px bg-[#0000001F]" />
+                <div className="grid grid-cols-[210px_240px_1fr] overflow-hidden relative after:absolute
+    after:left-0
+    after:top-[37px]
+    after:h-px
+    after:w-full
+    after:border-t
+    after:border-[#0000001F]
+    after:content-['']">
 
-      {/* LEFT COLUMN */}
-      <div className="border-r border-[#EDF1F5] p-5">
-        <p className="text-[18px] font-semibold text-[#111827]">
-          Filter by
-        </p>
 
-        <button
-          type="button"
-          className="mt-5 flex h-[40px] w-full items-center justify-between rounded-[12px] border border-[#E6EAF0] bg-white px-4 text-[15px] font-semibold text-[#111827]"
-        >
-          Creative
-          <Check size={14} strokeWidth={3} className="text-[#22C55E]" />
-        </button>
+                  {/* LEFT COLUMN */}
+                  <div className="ps-[18px">
+                    <p className="text-[14px] ps-[18px] font-medium leading-[20px] text-[#5F6070]">
+                      Filter by
+                    </p>
 
-        <div className="mt-4 space-y-2">
-          {["Brand", "Fb Page"].map((item) => (
-            <button
-              key={item}
-              className="flex h-[40px] w-full items-center justify-between rounded-[12px] px-4 text-left text-[15px] font-medium text-[#111827] transition hover:bg-white"
-            >
-              {item}
-              {item === "Brand" && (
-                <Check
-                  size={14}
-                  strokeWidth={3}
-                  className="text-[#22C55E]"
-                />
-              )}
-            </button>
-          ))}
-        </div>
-      </div>
+                    <button
+                      type="button"
+                      className="mt-[40px] flex h-[40px] w-fit items-center justify-between rounded-[12px] border border-[#E6EAF0] bg-white px-4 text-[15px] font-semibold text-[#111827]"
+                    >
+                      Creative
+                      <Check size={14} strokeWidth={3} className="text-[#000000] ms-2" />
+                    </button>
 
-      {/* MIDDLE COLUMN */}
-      <div className="border-r border-[#EDF1F5] p-5">
-        <p className="text-[18px] font-semibold text-[#111827]">
-          Filter by
-        </p>
+                    <div className="mt-4 space-y-2">
+                      {["Brand", "Fb Page"].map((item) => (
+                        <button
+                          key={item}
+                          className="flex h-[30px] w-fit items-center justify-between rounded-[12px] px-4 text-left text-[16px] font-medium leading-[20px] text-[#060317] transition hover:bg-white"
+                        >
+                          {item}
+                          {item === "Brand" && (
+                            <Check
+                              size={14}
+                              strokeWidth={3}
+                              className="text-[#000000] ms-2"
+                            />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
 
-        <button
-          type="button"
-          className="mt-5 flex h-[40px] w-full items-center justify-between rounded-[12px] border border-[#E6EAF0] bg-white px-4 text-[15px] font-semibold text-[#111827]"
-        >
-          Last 7 Days
-          <Check size={14} strokeWidth={3} className="text-[#22C55E]" />
-        </button>
+                  {/* MIDDLE COLUMN */}
+                  <div className="ps-[18px]">
+                    <p className="text-[14px] font-medium ps-[32px] leading-[20px] text-[#5F6070]">
+                      Filter by
+                    </p>
 
-        <div className="mt-4 space-y-2">
-          {dateFilters.map((item, index) => (
-            <button
-              key={item}
-              className={`flex h-[40px] w-full items-center justify-between rounded-[12px] px-4 text-left text-[15px] font-medium transition ${
-                index === 0
-                  ? "bg-white text-[#111827]"
-                  : "text-[#6B7280] hover:bg-white"
-              }`}
-            >
-              {item}
+                    <button
+                      type="button"
+                      className="mt-[40px] flex h-[40px] w-fit items-center justify-between rounded-[12px] border border-[#E6EAF0] bg-white px-4 text-[15px] font-semibold text-[#111827]"
+                    >
+                      Last 7 Days
+                      <Check size={14} strokeWidth={3} className="text-[#000000] ms-2" />
+                    </button>
 
-              {index === 0 && (
-                <Check
-                  size={14}
-                  strokeWidth={3}
-                  className="text-[#22C55E]"
-                />
-              )}
-            </button>
-          ))}
-        </div>
-      </div>
+                    <div className="mt-4 space-y-2">
+                      {dateFilters.map((item, index) => (
+                        <button
+                          key={item}
+                          className={`flex h-[30px] w-fit items-center justify-between rounded-[12px] px-4 text-left text-[16px] font-medium leading-[20px] text-[#060317] transition ${index === 0
+                            ? "bg-white text-[#060317]"
+                            : "text-[#6B7280] hover:bg-white"
+                            }`}
+                        >
+                          {item}
 
-      {/* CALENDAR */}
-      {/* CALENDAR */}
-<div className="p-5">
-  <DayPicker
-    mode="single"
-    selected={selected}
-    onSelect={setSelected}
-    showOutsideDays
-    className="custom-calendar"
-    modifiersClassNames={{
-      selected: "selected-day",
-      today: "today",
-    }}
-    styles={{
-      months: {
-        display: "flex",
-      },
-      month: {
-        width: "100%",
-      },
-      caption: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginBottom: "18px",
-      },
-      caption_label: {
-        fontSize: "20px",
-        fontWeight: "600",
-      },
-      head_cell: {
-        color: "#9CA3AF",
-        fontSize: "12px",
-        fontWeight: "600",
-      },
-      cell: {
-        textAlign: "center",
-        padding: "4px",
-      },
-      day: {
-        width: "38px",
-        height: "38px",
-        borderRadius: "9999px",
-        fontSize: "15px",
-      },
-    }}
-  />
-</div>
-    </div>
-  </div>
-)}
+                          {index === 0 && (
+                            <Check
+                              size={14}
+                              strokeWidth={3}
+                              className="text-[#000000] ms-2"
+                            />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CALENDAR */}
+                  {/* CALENDAR */}
+                  <div className="">
+                    <DayPicker
+                      mode="single"
+                      selected={selected}
+                      onSelect={setSelected}
+                      showOutsideDays
+                      className="custom-calendar"
+                      modifiersClassNames={{
+                        selected: "selected-day",
+                        today: "today",
+                      }}
+                      styles={{
+                        months: {
+                          display: "flex",
+                        },
+                        month: {
+                          width: "100%",
+                        },
+                        caption: {
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginBottom: "18px",
+                        },
+                        caption_label: {
+                          fontSize: "20px",
+                          fontWeight: "600",
+                        },
+                        head_cell: {
+                          color: "#9CA3AF",
+                          fontSize: "12px",
+                          fontWeight: "600",
+                        },
+                        cell: {
+                          textAlign: "center",
+                          padding: "4px",
+                        },
+                        day: {
+                          width: "38px",
+                          height: "38px",
+                          borderRadius: "9999px",
+                          fontSize: "15px",
+                        },
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* <div
@@ -281,9 +290,9 @@ const [selected, setSelected] = useState<Date | undefined>(new Date());
             onMouseLeave={() => setIsSortOpen(false)}
           > */}
           <div
-  className="relative"
-  ref={sortRef}
->
+            className="relative"
+            ref={sortRef}
+          >
             <button
               type="button"
               onClick={() => setIsSortOpen((prev) => !prev)}
@@ -310,12 +319,12 @@ const [selected, setSelected] = useState<Date | undefined>(new Date());
                       <button
                         key={option.label}
                         type="button"
-                        className={`flex w-full items-center gap-3 rounded-[18px] px-4 py-3 text-left text-sm font-medium transition ${option.selected
+                        className={`flex w-full items-center gap-3 h-[30px] text-left text-[16px] font-medium transition ${option.selected
                           ? "bg-[#F3F4FF] text-[#111827]"
                           : "text-[#111827] hover:bg-[#F8FAFB]"
                           }`}
                       >
-                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F8FAFB] text-[#3C4E84]">
+                        <span className="me-[10px">
                           <Icon size={18} />
                         </span>
                         <span className="flex-1">{option.label}</span>

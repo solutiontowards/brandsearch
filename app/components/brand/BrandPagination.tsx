@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function BrandPagination() {
   return (
-    <div className="flex items-center justify-between border-t border-[#ECECEC] px-8 py-6">
+    <div className="flex items-center justify-end border-t border-[#ECECEC] px-8 py-6">
 
       {/* <p className="text-sm text-[#8A8A8A]">
         Showing 1–4 of 126 Brands
