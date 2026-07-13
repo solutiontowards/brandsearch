@@ -4,6 +4,24 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { Bookmark, ChevronLeft, ChevronRight, MoreVertical } from "lucide-react";
 import type { BrandCard as BrandCardType, BrandPlatformMetric } from "@/app/data/brands";
+import RevenueSlider from "./RevenueSlider";
+import { TbGraph } from "react-icons/tb";
+import { FaChevronUp } from "react-icons/fa6";
+
+const cards = [
+  {
+    id: 1,
+    revenues: ["$197.0k", "$205.4k", "$210.1k"],
+  },
+  {
+    id: 2,
+    revenues: ["$85.2k", "$92.5k", "$98.4k"],
+  },
+  {
+    id: 3,
+    revenues: ["$450.3k", "$470.6k", "$489.9k"],
+  },
+];
 
 const PLATFORM_ICON_SRC: Record<BrandPlatformMetric["platform"], string> = {
   facebook: "/image/facebook.png",
@@ -58,7 +76,7 @@ export default function BrandCard({
   );
 
   return (
-    <div className="w-full max-w-sm rounded-[18px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:py-5 min-[1660px]:px-[25px] transition hover:-translate-y-0.5">
 
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-1.5 min-[1660px]:gap-2.5">
@@ -181,7 +199,7 @@ export default function BrandCard({
             </div>
           </div>
         </div>
-        <div className="relative mt-4">
+        <div className="relative mt-[15px]">
 
           {/* Previous Button */}
 
@@ -239,7 +257,7 @@ export default function BrandCard({
 
       </div>
 
-      <div className="mt-5">
+      <div className="mt-[27px]">
 
         {/* GMV + Unit Sold */}
 
@@ -323,36 +341,22 @@ export default function BrandCard({
         </div>
 
       </div>
-      <div className="my-4 border-t border-[#00000014]" />
+      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
 
       <div className="space-y-3">
 
-        <div className="flex items-center justify-start gap-1">
-
-          <p className="text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
-            Live Revenue:
-          </p>
-
-          <p className="text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
-            {liveRevenue}
-          </p>
-
-        </div>
-
-        <div className="relative h-[6px] rounded-full bg-[#ECECEC]">
-
-          <div
-            className="absolute left-0 top-0 h-full rounded-full bg-[#607FF8]"
-            style={{ width: "92%" }}
-          />
-
-          <div className="absolute right-0 top-1/2 h-[12px] w-[12px] -translate-y-1/2 rounded-full bg-[#607FF8] ring-2 ring-white" />
-
-        </div>
+        <RevenueSlider
+          revenues={[
+            liveRevenue,
+            "$205.4k",
+            "$210.1k",
+          ]}
+        />
+        
 
       </div>
 
-      <div className="my-4 border-t border-[#00000014]" />
+      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
       <div className="flex items-center justify-start gap-1">
 
         <p className="text-[10px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
@@ -365,7 +369,7 @@ export default function BrandCard({
 
 
       </div>
-      <div className="my-4 border-t border-[#00000014]" />
+      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
       <div className="flex items-center justify-start gap-0.1">
 
         <p className="text-[10px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
@@ -422,22 +426,33 @@ export default function BrandCard({
 
       </div>
 
-      <div className="mt-5 flex items-center justify-between gap-3">
-        <button
-          type="button"
-          onClick={onSave}
-          className="flex items-center justify-center gap-2 rounded-[12px] border border-slate-200 bg-white px-4 py-2 text-[13px] font-medium text-[#3C3D51] transition hover:bg-slate-50"
-        >
-          <Bookmark size={16} /> Save
-        </button>
-        <button
-          type="button"
-          onClick={onAnalyze}
-          className="flex items-center justify-center rounded-[12px] bg-[#F5F5F5] px-4 py-2 text-[13px] font-medium text-[#3C3D51] transition hover:bg-slate-200"
-        >
-          Analyze
-        </button>
-      </div>
+      <div className="mt-[30px] min-[1660px]:mt-[40px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
+
+            <button
+              type="button"
+              className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[13px] font-medium text-[#141617] transition"
+            >
+
+              <Bookmark size={16} />
+
+              Save
+
+            </button>
+
+            <div className="flex items-center gap-2 min-[1660px]:gap-[18px]">
+              <FaChevronUp className="text-[#808B96]" />
+
+              <button
+                type="button"
+                className="inline-flex items-center justify-center gap-[7px] rounded-[10px] min-[1660px]:w-[108px] min-[1660px]:h-[39px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
+              >
+                <TbGraph />
+                Analyze
+
+              </button>
+            </div>
+
+          </div>
     </div>
   );
 }
