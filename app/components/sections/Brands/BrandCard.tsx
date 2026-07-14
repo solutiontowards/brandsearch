@@ -76,7 +76,7 @@ export default function BrandCard({
   );
 
   return (
-    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:py-5 min-[1660px]:px-[25px] transition hover:-translate-y-0.5">
+    <div className="w-full max-w-[360px] rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:py-5 min-[1660px]:px-[25px] transition hover:-translate-y-0.5">
 
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-1.5 min-[1660px]:gap-2.5">
@@ -125,7 +125,7 @@ export default function BrandCard({
         </button>
       </div>
 
-      <div className="mt-5 flex items-center justify-between">
+      <div className="mt-2.5 flex items-center justify-between">
         {/* Left */}
         <div>
           <div className="flex items-end gap-1">
@@ -151,8 +151,8 @@ export default function BrandCard({
         </div>
       </div>
 
-      <div className="mt-5">
-        <div className="mt-6 flex items-start min-[1660px]:items-center justify-between flex-col min-[1660px]:flex-row">
+      <div className="mt-4">
+        <div className="flex items-start min-[1660px]:items-center justify-between flex-col min-[1660px]:flex-row">
           <p className="text-[12px] min-[1660px]:text-[14px] font-normal leading-6 text-[#141617]">
             Best Selling Products
           </p>
@@ -289,7 +289,7 @@ export default function BrandCard({
 
         {/* Revenue */}
 
-        <div className="mt-5 flex items-center justify-between">
+        <div className="mt-4 flex items-center justify-between">
 
           <div>
 
@@ -341,7 +341,7 @@ export default function BrandCard({
         </div>
 
       </div>
-      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
+      <div className="my-[8px] min-[1660px]:my-[8px] border-t border-[#00000014]" />
 
       <div className="space-y-3">
 
@@ -356,7 +356,7 @@ export default function BrandCard({
 
       </div>
 
-      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
+      <div className="my-[8px] min-[1660px]:my-[8px] border-t border-[#00000014]" />
       <div className="flex items-center justify-start gap-1">
 
         <p className="text-[10px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
@@ -369,7 +369,7 @@ export default function BrandCard({
 
 
       </div>
-      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
+      <div className="my-[8px] min-[1660px]:my-[8px] border-t border-[#00000014]" />
       <div className="flex items-center justify-start gap-0.1">
 
         <p className="text-[10px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
@@ -382,8 +382,8 @@ export default function BrandCard({
 
 
       </div>
-      <div className="mt-4 border-t border-[#00000014]" />
-      <div className="mt-5 grid grid-cols-3 gap-4">
+      <div className="mt-2 border-t border-[#00000014]" />
+      <div className="mt-2 grid grid-cols-3 gap-4">
 
         {platformMetrics.map((metric) => (
 
@@ -391,7 +391,7 @@ export default function BrandCard({
 
             {/* Icon + Name */}
 
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex items-center justify-start gap-1">
 
               <Image
                 src={PLATFORM_ICON_SRC[metric.platform]}
@@ -408,7 +408,7 @@ export default function BrandCard({
 
             {/* Numbers */}
 
-            <div className="mt-[6px] flex items-end justify-center gap-1">
+            <div className="mt-[6px] flex items-end justify-start gap-1">
 
               <span className="text-[12px] min-[1660x]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#141617]">
                 {metric.value}

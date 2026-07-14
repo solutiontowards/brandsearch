@@ -8,7 +8,7 @@ export default function TrafficTrend() {
         alt="Traffic Trend"
         width={120}
         height={45}
-        className="h-auto w-auto"
+        className="h-auto w-[120px]"
       />
     </div>
   );

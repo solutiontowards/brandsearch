@@ -7,13 +7,13 @@ export default function RecentlyViewedCard({
   ad: RecentlyViewedAd;
 }) {
   return (
-    <div className="w-full rounded-[14px] border border-[#ECECEC] bg-[#F9F9F9] p-3">
+    <div className="w-full rounded-[14px] border border-[#ECECEC] bg-[#F9F9F9] px-[10px] pt-[10px] pb-[12px] min-h-[240px]">
 
       {/* Image */}
 
       <div className="relative overflow-hidden rounded-[10px]">
 
-        <div className="relative h-[105px] w-full">
+        <div className="relative h-[110px] w-full">
 
           <Image
             src={ad.image}
@@ -46,11 +46,11 @@ export default function RecentlyViewedCard({
 
       {/* Brand */}
 
-      <div className="mt-3 flex items-start justify-between">
+      <div className="mt-[15.33px] flex items-start justify-between">
 
         <div className="flex gap-2">
 
-          <div className="relative h-[28px] w-[28px] overflow-hidden rounded-full">
+          <div className="relative h-[34px] w-[34px] overflow-hidden rounded-full">
 
             <Image
               src={ad.logo}

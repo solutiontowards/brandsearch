@@ -19,7 +19,7 @@ export default function InstagramMetrics({
   rating,
 }: InstagramMetricsProps) {
   return (
-    <div className="mt-4 flex items-center gap-2">
+    <div className=" flex items-center gap-2">
       {/* Revenue */}
       <div className="flex h-8 items-center gap-1 rounded-full bg-[#DDF8E5] px-3">
         <Users size={14} className="text-[#38CA6E]" />

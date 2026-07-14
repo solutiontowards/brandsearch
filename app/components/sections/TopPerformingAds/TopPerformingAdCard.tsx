@@ -47,7 +47,7 @@ export default function TopPerformingAdCard({
   };
 
   return (
-    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:px-[25px] min-[1660px]:py-[20px] transition hover:-translate-y-0.5">
+    <div className="w-full max-w-[360px] rounded-[10px] border border-slate-200 bg-white px-[25px] py-5 min-[1660px]:px-[25px] min-[1660px]:py-[20px] transition hover:-translate-y-0.5">
 
       {/* ================= HEADER ================= */}
 
@@ -76,7 +76,7 @@ export default function TopPerformingAdCard({
               </h3>
 
               <span
-                className={`rounded-full px-2 py-[1px] min-[1660px]:py-[3px] text-[5px] min-[1660px]:text-[10px] leading-[10px]
+                className={`rounded-full px-2 py-[1px] min-[1660px]:py-[3px] text-[5px] h-[21px] min-[1660px]:text-[10px] flex items-center justify-center
                 ${variant === "default"
                     ? "bg-[#F2347917] text-[#F23479]"
                     : "bg-[#F5F5F5] text-[#808B96]"
@@ -95,7 +95,7 @@ export default function TopPerformingAdCard({
                     {ad.period}
                   </span>
 
-                  <span className="rounded-full bg-[#F5F5F5] px-[8px] py-[4px] text-[8px] min-[1660px]:text-[10px] font-medium leading-[10px] text-[#3C3D51]">
+                  <span className="rounded-[40px] bg-[#F5F5F5] px-[8px] py-[4px] text-[8px] min-[1660px]:text-[10px] min-w-[35px] h-[22px] font-medium leading-[10px] text-[#3C3D51] flex items-center justify-center">
                     {ad.days}
                   </span>
                 </>
@@ -158,7 +158,7 @@ export default function TopPerformingAdCard({
 
       {/* ================= FIRST ROW ================= */}
 
-      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
+      <div className="my-[2px] min-[1660px]:my-[4.17px] border-t border-[#00000014]" />
 
       {variant === "default" ? (
 
@@ -265,7 +265,7 @@ export default function TopPerformingAdCard({
       )}
       {/* ================= SECOND ROW ================= */}
 
-      <div className=" my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
+      <div className=" mt-[4px] mb-[5px] border-t border-[#00000014]" />
 
       {variant === "default" ? (
 
@@ -352,12 +352,12 @@ export default function TopPerformingAdCard({
 
       {/* ================= IMAGE ================= */}
 
-      <div className="relative mt-3 mb-2 min-[1660px]:mt-6 min-[1660px]:mb-5 overflow-hidden rounded-[12px] border border-[#0000001A]">
+      <div className="relative mt-5  min-[1660px]:mt-5 min-[1660px]:mb-5 overflow-hidden rounded-[10px] border border-[#0000001A]">
 
         {variant === "default" ? (
 
           <>
-            <div className="relative h-[170px] min-[1660px]:h-[288px] w-full">
+            <div className="relative h-[288px] min-[1660px]:h-[288px] w-full">
 
               <Image
                 src={ad.images[0]}
@@ -478,7 +478,7 @@ export default function TopPerformingAdCard({
       {variant === "default" ? (
 
         <>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between h-[20px] mt-5">
 
             <div className="flex items-center">
 
@@ -536,7 +536,7 @@ export default function TopPerformingAdCard({
 
           </p>
 
-          <div className="my-5 border-t border-[#00000014]" />
+          <div className="mb-[10px] mt-2 border-t border-[#00000014]" />
 
         </>
 
@@ -551,11 +551,11 @@ export default function TopPerformingAdCard({
 
       {/* ================= LINK BOX ================= */}
 
-      <div className="mt-5 rounded-[10px] border border-[#00000014] bg-white px-3 py-[9px]">
+      <div className="mt-[11px] rounded-[10px] h-[38px] border border-[#00000014] bg-white ps-[17px] pe-[12px] py-[9px]">
 
         <div className="flex items-center justify-between">
 
-          <span className="truncate text-[14px] text-[#141617]">
+          <span className="truncate font-normal text-[15px] text-[#141617]">
 
             {ad.link}
 

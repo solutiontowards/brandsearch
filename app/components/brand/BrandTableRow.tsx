@@ -12,7 +12,7 @@ interface Props {
 
 export default function BrandTableRow({ brand }: Props) {
   return (
-    <div className="grid grid-cols-[90px_350px_180px_100px_120px_120px_80px_85px_130px] items-center border rounded-[20px] mt-[10px] border-[#00000014] px-7 py-5">
+    <div className="grid grid-cols-[100px_360px_180px_110px_120px_170px_90px_95px_130px] items-center border rounded-[20px] mt-[10px] border-[#00000014] px-7 py-5">
 
       {/* Star + Rank */}
       <div className="flex items-center justify-center gap-3">
