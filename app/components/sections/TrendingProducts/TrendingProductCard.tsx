@@ -57,7 +57,7 @@ const DEFAULT_THUMBNAILS = ["/image/trending-pro2.png", "/image/trending-pro3.pn
 function Sparkline({ data }: { data: number[] }) {
   const max = Math.max(...data);
   return (
-    <div className="flex h-8 min-[1660px]:h-10 items-end gap-[1px] min-[1660px]:gap-[3px]">
+    <div className="flex h-[26px] min-[1660px]:h-[24px] items-end gap-[1px] min-[1660px]:gap-[3px]">
       {data.map((value, i) => (
         <div
           key={i}
@@ -101,7 +101,7 @@ export default function TrendingProductCard({
   } as const;
 
   return (
-    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:px-[25px] min-[1660px]:py-[20px] transition hover:-translate-y-0.5">
+    <div className="w-full max-w-[360px] rounded-[10px]  bg-white px-3 py-5 min-[1660px]:px-[25px] min-[1660px]:py-[20px] transition hover:-translate-y-0.5">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-[5px] min-[1660px]:gap-[10px]">
@@ -137,7 +137,7 @@ export default function TrendingProductCard({
 
 
       {/* Traffic + sparkline */}
-      <div className="mt-2 flex items-center justify-between">
+      <div className="mt-1.5 flex items-center justify-between">
         <p className="text-[18px] min-[1660px]:text-[26px] leading-[34px] font-medium text-[#141617]">
           {trafficDisplay}{" "}
           <span className="text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal text-[#808B96]">{trafficLabel}</span>
@@ -146,7 +146,7 @@ export default function TrendingProductCard({
       </div>
 
       {/* Image + thumbnails */}
-      <div className="mt-4 grid  grid-cols-[2fr_1fr] grid-rows-2 gap-1.5 min-[1660px]:gap-3">
+      <div className="mt-3.5 grid  grid-cols-[2fr_1fr] h-[145px] grid-rows-2 gap-1.5 min-[1660px]:gap-3">
         <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[24px] border border-black/20 bg-slate-100 h-[120px] min-[1660px]:h-[145px]">
           <Image src={image} alt={productName} fill sizes="100%" className="object-cover" />
         </div>
@@ -172,23 +172,23 @@ export default function TrendingProductCard({
       </p>
 
       {/* Price */}
-      <p className="mt-[6px] text-[14px] leading-[20px] font-normal text-[#808B96]">
-        Price: <span className="font-normal text-[#141617]">{priceRange}</span>
+      <p className="mt-[6px] text-[14px] font-normal leading-[20px] font-normal text-[#808B96]">
+        Price: <span className="font-bold text-[#141617]">{priceRange}</span>
       </p>
 
-      <div className="mt-2 mb-2 border-t border-[#00000014]" />
+      <div className="my-[7px] border-t border-[#00000014]" />
 
       {/* GMV */}
       <div className="flex items-center justify-between text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal">
         <span className="text-[#808B96]">
-          GMV <span className="font-normal text-[#38CA6E]">{gmv}</span>
+          GMV <span className="font-bold text-[#38CA6E]">{gmv}</span>
         </span>
         <span className="text-slate-500">
-          Total GMV: <span className="font-semibold text-slate-900">{totalGmv}</span>
+          Total GMV: <span className="font-bold text-[#141617]">{totalGmv}</span>
         </span>
       </div>
 
-      <div className="mt-2 mb-2 border-t border-[#00000014]" />
+      <div className="my-2 border-t border-[#00000014]" />
 
       {/* Daily range + growth */}
       <div className="flex items-center justify-between">
@@ -200,7 +200,7 @@ export default function TrendingProductCard({
       </div>
 
       {/* Country */}
-      <div className="mt-2 flex items-center gap-[11px] text-sm text-slate-600">
+      <div className="mt-[3px] flex items-center gap-[11px] text-sm text-slate-600">
         <span className="relative h-4 w-4 overflow-hidden rounded-full">
           <Image src={usLogo} alt="USA" fill sizes="100%" className="object-cover" />
         </span>
@@ -213,8 +213,8 @@ export default function TrendingProductCard({
       <div className="grid grid-cols-3 gap-2 min-[1660px]:gap-3">
         {platformMetrics.map((metric) => (
           <div key={metric.platform}>
-            <div className="flex items-center gap-1.5">
-              <span className="relative grid h-7 w-7 basis-5 min-[1660px]:basis-7">
+            <div className="flex items-center justify-start gap-[4px]">
+              <span className="relative grid h-6 w-6 basis-5 min-[1660px]:basis-7">
                 <Image
                   src={PLATFORM_ICON_SRC[metric.platform]}
                   alt={platformLabel[metric.platform]}
@@ -223,11 +223,11 @@ export default function TrendingProductCard({
                   className="object-contain p-1"
                 />
               </span>
-              <span className="text-[10px] min-[1660px]:text-[12px] leading-none font-normal text-[#808B96]">
+              <span className="text-[10px] min-[1660px]:text-[10px] leading-none font-normal text-[#808B96]">
                 {platformLabel[metric.platform]}
               </span>
             </div>
-            <p className="mt-1.5 text-[9px] min-[1660px]:text-[12px] leading-[12px] font-normal tracking-[3%] text-[#808B96]">
+            <p className="mt-[2px] text-[9px] min-[1660px]:text-[12px] leading-[12px] font-normal tracking-[3%] text-[#808B96]">
               <span className="font-bold text-[11px] min-[1660px]:text-[14px] leading-[20px] text-[#141617]">{metric.value}</span>
               /{metric.total}
             </p>
