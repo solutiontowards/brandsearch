@@ -11,17 +11,17 @@ export default function AdsLibraryPage() {
     <div className="flex min-h-screen bg-[#141414]">
       <Sidebar />
 
-      <main className="mt-[15px] mr-[15px] flex-1 overflow-y-auto rounded-[20px] bg-[#F8F8F8] p-6">
+      <main className="flex-1 space-y-5 min-[1150px]:space-y-0 mt-[15px] mr-[19px] rounded-[20px] bg-[#F1F1F1] pt-[21px] pr-[33px] pl-[40px] pb-[40px]">
         <BrandProductsNavbar />
 
         {/* Cards */}
-        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-[25px] md:grid-cols-2 xl:grid-cols-4">
           {topPerformingAds.map((ad) => (
-  <TopPerformingAdCard
-    key={ad.id}
-    ad={ad}
-  />
-))}
+            <TopPerformingAdCard
+              key={ad.id}
+              ad={ad}
+            />
+          ))}
         </div>
 
         {/* Pagination */}

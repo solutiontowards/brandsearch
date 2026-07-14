@@ -21,7 +21,7 @@ type Props = {
 
 export default function InstagramAdCard({ ad }: Props) {
     return (
-        <div className="w-full max-w-sm rounded-[20px] border border-[#00000014] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div className="w-full max-w-[360px] rounded-[20px] bg-white py-[22px] ps-[24px] pe-[22px] shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
 
             {/* ================= Header ================= */}
 
@@ -95,13 +95,13 @@ export default function InstagramAdCard({ ad }: Props) {
 
             {/* Divider */}
 
-            <div className="my-4 border-t border-[#00000014]" />
+            <div className="mt-4 mb-[7px] border-t border-[#00000014]" />
 
 
 
             {/* Metrics */}
 
-            <div className="mt-5">
+            <div className="">
 
                 <InstagramMetrics
                     revenue={ad.revenue}
@@ -112,11 +112,11 @@ export default function InstagramAdCard({ ad }: Props) {
 
             </div>
 
-            <div className="my-5 border-t border-[#00000014]" />
+            {/* <div className="my-5 border-t border-[#00000014]" /> */}
 
             {/* Image Slider */}
 
-            <div className="relative">
+            <div className="relative h-[288px] mt-[22px[">
 
                 <InstagramSlider images={ad.images} />
 
@@ -124,11 +124,11 @@ export default function InstagramAdCard({ ad }: Props) {
 
             </div>
 
-            <div className="my-5 border-t border-[#00000014]" />
+            {/* <div className="my-5 border-t border-[#00000014]" /> */}
             {/* Caption */}
 
             <div className="mt-5">
-                <h3 className="text-[15px] min-[1660px]:text-[18px] font-medium leading-6 text-[#141617]">
+                <h3 className="text-[15px] min-[1660px]:text-[18px] font-medium leading-5 text-[#141617]">
                     {ad.title}
                 </h3>
 
@@ -179,7 +179,7 @@ export default function InstagramAdCard({ ad }: Props) {
 
             {/* Bottom Buttons */}
 
-            <div className="mt-5 flex items-center justify-between gap-3">
+            <div className="mt-5 flex items-center justify-between gap-3 h-[39px]">
 
                 <button
                     type="button"

@@ -3,18 +3,17 @@ import { recentlyViewedAds } from "@/app/data/recentlyViewedAds";
 
 export default function RecentlyViewedAds() {
   return (
-    <section className="rounded-[16px] bg-white p-6">
+    <section className="rounded-[10px] bg-white pt-[10px] ps-[36px] pe-[30px] pt-[24px] pb-[36px] mt-5">
       {/* Heading */}
-      <div className="mb-6 flex items-center gap-2">
-        <h2 className="text-[24px] font-semibold leading-8 text-[#141617]">
-          Recently Viewed Ads
+      <div className="mb-[27px] flex items-center justify-between">
+        <h2 className="relative text-[23px] leading-[27px] font-semibold text-[#141617]">
+          Recently Viewd Ads
+          <span className="absolute top-1/2 right-[-30px] h-px w-[25px] -translate-y-1/2 bg-[#141617]" />
         </h2>
-
-        <div className="h-px flex-1 bg-[#D9D9D9]" />
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div className="grid grid-cols-1 gap-[25px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {recentlyViewedAds.map((ad) => (
           <RecentlyViewedCard
             key={ad.id}
