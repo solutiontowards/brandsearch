@@ -8,12 +8,12 @@ export default function BrandPage() {
     <div className="flex min-h-screen bg-[#141414]">
       <Sidebar />
 
-      <main className="flex-1 mt-[15px] mr-[15px] overflow-y-auto rounded-[20px] bg-[#F8F8F8] p-6">
+      <main className="flex-1 space-y-6 min-[1150px]:space-y-0 mt-[15px] mr-[19px] rounded-[20px] bg-[#F1F1F1] pt-[21px] pr-[33px] pl-[40px] pb-[40px]">
         {/* Navbar */}
         <BrandProductsNavbar />
 
         {/* Brand Table */}
-        <section className="mt-6 bg-[#FFFFFF] rounded-[10px] py-[16px] ps-[30px] pe-[21px]">
+        <section className="mt-[10px] bg-[#FFFFFF] rounded-[10px] py-[16px] ps-[30px] pe-[21px]">
           <BrandTable />
         </section>
         <BrandPagination />

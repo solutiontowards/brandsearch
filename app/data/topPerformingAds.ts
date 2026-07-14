@@ -37,10 +37,10 @@ export const topPerformingAds: TopPerformingAd[] = [
     sparkline: [10, 18, 21, 24, 31, 27, 35],
 
     images: [
-      "/image/trending-pro1.png",
-      "/image/trending-pro2.png",
-      "/image/trending-pro3.png",
-      "/image/trending-pro1.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-2.png",
     ],
 
     presentedBy: "Presented By",
@@ -65,10 +65,10 @@ export const topPerformingAds: TopPerformingAd[] = [
     sparkline: [8, 16, 20, 22, 28, 32, 38],
 
     images: [
-      "/image/trending-pro2.png",
-      "/image/trending-pro3.png",
-      "/image/trending-pro1.png",
-      "/image/trending-pro2.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-2.png",
+      "/image/topPerforming-3.png",
+      "/image/topPerforming-4.png",
     ],
 
     presentedBy: "Presented By",
@@ -93,10 +93,10 @@ export const topPerformingAds: TopPerformingAd[] = [
     sparkline: [12, 20, 25, 28, 34, 31, 40],
 
     images: [
-      "/image/trending-pro3.png",
-      "/image/trending-pro1.png",
-      "/image/trending-pro2.png",
-      "/image/trending-pro3.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-2.png",
     ],
 
     presentedBy: "Presented By",
@@ -121,10 +121,10 @@ export const topPerformingAds: TopPerformingAd[] = [
     sparkline: [14, 19, 23, 27, 33, 36, 39],
 
     images: [
-      "/image/trending-pro1.png",
-      "/image/trending-pro2.png",
-      "/image/trending-pro3.png",
-      "/image/trending-pro1.png",
+      "/image/topPerforming-2.png",
+      "/image/topPerforming-2.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-1.png",
     ],
 
     presentedBy: "Presented By",
