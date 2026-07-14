@@ -103,3 +103,6 @@ main{
 .rdp-months{
   margin-inline: auto;
 }
+.swiper{
+  margin-left: 0 !important;
+}

@@ -1,10 +1,11 @@
 import { brandCards } from "@/app/data/brands";
 import BrandCard from "./BrandCard";
+import { FaCircleChevronRight } from "react-icons/fa6";
 
 export default function Brands() {
   return (
-    <section className="mt-8">
-      <div className="mb-6 flex items-center justify-between">
+    <section className="pt-[52px]">
+      <div className="mb-[27px] flex items-center justify-between">
         <h2 className="relative text-[23px] leading-[27px] font-semibold text-[#141617]">
           Brand Cards
           <span className="absolute top-1/2 right-[-30px] h-px w-[25px] -translate-y-1/2 bg-[#141617]" />
@@ -12,6 +13,7 @@ export default function Brands() {
 
         <button className="flex items-center gap-[10px] text-[13px] leading-[19px] font-normal text-[#3C3D51] underline">
           Show all
+          <FaCircleChevronRight className="text-[#607FF8] h-[20px] w-[20px]" />
         </button>
       </div>
 

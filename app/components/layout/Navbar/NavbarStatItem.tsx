@@ -23,7 +23,7 @@ export default function NavbarStatItem({
 }: NavbarStatItemProps) {
   return (
     <div
-      className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#57df8f] via-[#2fc673] to-[#1ca25b] pt-[15px] min-[1660px]:pt-[20px] pb-[15px] min-[1660px]:pb-[20px] pl-[15px] min-[1660px]:pl-[32px] pr-[15px] min-[1660px]:pr-[30px] text-white shadow-lg transition-all hover:shadow-xl min-h-[169px]"
+      className="relative overflow-hidden rounded-[21.03px] bg-gradient-to-br from-[#57df8f] via-[#2fc673] to-[#1ca25b] pt-[15px] min-[1660px]:pt-[20px] pb-[15px] min-[1660px]:pb-[20px] pl-[15px] min-[1660px]:pl-[32px] pr-[15px] min-[1660px]:pr-[30px] text-white shadow-lg transition-all hover:shadow-xl min-h-[169px]"
       style={{
         background: boxBg
           ? boxBg

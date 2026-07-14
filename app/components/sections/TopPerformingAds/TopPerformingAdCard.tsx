@@ -14,6 +14,10 @@ import {
   ListFilter,
   ChevronDown,
 } from "lucide-react";
+import { CiBag1 } from "react-icons/ci";
+import { GoStack } from "react-icons/go";
+import { TbGraph } from "react-icons/tb";
+import { FaChevronUp } from "react-icons/fa6";
 
 import type { TopPerformingAd } from "@/app/data/topPerformingAds";
 
@@ -43,7 +47,7 @@ export default function TopPerformingAdCard({
   };
 
   return (
-    <div className="w-full max-w-sm rounded-[20px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+    <div className="w-full max-w-sm rounded-[10px] border border-slate-200 bg-white px-3 py-5 min-[1660px]:px-[25px] min-[1660px]:py-[20px] transition hover:-translate-y-0.5">
 
       {/* ================= HEADER ================= */}
 
@@ -154,57 +158,53 @@ export default function TopPerformingAdCard({
 
       {/* ================= FIRST ROW ================= */}
 
-      <div className="my-4 border-t border-[#00000014]" />
+      <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
 
       {variant === "default" ? (
 
-        <div className="flex items-center gap-[5px]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-[5px]">
+            <div className="flex items-center gap-1 rounded-full border border-[#00000014] px-0.5 min-[1660px]:px-2 py-[2px] min-[1660px]:py-[4px]">
+              <ScanSearch
+                size={10}
+                className="text-[#808B96]"
+              />
+              <span className="text-[6px] min-[1660px]:text-[10px] text-[#808B96]">
+                Scaling
+              </span>
+            </div>
 
-          <div className="flex items-center gap-1 rounded-full border border-[#00000014] px-2 py-[4px]">
+            <div className="flex items-center gap-1 rounded-full border border-[#00000014] px-0.5 min-[1660px]:px-2 py-[2px] min-[1660px]:py-[4px]">
+              <FlaskConical
+                size={10}
+                className="text-[#808B96]"
+              />
+              <span className="text-[6px] min-[1660px]:text-[10px] text-[#808B96]">
+                Testing
+              </span>
+            </div>
 
-            <ScanSearch
-              size={10}
-              className="text-[#808B96]"
-            />
-
-            <span className="text-[8px] min-[1660px]:text-[10px] text-[#808B96]">
-
-              Scaling
-
-            </span>
-
+            <div className="flex items-center gap-1 rounded-full bg-[#00C43717] px-0.5 min-[1660px]:px-2 py-[2px] min-[1660px]:py-[4px]">
+              <TrendingUp
+                size={10}
+                className="text-[#00C438]"
+              />
+              <span className="text-[6px] min-[1660px]:text-[10px] text-[#00C438]">
+                Winning
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-1 rounded-full border border-[#00000014] px-2 py-[4px]">
-
-            <FlaskConical
-              size={10}
-              className="text-[#808B96]"
+          {/* Graph */}
+          <div className="relative h-[25px] w-[40px] min-[1660px]:w-[87px] shrink-0">
+            <Image
+              src="/image/blue-graph.png"
+              alt="Performance graph"
+              fill
+              sizes="87px"
+              className="object-contain"
             />
-
-            <span className="text-[8px] min-[1660px]:text-[10px] text-[#808B96]">
-
-              Testing
-
-            </span>
-
           </div>
-
-          <div className="flex items-center gap-1 rounded-full bg-[#00C43717] px-2 py-[4px]">
-
-            <TrendingUp
-              size={10}
-              className="text-[#00C438]"
-            />
-
-            <span className="text-[8px] min-[1660px]:text-[10px] text-[#00C438]">
-
-              Winning
-
-            </span>
-
-          </div>
-
         </div>
 
       ) : (
@@ -265,7 +265,7 @@ export default function TopPerformingAdCard({
       )}
       {/* ================= SECOND ROW ================= */}
 
-      <div className="my-4 border-t border-[#00000014]" />
+      <div className=" my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
 
       {variant === "default" ? (
 
@@ -275,11 +275,11 @@ export default function TopPerformingAdCard({
 
           <div className="flex items-center gap-0.5">
 
-            <p className="text-[11px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
-              Revenue:
+            <p className="text-[10px] min-[1660px]:text-[14px] leading-5 flex items-center gap-1 tracking-[0.03em] text-[#808B96]">
+              <CiBag1 className="text-[#141617]" /> Revenue:
             </p>
 
-            <p className="mt-[2px] text-[11px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
+            <p className="mt-[2px] text-[10px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#38CA6E]">
               {ad.revenueValue}
             </p>
 
@@ -289,11 +289,11 @@ export default function TopPerformingAdCard({
 
           <div className="text-right flex items-center gap-0.5  ">
 
-            <p className="text-[11px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#808B96]">
-              Total Ads:
+            <p className="text-[10px] min-[1660px]:text-[14px] leading-5 flex items-center gap-1 tracking-[0.03em] text-[#808B96]">
+              <GoStack className="text-[#141617]" /> Total Ads:
             </p>
 
-            <p className="mt-[2px] text-[11px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
+            <p className="mt-[2px] text-[01px] min-[1660px]:text-[14px] font-bold leading-5 tracking-[0.03em] text-[#F23479]">
               {ad.totalAdsValue}
             </p>
 
@@ -352,7 +352,7 @@ export default function TopPerformingAdCard({
 
       {/* ================= IMAGE ================= */}
 
-      <div className="relative mt-5 overflow-hidden rounded-[12px] border border-[#0000001A]">
+      <div className="relative mt-3 mb-2 min-[1660px]:mt-6 min-[1660px]:mb-5 overflow-hidden rounded-[12px] border border-[#0000001A]">
 
         {variant === "default" ? (
 
@@ -458,8 +458,8 @@ export default function TopPerformingAdCard({
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2.5 w-2.5 rounded-full transition ${currentIndex === index
-                      ? "bg-white"
-                      : "bg-white/40"
+                    ? "bg-white"
+                    : "bg-white/40"
                     }`}
                 />
 
@@ -478,7 +478,7 @@ export default function TopPerformingAdCard({
       {variant === "default" ? (
 
         <>
-          <div className="mt-4 flex items-center justify-between">
+          <div className="flex items-center justify-between">
 
             <div className="flex items-center">
 
@@ -517,7 +517,7 @@ export default function TopPerformingAdCard({
 
           </div>
 
-          <div className="my-4 border-t border-[#00000014]" />
+          <div className="my-2 min-[1660px]:my-4 border-t border-[#00000014]" />
 
         </>
 
@@ -593,11 +593,11 @@ export default function TopPerformingAdCard({
 
       {variant === "default" ? (
 
-        <div className="mt-4 flex items-center justify-between gap-3">
+        <div className="mt-[30px] min-[1660px]:mt-[40px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
 
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-2 rounded-[12px] border border-slate-200 bg-white px-4 py-2 text-[13px] font-medium text-[#141617] transition hover:bg-slate-50"
+            className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[13px] font-medium text-[#141617] transition"
           >
 
             <Bookmark size={16} />
@@ -606,42 +606,48 @@ export default function TopPerformingAdCard({
 
           </button>
 
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-[12px] bg-[#F5F5F5] px-4 py-2 text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
-          >
+          <div className="flex items-center gap-2 min-[1660px]:gap-[18px]">
+            <FaChevronUp className="text-[#808B96]" />
 
-            Analyze
+            <button
+              type="button"
+              className="inline-flex items-center justify-center gap-[7px] rounded-[10px] min-[1660px]:w-[108px] min-[1660px]:h-[39px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
+            >
+              <TbGraph />
+              Analyze
 
-          </button>
+            </button>
+          </div>
 
         </div>
 
       ) : (
 
-        <div className="mt-5 flex items-center gap-3">
+        <div className="mt-[30px] min-[1660px]:mt-[40px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
 
           <button
             type="button"
-            className="flex flex-1 items-center justify-center rounded-[10px] border border-[#00000014] bg-white py-3 text-[14px] font-medium text-[#141617] transition hover:bg-[#F8F8F8]"
-          >
-
-            Details
-
-          </button>
-
-          <button
-            type="button"
-            className="flex flex-1 items-center justify-center gap-2 rounded-[10px] bg-[#607FF8] py-3 text-[14px] font-medium text-white transition hover:bg-[#4B6DF5]"
+            className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[13px] font-medium text-[#141617] transition hover:bg-slate-50"
           >
 
             <Bookmark size={16} />
 
             Save
 
-            <ChevronDown size={16} />
-
           </button>
+
+          <div className="flex items-center gap-2 min-[1660px]:gap-[18px]">
+            <FaChevronUp className="text-[#808B96]" />
+
+            <button
+              type="button"
+              className="inline-flex items-center justify-center gap-[7px] rounded-[10px] min-[1660px]:w-[108px] min-[1660px]:h-[39px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
+            >
+              <TbGraph />
+              Analyze
+
+            </button>
+          </div>
 
         </div>
 
