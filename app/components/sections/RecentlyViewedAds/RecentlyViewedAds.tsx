@@ -3,7 +3,7 @@ import { recentlyViewedAds } from "@/app/data/recentlyViewedAds";
 
 export default function RecentlyViewedAds() {
   return (
-    <section className="rounded-[10px] bg-white pt-[10px] ps-[36px] pe-[30px] pt-[24px] pb-[36px] mt-5">
+    <section className="rounded-[10px] bg-white pt-[24px] ps-[34px] pe-[30px] pt-[24px] pb-[32px] mt-5">
       {/* Heading */}
       <div className="mb-[27px] flex items-center justify-between">
         <h2 className="relative text-[23px] leading-[27px] font-semibold text-[#141617]">

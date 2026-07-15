@@ -1,0 +1,73 @@
+"use client";
+
+import Image from "next/image";
+import { Bookmark, ScanSearch } from "lucide-react";
+
+import type { SavedProduct } from "@/app/data/savedProducts";
+
+type Props = {
+  product: SavedProduct;
+};
+
+export default function SavedProductCard({ product }: Props) {
+  return (
+    <div className="w-[270px] h-[240px] shrink-0 rounded-[10px] bg-[#F5F5F5] px-[4px] py-[5px]">
+      {/* Product Image */}
+      <div className="relative h-[155px] w-full overflow-hidden rounded-[10px]">
+        <Image
+          src={product.image}
+          alt={product.title}
+          fill
+          sizes="172px"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="-mt-7 relative z-10 mx-[6px] rounded-[10px] border border-[#F3F3F3] bg-white px-[8px] pt-[8px] pb-[10px] shadow-[0px_6px_18px_rgba(0,0,0,0.08)]">
+        {/* Title + Trend */}
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <h3 className="truncate text-[13px] font-medium leading-[18px] text-[#141617]">
+              {product.title}
+            </h3>
+
+            <p className="mt-[2px] text-[10px] leading-[14px] text-[#6E7781]">
+              {product.date}
+            </p>
+          </div>
+
+          <Image
+            src={product.trendImage}
+            alt="Trend"
+            width={48}
+            height={18}
+            className="h-[18px] w-[48px] object-contain"
+          />
+        </div>
+
+        {/* Divider */}
+        <div className="my-[10px] h-px bg-[#F2F2F2]" />
+
+        {/* Bottom Buttons */}
+        <div className="flex gap-[6px]">
+          <button
+            type="button"
+            className="flex h-[28px] flex-1 items-center justify-center gap-1 rounded-[7px] bg-[#F8F8F8] text-[10px] font-medium text-[#3C3D51] transition hover:bg-[#EFEFEF]"
+          >
+            <Bookmark size={12} fill="#F23479" className="text-[#F23479]" />
+            My Favorites
+          </button>
+
+          <button
+            type="button"
+            className="flex h-[28px] flex-1 items-center justify-center gap-1 rounded-[7px] bg-[#F8F8F8] text-[10px] font-medium text-[#3C3D51] transition hover:bg-[#EFEFEF]"
+          >
+            <ScanSearch size={12} />
+            Analyze
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
