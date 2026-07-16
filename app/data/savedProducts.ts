@@ -13,7 +13,7 @@ export const savedProducts: SavedProduct[] = [
     title: "PDRN Pink Collag...",
     date: "Oct 3, 2026",
     image: "/image/saved1.png",
-    trendImage: "/image/saved1.png",
+    trendImage: "/image/green_graph.png",
     favorite: true,
   },
   {
@@ -21,7 +21,7 @@ export const savedProducts: SavedProduct[] = [
     title: "PDRN Pink Collag...",
     date: "Oct 3, 2026",
     image: "/image/saved2.png",
-    trendImage: "/image/trend-line.png",
+    trendImage: "/image/green_graph.png",
     favorite: true,
   },
   {
@@ -29,7 +29,7 @@ export const savedProducts: SavedProduct[] = [
     title: "PDRN Pink Collag...",
     date: "Oct 3, 2026",
     image: "/image/saved3.png",
-    trendImage: "/image/trend-line.png",
+    trendImage: "/image/green_graph.png",
     favorite: true,
   },
   {
@@ -37,7 +37,7 @@ export const savedProducts: SavedProduct[] = [
     title: "PDRN Pink Collag...",
     date: "Oct 3, 2026",
     image: "/image/saved4.png",
-    trendImage: "/image/trend-line.png",
+    trendImage: "/image/green_graph.png",
     favorite: true,
   },
 ];

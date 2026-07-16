@@ -23,6 +23,7 @@ export default function SavedProducts() {
                 product={product}
               />
             ))}
+            <AddMoreCard />
           </div>
         </section>
   );

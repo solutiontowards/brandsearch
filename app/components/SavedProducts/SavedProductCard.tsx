@@ -24,7 +24,7 @@ export default function SavedProductCard({ product }: Props) {
       </div>
 
       {/* Content */}
-      <div className="-mt-7 relative z-10 mx-[6px] rounded-[10px] border border-[#F3F3F3] bg-white px-[8px] pt-[8px] pb-[10px] shadow-[0px_6px_18px_rgba(0,0,0,0.08)]">
+      <div className="-mt-7 relative z-10 mx-[6px] h-[144px] rounded-[10px] bg-[url('/image/whitebg.png')] bg-cover bg-center bg-no-repeat px-[8px] pt-[8px] pb-[10px] shadow-[0px_6px_18px_rgba(0,0,0,0.08)]">
         {/* Title + Trend */}
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
