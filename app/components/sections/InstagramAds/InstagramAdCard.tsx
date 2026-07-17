@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import type { InstagramAd } from "@/app/data/instagramAds";
+import { TbListDetails } from "react-icons/tb";
 
 import InstagramSlider from "./InstagramSlider";
 import InstagramMetrics from "./InstagramMetrics";
@@ -21,7 +22,7 @@ type Props = {
 
 export default function InstagramAdCard({ ad }: Props) {
     return (
-        <div className="w-full max-w-[360px] rounded-[20px] bg-white py-[22px] ps-[24px] pe-[22px] shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div className="w-full max-w-[360px] rounded-[20px] bg-white pt-[24px] pb-[22px] px-[25px] shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
 
             {/* ================= Header ================= */}
 
@@ -65,7 +66,7 @@ export default function InstagramAdCard({ ad }: Props) {
 
                         {/* Date */}
 
-                        <div className="mt-[6px] flex items-center gap-2">
+                        <div className="mt-[0px] flex items-center gap-2">
 
                             <span className="text-[14px] font-normal leading-5 tracking-[0.03em] text-[#141617]">
 
@@ -101,7 +102,7 @@ export default function InstagramAdCard({ ad }: Props) {
 
             {/* Metrics */}
 
-            <div className="">
+            <div className="pb-[2px]">
 
                 <InstagramMetrics
                     revenue={ad.revenue}
@@ -116,11 +117,11 @@ export default function InstagramAdCard({ ad }: Props) {
 
             {/* Image Slider */}
 
-            <div className="relative h-[288px] mt-[22px[">
+            <div className="relative h-[288px] mt-[22.5px] mb-5">
 
                 <InstagramSlider images={ad.images} />
 
-                
+
 
             </div>
 
@@ -128,47 +129,45 @@ export default function InstagramAdCard({ ad }: Props) {
             {/* Caption */}
 
             <div className="mt-5">
-                <h3 className="text-[15px] min-[1660px]:text-[18px] font-medium leading-5 text-[#141617]">
+                <h3 className="text-[14px] min-[1660px]:text-[14px] font-normal leading-5 text-[#141617]">
                     {ad.title}
                 </h3>
 
-                <p className="mt-2 text-[12px] leading-4 text-[#808B96]">
+                <p className="mt-[5px] text-[12px] leading-4 font-normal text-[#808B96]">
                     {ad.description}
                 </p>
             </div>
 
             {/* Link Box */}
 
-            <div className="mt-5 rounded-[10px] border border-[#00000014] bg-white px-3 py-[9px]">
+            <div className="mt-5 rounded-[10px] border border-[#F234791A] bg-[#F234790D] ps-[12px] pe-[14px] py-[11px]">
 
                 <div className="flex items-center justify-between">
 
-                    <span className="truncate text-[14px] text-[#141617]">
+                    <span className="truncate text-[11px] text-[#141617]">
                         {ad.link}
                     </span>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
 
-                        <button
-                            type="button"
-                            className="transition hover:opacity-70"
-                        >
+                        <button>
+
                             <ClipboardCopy
-                                size={16}
+                                size={14}
                                 className="text-[#808B96]"
                             />
+
                         </button>
 
-                        <button
-                            type="button"
-                            className="transition hover:opacity-70"
-                        >
+                        <button>
+
                             <Image
                                 src="/image/share.svg"
                                 alt="Share"
-                                width={16}
-                                height={16}
+                                width={14}
+                                height={14}
                             />
+
                         </button>
 
                     </div>
@@ -179,19 +178,19 @@ export default function InstagramAdCard({ ad }: Props) {
 
             {/* Bottom Buttons */}
 
-            <div className="mt-5 flex items-center justify-between gap-3 h-[39px]">
+            <div className="mt-[30px] flex items-center justify-between gap-[10px] h-[39px]">
 
                 <button
                     type="button"
-                    className="flex h-10 flex-1 items-center justify-center gap-2 rounded-[12px] border border-[#E5E7EB] bg-white text-[13px] font-medium text-[#141617] transition hover:bg-[#F8F8F8]"
+                    className="flex w-[192px] h-[39px]  items-center justify-center gap-[6.8px] rounded-[10px] bg-[#3C3D51] text-[13.6px] leading-[19.43px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
                 >
-                    <Bookmark size={16} />
-                    Save
+                    <TbListDetails size={16} />
+                    Details
                 </button>
 
                 <button
                     type="button"
-                    className="flex h-10 flex-1 items-center justify-center rounded-[12px] bg-[#F5F5F5] text-[13px] font-medium text-[#141617] transition hover:bg-[#EAEAEA]"
+                    className="flex h-[39px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[10px]  text-[13.6px] leading-[19.43px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
                 >
                     Analyze
                 </button>

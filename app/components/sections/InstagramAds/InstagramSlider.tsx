@@ -26,16 +26,16 @@ export default function InstagramSlider({
   };
 
   return (
-    <div className="relative overflow-hidden rounded-[10px] h-[288px] border border-[#0000001A]">
+    <div className="relative rounded-[10px] h-[288px] border border-[#0000001A]">
       {/* Image */}
 
-      <div className="relative h-[288px] w-full">
+      <div className="relative h-[288px] w-full rounded-[10px]">
         <Image
           src={images[current]}
           alt={`Instagram Ad ${current + 1}`}
           fill
           sizes="100%"
-          className="object-cover"
+          className="object-cover rounded-[10px]"
         />
       </div>
 
@@ -43,7 +43,7 @@ export default function InstagramSlider({
 
       <button
         onClick={prevSlide}
-        className="absolute left-[-2] top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow transition hover:bg-white"
+        className="absolute left-[-18px] top-1/2 flex h-[31px] w-[31px] shadow-[2px_2px_4px_0px_#00000040] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow transition hover:bg-white"
       >
         <ChevronLeft
           size={18}
@@ -55,7 +55,7 @@ export default function InstagramSlider({
 
       <button
         onClick={nextSlide}
-        className="absolute right-[-2] top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow transition hover:bg-white"
+        className="absolute right-[-18px] top-1/2 flex h-[31px] w-[31px] shadow-[2px_2px_4px_0px_#00000040] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow transition hover:bg-white"
       >
         <ChevronRight
           size={18}

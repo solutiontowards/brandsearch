@@ -3,11 +3,11 @@ import { tiktokAds } from "@/app/data/tiktokAds";
 
 export default function TikTokAds() {
   return (
-    <section className="mt-8">
+    <section className="mt-5">
 
       {/* Section Header */}
 
-      <div className="mb-6 flex items-center justify-between">
+      {/* <div className="mb-6 flex items-center justify-between">
 
         <div>
 
@@ -21,7 +21,7 @@ export default function TikTokAds() {
 
         </div>
 
-      </div>
+      </div> */}
 
       {/* Cards */}
 

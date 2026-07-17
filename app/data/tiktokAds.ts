@@ -33,16 +33,16 @@ export const tiktokAds: TikTokAd[] = [
     title: "The New Standard for Elite Recovery",
 
     description:
-      "My pin straight hair is going to see this tool ALOT 😂 #hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights",
+      "Cute inflatable chair 💖 #babygirl #inflatablechair #tiktokshop #adorable ",
 
-    image: "/image/trending-pro1.png",
+    image: "/image/tiktok.png",
 
-    isVideo: true,
+    // isVideo: true,
 
-    views: "6,692",
-    days: "4",
-    relatedAds: "14",
-    roas: "★★★★★",
+    views: "6.4k",
+    days: "2",
+    relatedAds: "1",
+    roas: "2.49",
   },
 
   {
@@ -57,14 +57,14 @@ export const tiktokAds: TikTokAd[] = [
     title: "Salon Finish At Home",
 
     description:
-      "Create smooth and silky hair in minutes. #beauty #viral #creator #haircare",
+      "Cute inflatable chair 💖 #babygirl #inflatablechair #tiktokshop #adorable ",
 
-    image: "/image/trending-pro2.png",
+    image: "/image/tiktok.png",
 
     views: "5,814",
     days: "7",
     relatedAds: "11",
-    roas: "★★★★☆",
+    roas: "2.2",
   },
 
   {
@@ -79,16 +79,16 @@ export const tiktokAds: TikTokAd[] = [
     title: "Hydrating Glow Serum",
 
     description:
-      "Creators are loving this serum for everyday glowing skin. #skincare #serum #beauty",
+      "Cute inflatable chair 💖 #babygirl #inflatablechair #tiktokshop #adorable ",
 
-    image: "/image/trending-pro3.png",
+    image: "/image/tiktok.png",
 
     isVideo: true,
 
     views: "8,203",
     days: "5",
     relatedAds: "17",
-    roas: "★★★★★",
+    roas: "2.91",
   },
 
   {
@@ -103,105 +103,13 @@ export const tiktokAds: TikTokAd[] = [
     title: "Flawless Makeup Routine",
 
     description:
-      "Perfect makeup routine for every creator. #makeup #beauty #viral",
+      "Cute inflatable chair 💖 #babygirl #inflatablechair #tiktokshop #adorable ",
 
-    image: "/image/trending-pro1.png",
+    image: "/image/tiktok.png",
 
     views: "7,112",
     days: "6",
     relatedAds: "13",
-    roas: "★★★★☆",
-  },
-
-  {
-    id: 5,
-
-    brandName: "Pure Hair",
-    logoSrc: "/image/brand-logo.png",
-
-    startDate: "Oct 5",
-    endDate: "Present",
-
-    title: "Healthy Hair Everyday",
-
-    description:
-      "Natural shine and volume in one simple routine. #hair #healthyhair",
-
-    image: "/image/trending-pro2.png",
-
-    isVideo: true,
-
-    views: "4,998",
-    days: "3",
-    relatedAds: "9",
-    roas: "★★★★★",
-  },
-
-  {
-    id: 6,
-
-    brandName: "Byoma Beauty",
-    logoSrc: "/image/brand-logo.png",
-
-    startDate: "Oct 4",
-    endDate: "Present",
-
-    title: "Everyday Skincare Routine",
-
-    description:
-      "Hydrated skin all day with this trending product. #skincare #beauty",
-
-    image: "/image/trending-pro3.png",
-
-    views: "9,125",
-    days: "9",
-    relatedAds: "21",
-    roas: "★★★★★",
-  },
-
-  {
-    id: 7,
-
-    brandName: "Beauty Lab",
-    logoSrc: "/image/brand-logo.png",
-
-    startDate: "Sep 27",
-    endDate: "Present",
-
-    title: "Creators Favorite Product",
-
-    description:
-      "One of the most shared beauty campaigns this month.",
-
-    image: "/image/trending-pro1.png",
-
-    isVideo: true,
-
-    views: "12,441",
-    days: "11",
-    relatedAds: "28",
-    roas: "★★★★★",
-  },
-
-  {
-    id: 8,
-
-    brandName: "Skin Aura",
-    logoSrc: "/image/brand-logo.png",
-
-    startDate: "Oct 6",
-    endDate: "Present",
-
-    title: "Top Performing TikTok Ad",
-
-    description:
-      "Fastest growing campaign this week with creator collaborations.",
-
-    image: "/image/trending-pro2.png",
-
-    views: "10,824",
-    days: "8",
-    relatedAds: "19",
-    roas: "★★★★★",
+    roas: "3.21",
   },
 ];

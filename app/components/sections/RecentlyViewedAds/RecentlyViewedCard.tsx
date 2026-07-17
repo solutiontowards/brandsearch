@@ -7,13 +7,13 @@ export default function RecentlyViewedCard({
   ad: RecentlyViewedAd;
 }) {
   return (
-    <div className="w-full rounded-[14px] border border-[#ECECEC] bg-[#F9F9F9] px-[10px] pt-[10px] pb-[12px] min-h-[240px]">
+    <div className="w-full max-w-[270px] rounded-[14px] bg-[#F5F5F5] px-[10px] pt-[10px] pb-[12px] min-h-[240px]">
 
       {/* Image */}
 
-      <div className="relative overflow-hidden rounded-[10px]">
+      <div className="relative h-[110px] w-[250px] overflow-hidden rounded-[10px]">
 
-        <div className="relative h-[110px] w-full">
+        <div className="relative h-[110px] w-[250px]">
 
           <Image
             src={ad.image}
@@ -46,7 +46,7 @@ export default function RecentlyViewedCard({
 
       {/* Brand */}
 
-      <div className="mt-[15.33px] flex items-start justify-between">
+      <div className="mt-[15px] flex items-start justify-between">
 
         <div className="flex gap-2">
 
@@ -64,17 +64,17 @@ export default function RecentlyViewedCard({
 
           <div>
 
-            <h3 className="text-[13px] font-medium leading-4 text-[#141617]">
+            <h3 className="text-[16px] font-medium leading-[21px] text-[#141617]">
               {ad.brandName}
             </h3>
 
-            <div className="mt-[2px] flex items-center gap-2">
+            <div className="mt-[0px] flex items-center gap-[9px]">
 
-              <span className="text-[10px] text-[#141617]">
+              <span className="text-[12px] leading-1 text-[#141617]">
                 {ad.period}
               </span>
 
-              <span className="rounded bg-[#F5F5F5] px-[6px] py-[2px] text-[9px] text-[#3C3D51]">
+              <span className="rounded-[40px] bg-[#FFFFFF] px-[6px] py-[2px] w-[35px] h-[16px] text-[10px] text-[#3C3D51] flex items-baseline justify-center">
                 {ad.days}
               </span>
 
@@ -84,7 +84,7 @@ export default function RecentlyViewedCard({
 
         </div>
 
-        <button>
+        <button className="bg-[#FFFFFF] w-[23.46px] h-[23.92px] rounded-[3.81px] flex justify-center items-center">
 
           <MoreVertical
             size={15}
@@ -97,7 +97,7 @@ export default function RecentlyViewedCard({
 
       {/* Link */}
 
-      <div className="mt-3 rounded-[10px] border border-[#F4D8DF] bg-[#FFF5F7] px-3 py-[8px]">
+      <div className="mt-[15px] rounded-[10px] border border-[#F234791A] bg-[#F234790D] ps-[12px] pe-[14px] py-[11px]">
 
         <div className="flex items-center justify-between gap-3">
 
