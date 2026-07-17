@@ -14,12 +14,12 @@ export default function ProductDetailsPage() {
         <DetailNavbar />
 
         {/* Cards */}
-        <div className="mt-5 grid grid-cols-1 gap-[25px] md:grid-cols-2 xl:grid-cols-4">
-          <DetailTabs />
+        <div className="mt-[15px]">
+          {/* <DetailTabs /> */}
 
-      <DetailHero />
+          <DetailHero />
 
-      <StatsGrid />
+          <StatsGrid />
         </div>
       </main>
     </div>
