@@ -11,6 +11,7 @@ import RelatedProducts from "../components/detail/RelatedProduct";
 import { FiFacebook } from "react-icons/fi";
 import { PiTiktokLogo } from "react-icons/pi";
 import BestSellerCards from "../components/detail/BestSellerCards";
+import BrandDetailTopCard from "../components/detail/BrandDetailTopCard";
 
 export default function BrandDetailsPage() {
     return (
@@ -24,7 +25,7 @@ export default function BrandDetailsPage() {
                 <div className="mt-[15px]">
                     {/* <DetailTabs /> */}
 
-                    <DetailHero />
+                    <BrandDetailTopCard />
 
                     <BestSellerCards />
 
