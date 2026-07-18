@@ -79,11 +79,11 @@ export default function PixelsTabs() {
       </div>
 
       {/* Grid */}
-      <div className="mt-6 grid grid-cols-2 gap-[10px]">
+      <div className="mt-[17px] grid grid-cols-2 gap-[10px]">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex h-[42px] items-center gap-3 rounded-[14px] border border-[#D9D9D9] bg-white px-4 transition hover:border-[#3058FF]"
+            className="flex h-[42px] items-center gap-3 rounded-[10px] border border-[#D9D9D9] bg-white px-4 transition hover:border-[#3058FF]"
           >
             <Image
               src={item.icon}
