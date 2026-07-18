@@ -52,7 +52,7 @@ export default function PixelsTabs() {
   const data = items; // same data for both tabs for now
 
   return (
-    <div className="rounded-[10px] bg-white px-[23px] pt-[19px] overflow-hidden">
+    <div className="rounded-[10px] bg-white px-[23px] pt-[19px] overflow-hidden h-[319px]">
       {/* Tabs */}
       <div className="flex rounded-[10px] bg-[#F8F8F8] pt-[5px] pb-[4px] px-[7px]">
         <button
@@ -83,7 +83,7 @@ export default function PixelsTabs() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex h-[42px] items-center gap-3 rounded-[10px] border border-[#D9D9D9] bg-white px-4 transition hover:border-[#3058FF]"
+            className="flex h-[42px] items-center gap-3 rounded-[10px] border border-[#D9D9D9] bg-white px-3 transition hover:border-[#3058FF]"
           >
             <Image
               src={item.icon}
