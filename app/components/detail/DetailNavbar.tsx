@@ -78,7 +78,7 @@ export default function DetailNavbar() {
           <div className="flex h-[36px] items-center gap-[10px] rounded-[10px] border border-[#ECECEC] bg-#F1F1F1 px-[12px]">
             <div className="relative h-5 w-5 overflow-hidden rounded-[4px]">
               <Image
-                src="/image/dr-melaxin-logo.png"
+                src="/image/shopImg.png"
                 alt="Shop"
                 fill
                 sizes="20px"

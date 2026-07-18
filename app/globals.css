@@ -106,3 +106,13 @@ main{
 .swiper{
   margin-left: 0 !important;
 }
+
+.recharts-cartesian-axis-tick-labels.recharts-xAxis-tick-labels{
+ border-top: 1px solid #808B964D;
+}
+.recharts-layer.recharts-cartesian-axis-tick-label text, .recharts-layer.recharts-cartesian-axis-tick-label text tspan{
+font-size: 14px;
+line-height: 15px;
+font-weight: 500;
+color: #060317;
+}
