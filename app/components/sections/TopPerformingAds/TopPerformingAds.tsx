@@ -12,18 +12,18 @@ export default function TopPerformingAds() {
         </h2>
 
         <button className="flex items-center gap-[10px] text-[13px] leading-[19px] font-normal text-[#3C3D51] underline">
-                  Show all
-                  <FaCircleChevronRight className="text-[#607FF8] h-[20px] w-[20px]" />
-                </button>
+          Show all
+          <FaCircleChevronRight className="text-[#607FF8] h-[20px] w-[20px]" />
+        </button>
       </div>
 
       <div className="grid gap-[25px] min-[1660px]:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {topPerformingAds.map((ad) => (
-  <TopPerformingAdCard
-    key={ad.id}
-    ad={ad}
-  />
-))}
+          <TopPerformingAdCard
+            key={ad.id}
+            ad={ad}
+          />
+        ))}
       </div>
     </section>
   );

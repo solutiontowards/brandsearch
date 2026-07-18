@@ -16,13 +16,13 @@ export default function HeroLeft() {
   return (
     <div className="rounded-[10px] bg-[#FFFFFF] ps-[15px] pe-[14px] pt-[11px] pb-[17px]">
       {/* Banner */}
-      <div className="relative overflow-hidden rounded-[15px]">
+      <div className="relative overflow-hidden h-[192px] w-full overflow-hidden rounded-[15px]">
         <Image
           src="/image/product-details.png" // Replace with your image
           alt="Banner"
-          width={700}
-          height={192}
-          className="h-[192px] w-full object-cover object-center"
+          width={100}
+          height={100}
+          className=" object-cover object-center h-full w-full"
         />
 
       </div>
@@ -119,7 +119,7 @@ function StatCard({
   subtitle: string;
 }) {
   return (
-    <div className="rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] p-[15px]">
+    <div className="rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] p-[15px] pb-[14px]">
       <div className="flex items-center gap-2">
         {logo && (
           <Image
@@ -131,7 +131,7 @@ function StatCard({
           />
         )}
 
-        <p className="text-[18px] leading-[26px] font-medium text-[#141617] mb-[3px]">
+        <p className="text-[18px] leading-[26px] font-medium text-[#141617] mb-[2.67px]">
           {title}
         </p>
       </div>
@@ -155,7 +155,7 @@ function InfoRow({
   value: string;
 }) {
   return (
-    <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] ps-[9px] pe-[12px] py-[9px]">
+    <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] ps-[9px] pe-[12px] py-[9px] h-[47px]">
       <div className="flex items-center gap-[10px]">
         <div className="text-[#000000]">{icon}</div>
 
@@ -171,7 +171,7 @@ function InfoRow({
 
 function StoreRow() {
   return (
-    <div className="mb-3 flex items-center justify-between rounded-[14px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-4">
+    <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] px-3 py-2 h-[47px]">
       <div className="flex items-center gap-3">
         <Store size={18} />
 
@@ -201,7 +201,7 @@ function IconRow({
   more: string;
 }) {
   return (
-    <div className="mb-3 flex items-center justify-between rounded-[14px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-4">
+    <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-2 h-[47px]">
       <div className="flex items-center gap-3">
         {icon}
 
@@ -212,7 +212,7 @@ function IconRow({
       </div>
 
       <div className="flex items-center gap-2">
-        {logos.map((logo) => (
+        {/* {logos.map((logo) => (
           <Image
             key={logo}
             src={logo}
@@ -221,7 +221,17 @@ function IconRow({
             height={20}
             className="h-5 w-5 object-contain"
           />
-        ))}
+        ))} */}
+        {logos.map((logo, index) => (
+  <Image
+    key={index}
+    src={logo}
+    alt=""
+    width={20}
+    height={20}
+    className="h-5 w-5 object-contain"
+  />
+))}
 
         <span className="ml-[10px] text-[13px]  text-[#808B96]">{more}</span>
       </div>
@@ -231,7 +241,7 @@ function IconRow({
 
 function FollowersRow() {
   return (
-    <div className="flex items-center justify-between rounded-[14px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-4">
+    <div className="flex items-center justify-between rounded-[10px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-2 h-[47px]">
       <div className="flex items-center gap-3">
         <Users size={18} />
 

@@ -5,7 +5,7 @@ import {
 
 export default function ProductHeader() {
   return (
-    <div className="rounded-[10px] border border-[#ECECEC] bg-[#FFFFFF] py-[13px] ps-[34px] pe-[13px]">
+    <div className="rounded-[10px] border border-[#ECECEC] bg-[#FFFFFF] py-[13px] ps-[34px] pe-[13px] max-h-[277px]">
       <div className="flex gap-8">
         {/* Left */}
         <div className="flex-1">
@@ -44,26 +44,26 @@ export default function ProductHeader() {
             />
 
             <LinkButton
-              icon="/images/globe.svg"
+              icon="/image/globe.svg"
               text="Website link"
             />
           </div>
         </div>
 
         {/* Right Card */}
-        <div className="w-[318px] rounded-[10px] border border-[#E4E4E4] bg-[#FAFAFA] pt-[18px] ps-[29px] pb-[24px] pe-[23px]">
+        <div className="w-[318px] h-[250px] rounded-[10px] border border-[#E4E4E4] bg-[#FAFAFA] pt-[18px] ps-[29px] pb-[24px] pe-[23px]">
           <h3 className="text-[18px] leading-10 font-medium text-[#141617]">
             Shop Info
           </h3>
 
-          <div className="mt-[21px] flex gap-[17px]">
+          <div className="mt-[16px] flex gap-[17px]">
             <div className="flex h-[80px] w-[80px] items-center justify-center rounded-[10px] border border-[#00000033]">
               <Image
                 src="/image/product-logo.png"
                 alt=""
                 width={80}
                 height={80}
-                className="h-[80px] w-[80px] rounded-[10px]"
+                className="rounded-[10px]"
               />
             </div>
 
@@ -91,7 +91,7 @@ export default function ProductHeader() {
           </div>
 
           {/* Shop Id */}
-          <div className="mt-8 flex items-center justify-between rounded-[10px] bg-[#3253F017] px-5 py-[14px]">
+          <div className="mt-5 flex items-center justify-between rounded-[10px] bg-[#3253F017] px-5 py-[14px]">
             <span className="text-[16px] leading-[30px] #3C3D51font-normal text-[]">
               Shop Id
             </span>

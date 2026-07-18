@@ -18,6 +18,11 @@ import { CiBag1 } from "react-icons/ci";
 import { GoStack } from "react-icons/go";
 import { TbGraph } from "react-icons/tb";
 import { FaChevronUp } from "react-icons/fa6";
+import { IoCopyOutline } from "react-icons/io5";
+import { HiOutlineUsers } from "react-icons/hi2";
+import { FaChartLine } from "react-icons/fa6";
+import { FaRegShareFromSquare } from "react-icons/fa6";
+import { TbListDetails } from "react-icons/tb";
 
 import type { TopPerformingAd } from "@/app/data/topPerformingAds";
 
@@ -47,7 +52,7 @@ export default function TopPerformingAdCard({
   };
 
   return (
-    <div className="w-full max-w-[360px] rounded-[10px] border border-slate-200 bg-white px-[25px] py-5 min-[1660px]:px-[25px] min-[1660px]:py-[20px] transition hover:-translate-y-0.5">
+    <div className="w-full max-w-[360px] rounded-[10px] bg-white px-[25px] pt-[25px] pb min-[1660px]:px-[25px] min-[1660px]:pb-[20px] transition hover:-translate-y-0.5">
 
       {/* ================= HEADER ================= */}
 
@@ -55,14 +60,14 @@ export default function TopPerformingAdCard({
 
         <div className="flex items-start gap-0.5 min-[1660px]:gap-2.5">
 
-          <div className="relative h-[18px] min-[1660px]:h-[26px] w-[18px] min-[1660px]:w-[26px] shrink-0 grow-0 basis-[18px] min-[1660px]:basis-[26px] overflow-hidden rounded-full">
+          <div className="relative h-[18px] min-[1660px]:h-[38px] w-[18px] min-[1660px]:w-[38px] shrink-0 grow-0 basis-[18px] min-[1660px]:basis-[38px] overflow-hidden rounded-full">
 
             <Image
               src={ad.logoSrc}
               alt={ad.brandName}
               fill
-              sizes="26px"
-              className="object-cover"
+              sizes="38px"
+              className="object-cover h-[38px] w-[38px] rounded-full"
             />
 
           </div>
@@ -75,7 +80,7 @@ export default function TopPerformingAdCard({
                 {ad.brandName}
               </h3>
 
-              <span
+              {/* <span
                 className={`rounded-full px-2 py-[1px] min-[1660px]:py-[3px] text-[5px] h-[21px] min-[1660px]:text-[10px] flex items-center justify-center
                 ${variant === "default"
                     ? "bg-[#F2347917] text-[#F23479]"
@@ -83,7 +88,7 @@ export default function TopPerformingAdCard({
                   }`}
               >
                 {ad.category}
-              </span>
+              </span> */}
 
             </div>
 
@@ -101,15 +106,15 @@ export default function TopPerformingAdCard({
                 </>
               ) : (
                 <>
-                  <span className="text-[28px] font-bold leading-none text-[#38CA6E]">
+                  <span className="text-[14px] font-bold leading-5 text-[#38CA6E]">
                     253
                   </span>
 
-                  <span className="text-[28px] font-normal leading-none text-[#141617]">
+                  <span className="text-[14px] font-normal leading-5 text-[#141617]">
                     of 414 Ads
                   </span>
 
-                  <span className="rounded-full bg-[#F5F5F5] px-[8px] py-[4px] text-[10px] font-medium text-[#3C3D51]">
+                  <span className="rounded-[40px] bg-[#F5F5F5] px-[8px] py-[6px] text-[10px] font-medium text-[#3C3D51]">
                     30d
                   </span>
                 </>
@@ -133,22 +138,20 @@ export default function TopPerformingAdCard({
 
           <div className="flex gap-2">
 
-            <button className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F5F5F5]">
+            <p className="flex justify-center items-center gap-[4px] text-[10px] leading-[10px] font-normal flex-col">
 
-              <ClipboardCopy size={14} />
+              <span className="h-[23px] w-[23px] rounded-[4px] bg-[#F1F1F1] text-[#808B96] flex justify-center items-center">
+                <IoCopyOutline size={10} /></span>
+              3
 
-            </button>
+            </p>
 
-            <button className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F5F5F5]">
+            <p className="flex justify-center items-center gap-[4px] text-[10px] leading-[10px] font-normal flex-col">
+              <span className="h-[23px] w-[23px] rounded-[4px] bg-[#F1F1F1] text-[#808B96] flex justify-center items-center"><GoStack size={10} /></span>
+              193
 
-              <Image
-                src="/image/meta-logo.svg"
-                alt="Meta"
-                width={14}
-                height={14}
-              />
 
-            </button>
+            </p>
 
           </div>
 
@@ -158,7 +161,7 @@ export default function TopPerformingAdCard({
 
       {/* ================= FIRST ROW ================= */}
 
-      <div className="my-[2px] min-[1660px]:my-[4.17px] border-t border-[#00000014]" />
+      <div className="mb-[7px] mt-[16px] border-t border-[#00000014]" />
 
       {variant === "default" ? (
 
@@ -209,16 +212,16 @@ export default function TopPerformingAdCard({
 
       ) : (
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="flex justify-between gap-[5px]">
 
-          <div className="flex items-center justify-center gap-2 rounded-xl bg-[#00C43717] py-2">
+          <div className="flex items-center justify-center w-[78px] gap-1 rounded-[20px] h-7 bg-[#00C43717] py-2">
 
-            <TrendingUp
-              size={16}
+            <HiOutlineUsers
+              size={12}
               className="text-[#38CA6E]"
             />
 
-            <span className="font-semibold text-[#38CA6E]">
+            <span className="font-medium text-[14px] leading-5 text-[#38CA6E]">
 
               6692
 
@@ -226,16 +229,14 @@ export default function TopPerformingAdCard({
 
           </div>
 
-          <div className="flex items-center justify-center gap-2 rounded-xl bg-[#F5F5F5] py-2">
+          <div className="flex items-center justify-center w-[136px] gap-1 rounded-[20px] h-7 bg-[#56565A26] py-2">
 
-            <Image
-              src="/image/meta-logo.svg"
-              alt=""
-              width={16}
-              height={16}
+            <GoStack
+              size={12}
+              className="text-[#56565A]"
             />
 
-            <span className="text-[#5E5E5E]">
+            <span className="font-medium text-[14px] leading-5 text-[#56565A]">
 
               210€-9€/d
 
@@ -243,16 +244,17 @@ export default function TopPerformingAdCard({
 
           </div>
 
-          <div className="flex items-center justify-center gap-2 rounded-xl bg-[#EEF2FF] py-2">
+          <div className="flex items-center justify-center gap-1 w-[78px] rounded-[20px] h-7 bg-[#607FF826] py-2">
 
             <Image
               src="/image/us-logo.png"
               alt=""
-              width={22}
-              height={16}
+              width={23}
+              height={14}
+              className="object-contain w-[23px] h-[14px] rounded-0"
             />
 
-            <span className="font-semibold">
+            <span className="font-medium text-[14px] leading-5 text-[#060317]">
 
               100%
 
@@ -265,7 +267,7 @@ export default function TopPerformingAdCard({
       )}
       {/* ================= SECOND ROW ================= */}
 
-      <div className=" mt-[4px] mb-[5px] border-t border-[#00000014]" />
+      {/* <div className=" mt-[4px] mb-[5px] border-t border-[#00000014]" /> */}
 
       {variant === "default" ? (
 
@@ -303,42 +305,26 @@ export default function TopPerformingAdCard({
 
       ) : (
 
-        <div className="flex items-center justify-between">
+        <div className="mt-[7px] py-[9px] pe-[17px] ps-[12px] flex items-center justify-between rounded-[10px] border border-[#F234791A] bg-[#F234790D]">
 
-          <div>
+          <div className="mt-1 flex items-center gap-2">
 
-            <p className="text-[14px] text-[#808B96]">
+            <FaChartLine
+              size={16}
+              className="text-[#F23479]"
+            />
 
-              Status
+            <span className="text-[18px] font-semibold text-[#F23479]">
 
-            </p>
+              Dropping Fast
 
-            <div className="mt-1 flex items-center gap-2">
-
-              <TrendingUp
-                size={16}
-                className="text-[#F23479]"
-              />
-
-              <span className="text-[18px] font-semibold text-[#F23479]">
-
-                Dropping Fast
-
-              </span>
-
-            </div>
+            </span>
 
           </div>
 
           <div className="text-right">
 
-            <p className="text-[14px] text-[#808B96]">
-
-              Creatives
-
-            </p>
-
-            <p className="mt-1 text-[22px] font-bold text-[#141617]">
+            <p className="mt-1 text-[14px] leading-5 font-medium text-[#B20000]">
 
               44
 
@@ -351,126 +337,130 @@ export default function TopPerformingAdCard({
       )}
 
       {/* ================= IMAGE ================= */}
+      <div className="relative">
+        <div className="relative mt-5  min-[1660px]:mt-5 min-[1660px]:mb-5 overflow-hidden rounded-[10px] border border-[#0000001A]">
 
-      <div className="relative mt-5  min-[1660px]:mt-5 min-[1660px]:mb-5 overflow-hidden rounded-[10px] border border-[#0000001A]">
+          {variant === "default" ? (
 
-        {variant === "default" ? (
-
-          <>
-            <div className="relative h-[288px] min-[1660px]:h-[288px] w-full">
-
-              <Image
-                src={ad.images[0]}
-                alt={ad.brandName}
-                fill
-                sizes="100%"
-                className="object-cover"
-              />
-
-            </div>
-
-            {/* Presented by Meta */}
-
-            <div className="absolute bottom-4 right-4 flex h-6 min-[1660px]:h-8 items-center gap-1 min-[1660px]:gap-2 rounded-full bg-white px-3 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-
-              <div className="relative h-[16px] min-[1660px]:h-[22px] w-[16px] min-[1660px]:w-[22px]">
+            <>
+              <div className="relative h-[288px] min-[1660px]:h-[288px] w-full">
 
                 <Image
-                  src="/image/meta-logo.svg"
-                  alt="Meta"
-                  fill
-                  sizes="22px"
-                  className="object-contain"
+                  src={ad.images[0]}
+                  alt={ad.brandName}
+                  width={100}
+                  height={288}
+                  className="object-cover w-full"
                 />
 
               </div>
 
-              <span className="text-[9px] min-[1660px]:text-[12px] text-[#141617]">
+              {/* Presented by Meta */}
 
-                Presented By
+              <div className="absolute bottom-4 right-4 flex h-6 min-[1660px]:h-8 items-center gap-1 min-[1660px]:gap-2 rounded-full bg-white px-3 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
 
-              </span>
-
-            </div>
-
-          </>
-
-        ) : (
-
-          <>
-            <div
-              className="flex transition-transform duration-500"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-
-              {sliderImages.map((img, index) => (
-
-                <div
-                  key={index}
-                  className="relative h-[310px] min-w-full"
-                >
+                <div className="relative h-[16px] min-[1660px]:h-[22px] w-[16px] min-[1660px]:w-[22px]">
 
                   <Image
-                    src={img}
-                    alt=""
-                    fill
-                    sizes="100%"
-                    className="object-cover"
+                    src="/image/meta-logo.svg"
+                    alt="Meta"
+width={22}
+  height={22}
+                    className="object-contain"
                   />
 
                 </div>
 
-              ))}
+                <span className="text-[9px] min-[1660px]:text-[12px] text-[#141617]">
 
-            </div>
+                  Presented By
 
-            {/* Previous */}
+                </span>
 
-            <button
-              onClick={prevSlide}
-              className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md"
-            >
+              </div>
 
-              <ChevronLeft size={18} />
+            </>
 
-            </button>
+          ) : (
 
-            {/* Next */}
+            <>
+              <div
+                className="flex transition-transform duration-500"
+                style={{
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
+              >
 
-            <button
-              onClick={nextSlide}
-              className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md"
-            >
+                {sliderImages.map((img, index) => (
 
-              <ChevronRight size={18} />
+                  <div
+                    key={index}
+                    className="relative h-[288px] min-w-full"
+                  >
 
-            </button>
+                    <Image
+                      src={img}
+                      alt="heloo"
+                      fill
+                      className="object-cover"
+                    />
 
-            {/* Indicators */}
+                  </div>
 
-            <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+                ))}
 
-              {sliderImages.map((_, index) => (
+              </div>
 
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2.5 w-2.5 rounded-full transition ${currentIndex === index
-                    ? "bg-white"
-                    : "bg-white/40"
-                    }`}
-                />
 
-              ))}
 
-            </div>
+            </>
 
-          </>
+          )}
 
-        )}
+        </div>
 
+        <div >
+          {/* Previous */}
+
+          <button
+            onClick={prevSlide}
+            className="absolute -left-5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md"
+          >
+
+            <ChevronLeft size={18} />
+
+          </button>
+
+          {/* Next */}
+
+          <button
+            onClick={nextSlide}
+            className="absolute -right-5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md"
+          >
+
+            <ChevronRight size={18} />
+
+          </button>
+
+          {/* Indicators */}
+
+          {/* <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+
+            {sliderImages.map((_, index) => (
+
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2.5 w-2.5 rounded-full transition ${currentIndex === index
+                  ? "bg-white"
+                  : "bg-white/40"
+                  }`}
+              />
+
+            ))}
+
+          </div> */}
+        </div>
       </div>
 
       {/* ================= BELOW IMAGE ================= */}
@@ -524,19 +514,17 @@ export default function TopPerformingAdCard({
       ) : (
 
         <>
-          <h2 className="mt-5 text-[22px] font-semibold leading-[30px] text-[#141617]">
+          <h4 className="mt-5 text-[14px] font-normal mb-[9px] leading-[20px] text-[#141617]">
 
             The New Standard for Elite Recovery
 
-          </h2>
+          </h4>
 
-          <p className="mt-2 text-[14px] leading-6 text-[#808B96]">
+          <p className="text-[12px] leading-4 font-normal text-[#808B96]">
 
             Recovery has entered a new era. Hyperice's latest innovation delivers elite performance for athletes and everyday users.
 
           </p>
-
-          <div className="mb-[10px] mt-2 border-t border-[#00000014]" />
 
         </>
 
@@ -551,34 +539,32 @@ export default function TopPerformingAdCard({
 
       {/* ================= LINK BOX ================= */}
 
-      <div className="mt-[11px] rounded-[10px] h-[38px] border border-[#00000014] bg-white ps-[17px] pe-[12px] py-[9px]">
+      <div className="mt-5 rounded-[10px] h-[38px] border border-[#F234791A] bg-[#F234790D] ps-[17px] pe-[12px] py-[11px]">
 
         <div className="flex items-center justify-between">
 
-          <span className="truncate font-normal text-[15px] text-[#141617]">
+          <span className="truncate font-normal text-[15px] leading-4 text-[#141617]">
 
             {ad.link}
 
           </span>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-[9px]">
 
             <button>
 
               <ClipboardCopy
                 size={16}
-                className="text-[#808B96]"
+                className="text-[#141617]"
               />
 
             </button>
 
             <button>
 
-              <Image
-                src="/image/share.svg"
-                alt="Share"
-                width={16}
-                height={16}
+              <FaRegShareFromSquare
+                size={16}
+                className="text-[#141617]"
               />
 
             </button>
@@ -593,61 +579,43 @@ export default function TopPerformingAdCard({
 
       {variant === "default" ? (
 
-        <div className="mt-[30px] min-[1660px]:mt-[40px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
+        <div className="mt-[30px] flex items-center justify-between gap-[10px] h-[39px]">
 
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[13px] font-medium text-[#141617] transition"
+            className="flex w-[192px] h-[39px]  items-center justify-center gap-[6.8px] rounded-[10px] bg-[#3C3D51] text-[13.6px] leading-[19.43px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
           >
-
-            <Bookmark size={16} />
-
-            Save
-
+            <TbListDetails size={16} />
+            Details
           </button>
 
-          <div className="flex items-center gap-2 min-[1660px]:gap-[18px]">
-            <FaChevronUp className="text-[#808B96]" />
-
-            <button
-              type="button"
-              className="inline-flex items-center justify-center gap-[7px] rounded-[10px] min-[1660px]:w-[108px] min-[1660px]:h-[39px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
-            >
-              <TbGraph />
-              Analyze
-
-            </button>
-          </div>
+          <button
+            type="button"
+            className="flex h-[39px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[10px]  text-[13.6px] leading-[19.43px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
+          >
+            Analyze
+          </button>
 
         </div>
 
       ) : (
 
-        <div className="mt-[30px] min-[1660px]:mt-[40px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
+        <div className="mt-[30px] flex items-center justify-between gap-[10px] h-[39px]">
 
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[13px] font-medium text-[#141617] transition hover:bg-slate-50"
+            className="flex w-[192px] h-[39px]  items-center justify-center gap-[6.8px] rounded-[10px] bg-[#3C3D51] text-[13.6px] leading-[19.43px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
           >
-
-            <Bookmark size={16} />
-
-            Save
-
+            <TbListDetails size={16} />
+            Details
           </button>
 
-          <div className="flex items-center gap-2 min-[1660px]:gap-[18px]">
-            <FaChevronUp className="text-[#808B96]" />
-
-            <button
-              type="button"
-              className="inline-flex items-center justify-center gap-[7px] rounded-[10px] min-[1660px]:w-[108px] min-[1660px]:h-[39px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
-            >
-              <TbGraph />
-              Analyze
-
-            </button>
-          </div>
+          <button
+            type="button"
+            className="flex h-[39px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[10px]  text-[13.6px] leading-[19.43px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
+          >
+            Analyze
+          </button>
 
         </div>
 

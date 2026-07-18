@@ -1,10 +1,9 @@
 import HeroLeft from "./HeroLeft";
 import HeroCenter from "./HeroCenter";
-import HeroRight from "./HeroRight";
 
 export default function DetailHero() {
   return (
-    <section className="mt-[15px] grid grid-cols-[421px_minmax(0,1fr)] gap-6">
+    <section className="mt-[15px] grid grid-cols-[421px_minmax(0,1fr)] gap-4">
   <HeroLeft />
 
   <div className="min-w-0">

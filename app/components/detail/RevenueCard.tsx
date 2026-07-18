@@ -55,7 +55,7 @@ export default function RevenueCard() {
       </div>
 
       {/* Chips */}
-      <div className="chartBg mt-6 bg-[url('/image/chartBg.png')] bg-cover bg-top bg-no-repeat">
+      <div className="chartBg mt-5 bg-[url('/image/chartBg.png')] bg-cover bg-top bg-no-repeat">
 
         <div className="flex gap-[10px]">
           <div className="flex items-center gap-2 rounded-full text-[15px] leading-[16px] bg-[#00C43717] px-4 py-[7px]">
@@ -116,16 +116,16 @@ export default function RevenueCard() {
       </div>
       {/* Countries */}
 
-      <div className="mt-6 flex items-center justify-center gap-12 rounded-[18px] border border-[#ECECEC] bg-[#FAFAFA] py-5">
+      <div className="mt-2 flex items-center justify-center gap-5 rounded-[18px] border border-[#ECECEC] bg-[#FAFAFA] py-5">
         <div className="flex items-center gap-2">
           <span className="text-xl">
             <Image
-                src="/image/sg-logo.png"
-                alt=""
-                width={17}
-                height={17}
-                className="h-[17px] w-[17px] rounded-full"
-              />
+              src="/image/sg-logo.png"
+              alt=""
+              width={17}
+              height={17}
+              className="h-[17px] w-[17px] rounded-full"
+            />
           </span>
           <span className="text-[18px] leading-[26px] font-medium text-[#141617]">
             <strong>90%</strong>{" "}
@@ -136,12 +136,12 @@ export default function RevenueCard() {
         <div className="flex items-center gap-2">
           <span className="text-xl">
             <Image
-                src="/image/us-logo.svg"
-                alt=""
-                width={17}
-                height={17}
-                className="h-[17px] w-[17px] rounded-full"
-              />
+              src="/image/us-logo.svg"
+              alt=""
+              width={17}
+              height={17}
+              className="h-[17px] w-[17px] rounded-full"
+            />
           </span>
           <span className="text-[18px] leading-[26px] font-medium text-[#141617]">
             <strong>4%</strong>{" "}
