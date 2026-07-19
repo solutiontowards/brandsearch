@@ -1,0 +1,38 @@
+export const moodCards = [
+  {
+    id: 1,
+    image: "/image/welcome-1.png",
+    title: "Skin Care",
+    subtitle: "Bridal Radiance, Everyday Confidence",
+    color: "#F97316",
+    rotate: "-3.22deg",
+    top: "20px",
+  },
+  {
+    id: 2,
+    image: "/image/welcome-2.png",
+    title: "Skin Care",
+    subtitle: "Bridal Radiance, Everyday Confidence",
+    color: "#A16207",
+    rotate: "2.57deg",
+    top: "8px",
+  },
+  {
+    id: 3,
+    image: "/image/welcome-3.png",
+    title: "Skin Care",
+    subtitle: "Bridal Radiance, Everyday Confidence",
+    color: "#65A30D",
+    rotate: "-3.14deg",
+    top: "10px",
+  },
+  {
+    id: 4,
+    image: "/image/welcome-4.png",
+    title: "Skin Care",
+    subtitle: "Bridal Radiance, Everyday Confidence",
+    color: "#F97316",
+    rotate: "0deg",
+    top: "18px",
+  },
+];
