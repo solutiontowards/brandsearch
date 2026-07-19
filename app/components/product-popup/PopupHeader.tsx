@@ -17,7 +17,7 @@ import { FaLink } from "react-icons/fa6";
 
 export default function PopupHeader() {
   return (
-    <div className="flex h-[60px] items-center justify-between border-b border-[#ECECEC] bg-white px-[20px]">
+    <div className="flex h-[60px] items-center rounded-[7.5px] justify-between border-b border-[#ECECEC] bg-white px-[20px]">
       {/* ================= Left ================= */}
       <div className="flex items-center gap-[10px]">
         {/* Close */}
