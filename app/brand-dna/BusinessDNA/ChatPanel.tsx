@@ -4,14 +4,14 @@ import ChatInput from "./ChatInput";
 
 export default function ChatPanel() {
   return (
-    <div className="flex h-full min-h-[680px] flex-col rounded-[16px] bg-gradient-to-b from-[#2C1436] to-[#1A0E27] p-5 text-white">
+    <div className="flex h-full min-h-[680px] flex-col rounded-[20px] bg-gradient-to-b from-[#2C1436] to-[#1A0E27] py-5 px-[41px] text-white">
       {/* Heading */}
-      <h2 className="text-[24px] font-semibold">
+      <h2 className="text-[35px] leading-[50px] font-semibold">
         Chat with us
       </h2>
 
       {/* Intro */}
-      <div className="mt-6 space-y-5 text-[13px] leading-6 text-white/80">
+      <div className="mt-[50px] space-y-3 text-[25px] leading-[30px] font-normal text-[#FFFFFFCC]">
         <p>
           👋 Welcome! I'm your AI Business Analyst.
         </p>

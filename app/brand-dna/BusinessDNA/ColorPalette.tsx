@@ -11,18 +11,18 @@ const colorCodes = [
 
 export default function ColorPalette({ colors }: Props) {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-[60px]">
       {colors.map((color, index) => (
         <div
           key={color}
           className="flex flex-col items-center"
         >
           <span
-            className="h-10 w-10 rounded-full border border-[#E9E9E9]"
+            className="h-[61px] w-[61px] rounded-full border border-[#E9E9E9]"
             style={{ backgroundColor: color }}
           />
 
-          <span className="mt-2 text-[11px] text-[#8A8A8A] uppercase">
+          <span className="mt-2 text-[18px] leading-[25px] font-normal text-[#737474] uppercase">
             {colorCodes[index]}
           </span>
         </div>

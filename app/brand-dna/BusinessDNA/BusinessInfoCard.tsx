@@ -13,7 +13,7 @@ export default function BusinessInfoCard({
   return (
     <div
       className={clsx(
-        "rounded-[14px] border border-[#ECECEC] bg-white p-5",
+        "rounded-[14px] border border-[#ECECEC] bg-white p-5 h-[220px]",
         className
       )}
     >

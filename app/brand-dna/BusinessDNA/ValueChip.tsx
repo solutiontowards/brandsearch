@@ -4,7 +4,7 @@ type Props = {
 
 export default function ValueChip({ label }: Props) {
   return (
-    <span className="rounded-full border border-[#D7D7D7] bg-[#FAFAFA] px-4 py-2 text-[12px] font-medium text-[#555]">
+    <span className="rounded-full border border-[#000000] py-[6px] px-[28px] bg-[#FAFAFA] px-4 py-2 text-[20px] font-normal text-[#737474]">
       {label}
     </span>
   );
