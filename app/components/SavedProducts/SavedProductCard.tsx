@@ -11,9 +11,9 @@ type Props = {
 
 export default function SavedProductCard({ product }: Props) {
   return (
-    <div className="w-[270px] h-[240px] shrink-0 rounded-[10px] bg-[#F5F5F5] px-[4px] py-[5px]">
+    <div className="w-[233px] h-[180px] relative flex items-end overflow-hidden shrink-0 rounded-[10px] bg-[#F5F5F5] px-[4px] py-[5px]">
       {/* Product Image */}
-      <div className="relative h-[155px] w-full overflow-hidden rounded-[10px]">
+      <div className="absolute top-0 left-0 h-[116px] w-full overflow-hidden rounded-[10px]">
         <Image
           src={product.image}
           alt={product.title}
@@ -24,15 +24,15 @@ export default function SavedProductCard({ product }: Props) {
       </div>
 
       {/* Content */}
-      <div className="-mt-7 relative z-10 mx-[6px] h-[144px] rounded-[10px] bg-[url('/image/whitebg.png')] bg-cover bg-center bg-no-repeat px-[8px] pt-[8px] pb-[10px] shadow-[0px_6px_18px_rgba(0,0,0,0.08)]">
+      <div className="relative z-10 mx-[1px] h-[108px] w-full pt-[19px] px-[11px] rounded-[10px] bg-[url('/image/whitebg.png')] bg-cover bg-center bg-no-repeat px-[8px] pt-[8px] pb-[10px] shadow-[0px_6px_18px_rgba(0,0,0,0.08)]">
         {/* Title + Trend */}
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
-            <h3 className="truncate text-[13px] font-medium leading-[18px] text-[#141617]">
+            <h3 className="truncate text-[12px] font-medium leading-[18px] text-[#141617]">
               {product.title}
             </h3>
 
-            <p className="mt-[2px] text-[10px] leading-[14px] text-[#6E7781]">
+            <p className="font-normal text-[9px] leading-[13px] text-[#141617]">
               {product.date}
             </p>
           </div>
