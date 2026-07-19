@@ -3,14 +3,14 @@
 import Image from "next/image";
 
 type Props = {
-  image: string;
+  images: string[];
   title: string;
   description: string;
   onClick?: () => void;
 };
 
 export default function AIToolCard({
-  image,
+  images,
   title,
   description,
   onClick,
@@ -22,13 +22,22 @@ export default function AIToolCard({
     >
       {/* Thumbnail */}
       <div className="relative h-[84px] w-[112px] shrink-0 overflow-hidden rounded-[12px]">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="112px"
-          className="object-cover transition duration-300 group-hover:scale-105"
-        />
+        <div className="flex items-center gap-3">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className="relative h-[132px] w-[99px] overflow-hidden rounded-[12px]"
+            >
+              <Image
+                src={img}
+                alt={`${title} ${index + 1}`}
+                fill
+                sizes="112px"
+                className="object-cover transition duration-300 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Text */}
