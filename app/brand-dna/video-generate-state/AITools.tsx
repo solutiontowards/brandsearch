@@ -12,7 +12,7 @@ export default function AITools() {
       {aiTools.map((tool) => (
         <AIToolCard
           key={tool.id}
-          image={tool.images}
+          images={tool.images}
           title={tool.title}
           description={tool.description}
           onClick={() => router.push(`/ai-tools/${tool.id}`)}

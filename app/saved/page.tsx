@@ -20,10 +20,10 @@ export default function SavedPage() {
         </h1>
 
         {/* Meta */}
-        <SavedAdsSection
+        {/* <SavedAdsSection
           title="Meta Ads"
           ads={recentlyViewedAds}
-        />
+        /> */}
         <SavedProducts />
 
         
