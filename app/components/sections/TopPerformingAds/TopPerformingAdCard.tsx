@@ -314,7 +314,7 @@ export default function TopPerformingAdCard({
               className="text-[#F23479]"
             />
 
-            <span className="text-[18px] font-semibold text-[#F23479]">
+            <span className="text-[18px] font-normal text-[#B20000]">
 
               Dropping Fast
 

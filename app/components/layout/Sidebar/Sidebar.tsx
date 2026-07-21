@@ -1,87 +1,65 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import SidebarItem from "./SidebarItem";
-import { menuItems, supportItems } from "../../../data/sidebar";
-import brandSearchLogo from "../../../public/image/brandsearchlogo.png";
+import { menuItems } from "../../../data/sidebar";
+
+import brandSearchLogo from "../../../../public/image/menu/Logo.png";
+import profileImage from "../../../../public/image/menu/profile.png";
 
 export default function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
   return (
-    <aside className={`left-sidebar sticky left-0 top-0 flex h-full min-h-screen flex-col justify-between overflow-hidden pb-10 pt-10 text-white shadow-[8px_0px_21px_0px_#878C9D14] transition-all duration-300 ${isCollapsed ? "w-24 px-3" : "w-77.75 px-7"}`}>
-      <div className="relative z-10 flex h-full flex-col justify-between">
-        <div>
-          <div className="mb-4 flex items-center justify-between px-1">
-            {!isCollapsed && (
-              <Link href="/" className="flex items-start justify-start">
-                <div className="flex h-auto w-auto items-center justify-start overflow-visible bg-transparent shadow-none">
-                  <Image
-                    src={brandSearchLogo}
-                    alt="BrandSearch logo"
-                    width={174}
-                    height={174}
-                    className="h-auto w-auto object-contain"
-                  />
-                </div>
-              </Link>
-            )}
-            <button
-              onClick={() => setIsCollapsed(!isCollapsed)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-white/10 transition-colors text-white"
-              aria-label="Toggle sidebar"
-            >
-              {isCollapsed ? (
-                <ChevronRight size={20} />
-              ) : (
-                <ChevronLeft size={20} />
-              )}
-            </button>
-          </div>
+    <aside
+      className="
+        sticky
+        top-0
+        left-0
+        z-20
+        h-screen
+        w-[80px]
+        shrink-0
+        overflow-visible
+        bg-[linear-gradient(180deg,#111326_0%,#29113B_100%)]
+        py-5
+        shadow-[8px_0_20px_rgba(0,0,0,.12)]
+      "
+    >
+      <div className="flex h-full flex-col items-center justify-between">
+        {/* ================= Logo + Menu ================= */}
+        <div className="flex flex-col items-center gap-7">
+          <Link href="/">
+            <Image
+              src={brandSearchLogo}
+              alt="Logo"
+              width={38}
+              height={38}
+              priority
+            />
+          </Link>
 
-          {!isCollapsed && (
-            <div className="relative mb-10 mt-13 px-4 text-[14px] font-normal uppercase leading-5 text-[#989EAD]">
-              MENU
-              <span className="absolute top-1/2 left-[60px] h-px w-[25px] -translate-y-1/2 bg-[#989EAD]"></span>
-            </div>
-          )}
-
-          <nav className="space-y-[10px]">
+          <nav className="flex flex-col items-center gap-[20px] min-[1440px]:gap-[35px] [perspective:1000px]">
             {menuItems.map((item) => (
               <SidebarItem
                 key={item.label}
-                label={item.label}
-                href={item.href}
-                image={item.image}
-                children={item.children}
+                {...item}
                 isActive={item.href === "/dashboard"}
-                isCollapsed={isCollapsed}
               />
             ))}
           </nav>
         </div>
 
-        <div className="mt-[42px] border-t border-slate-700 pt-[50px]">
-          {!isCollapsed && (
-            <div className="relative mb-[30px] px-4 text-[14px] font-normal uppercase leading-[20px] text-[#989EAD]">
-              Support
-              <span className="absolute top-1/2 left-[90px] h-px w-[25px] -translate-y-1/2 bg-[#989EAD]" />
-            </div>
-          )}
-          <div className="space-y-[10px]">
-            {supportItems.map((item) => (
-              <SidebarItem
-                key={item.label}
-                label={item.label}
-                href={item.href}
-                icon={item.icon}
-                isCollapsed={isCollapsed}
-              />
-            ))}
-          </div>
+        {/* ================= Profile ================= */}
+        <div className="pb-2">
+          <button className="transition-transform duration-300 hover:scale-105">
+            <Image
+              src={profileImage}
+              alt="Profile"
+              width={42}
+              height={42}
+              className="rounded-xl border border-white/20"
+            />
+          </button>
         </div>
       </div>
     </aside>
