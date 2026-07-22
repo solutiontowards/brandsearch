@@ -6,7 +6,7 @@ import BrandRevenue from "./BrandRevenue";
 
 export default function BrandDetailTopCard() {
   return (
-    <section className="mt-[15px] grid grid-cols-[421px_minmax(0,1fr)] gap-4">
+    <section className="mt-[15px] grid grid-cols-[320px_minmax(0,1fr)] min-[1660px]:grid-cols-[421px_minmax(0,1fr)] gap-4">
   <BrandLeft />
 
   <div className="min-w-0">

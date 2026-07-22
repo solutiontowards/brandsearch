@@ -42,23 +42,23 @@ export default function BrandRevenue() {
             <div className="flex gap-[45px] items-center relative">
                 <div className="bg-[#FAFAFA] border border-[#F5F5F5] rounded-[10px] h-[88px] w-[221px] px-[14px] pt-[11px] pb-[13px]">
 
-                <p className="text-[18px] leading-[25px] text-[#808B96]">
+                <p className="text-[16px] min-[1660px]:text-[18px] leading-[25px] text-[#808B96]">
                     Sale Revenue
                 </p>
 
 
-                <h2 className="mt-[3px] text-[24px] leading-[34px] font-medium text-[#141617]">
+                <h2 className="mt-[3px] text-[20px] min-[1660px]:text-[24px] leading-[30px] min-[1660px]:leading-[34px] font-medium text-[#141617]">
                     $197k - $229k
                 </h2>
             </div>
             <span className="absolute h-[70px] w-[1px] bg-[#808B964D] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></span>
             <div>
-                <p className="text-[18px] leading-[25px] text-[#808B96]">
+                <p className="text-[16px] min-[1660px]:text-[18px] leading-[25px] text-[#808B96]">
                     Total Unit Sold
                 </p>
 
 
-                <h2 className="mt-[3px] text-[24px] leading-[34px] font-medium text-[#141617]">
+                <h2 className="mt-[3px] text-[20px] min-[1660px]:text-[24px] leading-[30px] min-[1660px]:leading-[34px] font-medium text-[#141617]">
                     100.8k
                 </h2>
             </div>
@@ -69,14 +69,14 @@ export default function BrandRevenue() {
 
                 <div className="flex justify-between">
                     <div className="flex gap-[10px]">
-                        <div className="flex items-center gap-2 rounded-full text-[15px] leading-[16px] bg-[#00C43717] px-4 py-[7px]">
+                        <div className="flex items-center gap-2 rounded-full text-[13px] min-[1660px]:text-[15px] leading-[14px] min-[1660px]:leading-[16px] bg-[#00C43717] px-4 py-[7px]">
                             <span className="font-medium">7D</span>
                             <span className="font-semibold text-[#4CAF50]">
                                 ▲ 14%
                             </span>
                         </div>
 
-                        <div className="flex items-center gap-2 rounded-full text-[15px] leading-[16px] bg-[#F4F4F4] px-4 py-[7px]">
+                        <div className="flex items-center gap-2 rounded-full text-[13px] min-[1660px]:text-[15px] leading-[14px] min-[1660px]:leading-[16px] bg-[#F4F4F4] px-4 py-[7px]">
                             <span className="font-medium">Live</span>
                             <span className="font-semibold text-red-500">
                                 ▼ 14%
@@ -84,14 +84,14 @@ export default function BrandRevenue() {
                         </div>
                     </div>
                     <div className="flex gap-[10px]">
-                        <div className="flex items-center gap-2 rounded-full text-[15px] leading-[16px] bg-[#00C43717] px-4 py-[7px]">
+                        <div className="flex items-center gap-2 rounded-full text-[13px] min-[1660px]:text-[15px] leading-[14px] leading-[16px] bg-[#00C43717] px-4 py-[7px]">
                             <span className="font-medium">7D</span>
                             <span className="font-semibold text-[#4CAF50]">
                                 ▲ 14%
                             </span>
                         </div>
 
-                        <div className="flex items-center gap-2 rounded-full text-[15px] leading-[16px] bg-[#F4F4F4] px-4 py-[7px]">
+                        <div className="flex items-center gap-2 rounded-full text-[13px] min-[1660px]:text-[15px] leading-[14px] bg-[#F4F4F4] px-4 py-[7px]">
                             <span className="font-medium">Live</span>
                             <span className="font-semibold text-red-500">
                                 ▼ 14%
@@ -143,7 +143,7 @@ export default function BrandRevenue() {
             </div>
             {/* Countries */}
 
-            <div className="mt-2 flex items-center justify-center gap-5 rounded-[18px] border border-[#ECECEC] bg-[#FAFAFA] py-5">
+            <div className="mt-2 flex items-center justify-center gap-5 rounded-[18px] border border-[#ECECEC] bg-[#FAFAFA] py-3 min-[1660px]:py-5">
                 <div className="flex items-center gap-2">
                     <span className="text-xl">
                         <Image
@@ -154,7 +154,7 @@ export default function BrandRevenue() {
                             className="h-[17px] w-[17px] rounded-full"
                         />
                     </span>
-                    <span className="text-[18px] leading-[26px] font-medium text-[#141617]">
+                    <span className="text-[16px] min-[1660px]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617]">
                         <strong>90%</strong>{" "}
                         <span className="text-[#808B96] font-normal">SG</span>
                     </span>
@@ -170,15 +170,15 @@ export default function BrandRevenue() {
                             className="h-[17px] w-[17px] rounded-full"
                         />
                     </span>
-                    <span className="text-[18px] leading-[26px] font-medium text-[#141617]">
+                    <span className="text-[16px] min-[1660px]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617]">
                         <strong>4%</strong>{" "}
                         <span className="text-[#808B96] font-normal">US</span>
                     </span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <span className="text-[18px] leading-[26px] font-medium text-[#141617]">🇮🇳</span>
-                    <span className="text-[18px] ">
+                    <span className="text-[16px] min-[1660x]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617]">🇮🇳</span>
+                    <span className="text-[16px] min-[1660px]:text-[18px]">
                         <strong>2%</strong>{" "}
                         <span className="text-[#808B96] font-normals">IN</span>
                     </span>
