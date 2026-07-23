@@ -137,15 +137,15 @@ function StatCard({
                     />
                 )}
 
-                <p className="text-[18px] leading-[26px] font-medium text-[#141617] mb-[2.67px]">
+                <p className="text-[16px] min-[1660px]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617] mb-[2.67px]">
                     {title}
                 </p>
             </div>
 
-            <div className="flex items-center gap-2.5 text-[#808B96]">
+            <div className="flex items-center gap-1.5 min-[1660px]:gap-2.5 text-[#808B96]">
                 <div className="text-[#808B96]">{icon}</div>
 
-                <span className="text-[14px] leading-5">{subtitle}</span>
+                <span className="text-[12px] min-[1660px]:text-[14px] leading-5">{subtitle}</span>
             </div>
         </div>
     );
@@ -161,14 +161,14 @@ function InfoRow({
     value: string;
 }) {
     return (
-        <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] ps-[9px] pe-[12px] py-[9px] h-[47px]">
+        <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] ps-[9px] pe-[12px] py-[9px] h-[35px] min-[1660px]:h-[47px]">
             <div className="flex items-center gap-[10px]">
                 <div className="text-[#000000]">{icon}</div>
 
-                <span className="text-[16px] leading-[30px] font-normal text-[#3C3D51]">{label}</span>
+                <span className="text-[12px] min-[1660px]:text-[16px] leading-[30px] font-normal text-[#3C3D51]">{label}</span>
             </div>
 
-            <span className="text-[18px] leading-5 font-semibold text-[#000000]">
+            <span className="text-[14px] min-[1660px]:text-[18px] leading-5 font-semibold text-[#000000]">
                 {value}
             </span>
         </div>
@@ -178,10 +178,10 @@ function InfoRow({
 function StoreRow() {
     return (
         <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#F5F5F5] bg-[#FAFAFA] px-3 py-2 h-[47px]">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 min-[1660px]:gap-3">
                 <Store size={18} />
 
-                <span className="text-[15px] text-[#4A4A4A]">Store</span>
+                <span className="text-[12px] min-[1660px]:text-[15px] text-[#4A4A4A]">Store</span>
             </div>
 
             <div className="flex items-center gap-[5px]">
@@ -207,13 +207,13 @@ function IconRow({
     more: string;
 }) {
     return (
-        <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-2 h-[47px]">
-            <div className="flex items-center gap-3">
+        <div className="mb-[10px] flex items-center justify-between rounded-[10px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-2 h-[35px] min-[1660px]:h-[47px]">
+            <div className="flex items-center gap-2 min-[1660px]:gap-3">
                 {icon}
 
-                <span className="text-[15px] text-[#4A4A4A]">
+                <span className="text-[12px] min-[1660px]:text-[15px] text-[#4A4A4A]">
                     {label}
-                    <span className="ml-[2px] text-[#808B96] text-[14px] font-normal">{count}</span>
+                    <span className="ml-[2px] text-[#808B96] text-[11px] min-[1660px]:text-[14px] font-normal">{count}</span>
                 </span>
             </div>
 
@@ -247,17 +247,17 @@ function IconRow({
 
 function FollowersRow() {
     return (
-        <div className="flex items-center justify-between rounded-[10px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-2 h-[47px]">
-            <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between rounded-[10px] border border-[#ECECEC] bg-[#FAFAFA] px-4 py-2 h-[35px] min-[1660px]:h-[47px]">
+            <div className="flex items-center gap-2 min-[1660px]:gap-3">
                 <Users size={18} />
 
-                <span className="text-[15px] text-[#4A4A4A]">
+                <span className="text-[12px] min-[1660px]:text-[15px] text-[#4A4A4A]">
                     Followers
                     <span className="ml-1 text-[#8B8B8B]">5</span>
                 </span>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 min-[1660px]:gap-4">
                 <div className="flex items-center gap-1">
                     <Image
                         src="/image/youtube.svg"
@@ -265,7 +265,7 @@ function FollowersRow() {
                         width={20}
                         height={20}
                     />
-                    <span className="text-[16px] text-[#060317] font-medium">2.3k</span>
+                    <span className="text-[14px] min-[1660px]:text-[16px] text-[#060317] font-medium">2.3k</span>
                 </div>
 
                 <div className="flex items-center gap-1">
@@ -275,10 +275,10 @@ function FollowersRow() {
                         width={20}
                         height={20}
                     />
-                    <span className="text-[16px] text-[#060317] font-medium">2.3k</span>
+                    <span className="text-[14px] min-[1660px]:text-[16px] text-[#060317] font-medium">2.3k</span>
                 </div>
 
-                <span className="text-[#808B96] text-[13px] font-normal">+40</span>
+                <span className="text-[#808B96] text-[10px] min-[1660px]:text-[13px] font-normal">+40</span>
             </div>
         </div>
     );

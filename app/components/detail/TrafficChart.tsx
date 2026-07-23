@@ -44,12 +44,12 @@ export default function TrafficChart() {
 
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-[18px] font-normal leading-[26px] text-[#808B96]">
+          <p className="text-[16px] min-[1660px]:text-[18px] font-normal leading-[26px] text-[#808B96]">
             Monthly traffic
           </p>
 
           <div className="mt-2 flex items-center gap-3">
-            <h2 className="text-[24px] leading-[34px] font-medium text-[#141617]">
+            <h2 className="text-[20px] min-[1660px]:text-[24px] leading-[30px] min-[1660px]:leading-[34px] font-medium text-[#141617]">
               3.8M
             </h2>
 
@@ -142,7 +142,7 @@ export default function TrafficChart() {
         <Country flag="🇮🇳" percent="2%" code="IN" />
       </div> */}
 
-      <div className="mt-2 flex items-center justify-center gap-5 rounded-[18px] border border-[#ECECEC] bg-[#FAFAFA] py-5">
+      <div className="mt-2 flex items-center justify-center gap-5 rounded-[18px] border border-[#ECECEC] bg-[#FAFAFA] py-3 min-[1660px]:py-5">
               <div className="flex items-center gap-2">
                 <span className="text-xl">
                   <Image
@@ -153,7 +153,7 @@ export default function TrafficChart() {
                     className="h-[17px] w-[17px] rounded-full"
                   />
                 </span>
-                <span className="text-[18px] leading-[26px] font-medium text-[#141617]">
+                <span className="text-[16px] min-[1660px]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617]">
                   <strong>90%</strong>{" "}
                   <span className="text-[#808B96] font-normal">SG</span>
                 </span>
@@ -169,14 +169,14 @@ export default function TrafficChart() {
                     className="h-[17px] w-[17px] rounded-full"
                   />
                 </span>
-                <span className="text-[18px] leading-[26px] font-medium text-[#141617]">
+                <span className="text-[16px] min-[1660px]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617]">
                   <strong>4%</strong>{" "}
                   <span className="text-[#808B96] font-normal">US</span>
                 </span>
               </div>
       
               <div className="flex items-center gap-2">
-                <span className="text-[18px] leading-[26px] font-medium text-[#141617]">🇮🇳</span>
+                <span className="text-[16px] min-[1660px]:text-[18px] leading-[24px] min-[1660px]:leading-[26px] font-medium text-[#141617]">🇮🇳</span>
                 <span className="text-[18px] ">
                   <strong>2%</strong>{" "}
                   <span className="text-[#808B96] font-normals">IN</span>
