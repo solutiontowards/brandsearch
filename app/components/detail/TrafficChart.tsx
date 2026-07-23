@@ -74,7 +74,7 @@ export default function TrafficChart() {
 
       {/* Chart */}
 
-      <div className="chart-bg mt-[35.67px] h-[236px]">
+      <div className="chart-bg mt-[35.67px] h-[180px] min-[1660px]:h-[236px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>

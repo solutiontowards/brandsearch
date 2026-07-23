@@ -9,10 +9,15 @@ import Image from "next/image";
 interface Props {
   brand: BrandCard;
 }
+const platformImages = {
+  facebook: "/image/facebook.png",
+  instagram: "/image/instagram.png",
+  google: "/image/google.png",
+};
 
 export default function BrandTableRow({ brand }: Props) {
   return (
-    <div className="grid grid-cols-[100px_360px_180px_110px_120px_170px_90px_95px_130px] items-center border rounded-[20px] mt-[10px] border-[#00000014] px-7 py-5">
+    <div className="grid grid-cols-[100px_270px_180px_110px_120px_170px_90px_95px_130px_110px_230px] items-center border rounded-[20px] mt-[10px] border-[#00000014] px-7 py-5">
 
       {/* Star + Rank */}
       <div className="flex items-center justify-center gap-3">
@@ -70,7 +75,7 @@ export default function BrandTableRow({ brand }: Props) {
       </div>
 
       <div className="flex justify-center">
-        <span className="inline-flex items-center gap-2 text-[14px] min-[1660x]:text-[16px] font-normal text-[#060317]">
+        <span className="inline-flex items-center gap-2 text-[12px] font-normal text-[#060317]">
           <Image
             src="/image/us-logo.png"
             alt="US Flag"
@@ -80,6 +85,29 @@ export default function BrandTableRow({ brand }: Props) {
           />
           {brand.country}
         </span>
+      </div>
+
+      <div className="flex justify-center">
+        <span className="inline-flex items-center gap-2 text-[12px] font-normal text-[#060317]">
+          {brand.revenueRange}
+        </span>
+      </div>
+
+      {/* social */}
+      <div className="flex justify-center gap-4">
+        {brand.platformMetrics.map((item, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <Image
+              src={platformImages[item.platform as keyof typeof platformImages]}
+              alt={item.platform}
+              width={20}
+              height={20}
+            />
+
+            <span>{item.value}</span>
+            <span>{item.total}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

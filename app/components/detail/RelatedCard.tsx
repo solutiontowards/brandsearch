@@ -46,7 +46,7 @@ export default function RelatedCard({
     country,
 }: RelatedCardProps) {
     return (
-        <div className="w-full max-w-[360px] rounded-[10px] bg-white px-[25px] pt-[25px] pb min-[1660px]:px-[25px] min-[1660px]:pb-[20px] transition hover:-translate-y-0.5">
+        <div className="w-full rounded-[10px] bg-white px-[25px] pt-[25px] pb min-[1660px]:px-[25px] min-[1660px]:pb-[20px] transition hover:-translate-y-0.5">
 
             <div className="flex items-start justify-between mb-[19px]">
 

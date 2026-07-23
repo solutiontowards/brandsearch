@@ -75,7 +75,7 @@ export default function RevenueCard() {
 
         {/* Chart */}
 
-        <div className="mt-4 h-[206px]">
+        <div className="mt-4 h-[180px] min-[1660px]:h-[206px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data}>
               <XAxis

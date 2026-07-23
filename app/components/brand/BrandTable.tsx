@@ -7,7 +7,7 @@ import BrandPagination from "./BrandPagination";
 
 export default function BrandTable() {
   return (
-    <div className="overflow-hidden">
+    <div className="w-[1545px] overflow-x-auto overflow-hidden">
       <BrandTableHeader />
 
       <div>
