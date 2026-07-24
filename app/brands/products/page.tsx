@@ -57,12 +57,20 @@ export default function BrandProductsPage() {
           {view === "table" ? (
             <ProductTable />
           ) : (
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4 min-[1660px]:gap-[25px]">
-              {trendingProducts.map((product) => (
-                <TrendingProductCard
+            <div className="grid grid-cols-4 min-[1500px]:grid-cols-5 gap-3 min-[1660px]:gap-[25px] overflow-hidden">
+              {trendingProducts.map((product, index) => (
+                <div
                   key={product.id}
-                  {...product}
-                />
+                  className={
+                    index < 4
+                      ? "block"
+                      : index < 5
+                        ? "hidden min-[1500px]:block"
+                        : "hidden"
+                  }
+                >
+                  <TrendingProductCard {...product} />
+                </div>
               ))}
             </div>
           )}

@@ -46,16 +46,24 @@ export default function BrandPage() {
       <main className="mt-[15px] mr-[19px] flex-1 rounded-[20px] bg-[#F1F1F1] px-[22px] pt-[21px] pb-[70px] !overflow-hidden">
         <BrandProductsNavbar />
 
-        <section className="mt-[10px] rounded-[10px] bg-white py-[16px] ps-[30px] pe-[21px]">
+        <section>
           {view === "table" ? (
-            <>
-              <BrandTable />
-              
-            </>
+            <BrandTable />
           ) : (
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {brandCards.map((brand) => (
-                <BrandCard key={brand.id} {...brand} />
+            <div className="mt-6 grid grid-cols-4 min-[1500px]:grid-cols-5 gap-6 overflow-hidden">
+              {brandCards.map((brand, index) => (
+                <div
+                  key={brand.id}
+                  className={
+                    index < 4
+                      ? "block"
+                      : index < 5
+                        ? "hidden min-[1500px]:block"
+                        : "hidden"
+                  }
+                >
+                  <BrandCard {...brand} />
+                </div>
               ))}
             </div>
           )}

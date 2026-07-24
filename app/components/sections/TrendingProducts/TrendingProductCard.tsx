@@ -105,21 +105,21 @@ export default function TrendingProductCard({
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-[5px] min-[1660px]:gap-[10px]">
-          <div className="relative h-[20px] w-[20px] basis-[20px] min-[1660px]:h-[26px] min-[1660px]:w-[26px] shrink-0 grow-0 min-[1660px]:basis-[26px] overflow-hidden rounded-full border border-[#000000]">
+          <div className="relative h-[23px] w-[23px] basis-[23px]  shrink-0 grow-0 min-[1660px]:basis-[26px] overflow-hidden rounded-full border border-[#000000]">
             <Image src={avatarSrc} alt="NORDIC BEAUTY" fill sizes="100%" className="object-cover" />
           </div>
           <div>
-            <h3 className="text-[15px] min-[1660px]:text-[18px] leading-6 font-medium text-[#141617]">{store}</h3>
+            <h3 className="text-[13.5px] min-[1660px]:text-[15px] leading-[18px] font-medium text-[#141617]">{store}</h3>
             {/* Unit sold + category */}
             <div className="mt-1 flex items-center gap-1 min-[1660px]:gap-2">
-              <span className="text-[#808B96] text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal">
+              <span className="text-[#808B96] text-[10.5px] min-[1660px]:text-[12px] leading-[15px] font-normal">
                 Unit Sold: &nbsp;
-                <span className="text-[#141617] text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal">
+                <span className="text-[#141617] text-[10.5px] min-[1660px]:text-[12px] leading-[15px] font-normal">
                   {unitSold}
                 </span>
               </span>
 
-              <span className="rounded-full bg-[#00C43717] px-[4px] min-[1660px]:px-[10px] py-[3px] min-[1660px]:py-[6px] text-[8px] min-[1660px]:text-[10px] font-normal text-[#00C438]">
+              <span className="rounded-full bg-[#00C43717] px-[8px] py-[4px] text-[7.5px] min-[1660px]:text-[9px] font-normal text-[#00C438]">
                 {category}
               </span>
             </div>
@@ -138,22 +138,22 @@ export default function TrendingProductCard({
 
       {/* Traffic + sparkline */}
       <div className="mt-1.5 flex items-center justify-between">
-        <p className="text-[18px] min-[1660px]:text-[26px] leading-[34px] font-medium text-[#141617]">
+        <p className="text-[19.5px] leading-[25.5px] font-medium text-[#141617]">
           {trafficDisplay}{" "}
-          <span className="text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal text-[#808B96]">{trafficLabel}</span>
+          <span className="text-[10.5px] leading-[15px] font-normal text-[#808B96]">{trafficLabel}</span>
         </p>
         <Sparkline data={sparkline} />
       </div>
 
       {/* Image + thumbnails */}
-      <div className="mt-3.5 grid  grid-cols-[2fr_1fr] h-[145px] grid-rows-2 gap-1.5 min-[1660px]:gap-3">
-        <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[24px] border border-black/20 bg-slate-100 h-[120px] min-[1660px]:h-[145px]">
+      <div className="mt-3.5 grid  grid-cols-[2fr_1fr] h-[109px] grid-rows-2 gap-[9px]">
+        <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[11.25px] border border-black/20 bg-slate-100 h-[109px]">
           <Image src={image} alt={productName} fill sizes="100%" className="object-cover" />
         </div>
         {thumbnails.slice(0, 2).map((thumb, i) => (
           <div
             key={i}
-            className="relative overflow-hidden rounded-[20px] border border-black/20 bg-slate-100 h-[57px] min-[1660px]:h-[70px]"
+            className="relative overflow-hidden rounded-[11.25px] border border-black/20 bg-slate-100 h-[51px] min-[1660px]:h-[70px]"
           >
             <Image
               src={thumb}
@@ -167,47 +167,47 @@ export default function TrendingProductCard({
       </div>
 
       {/* Product name */}
-      <p className="mt-3 truncate text-[14px] leading-[24px] font-normal text-[#141617]">
+      <p className="mt-[9px] truncate text-[10.5px] leading-[18px] font-normal text-[#141617]">
         {productName}
       </p>
 
       {/* Price */}
-      <p className="mt-[6px] text-[14px] font-normal leading-[20px] font-normal text-[#808B96]">
+      <p className="mt-[4.5px] text-[10.5px] font-normal leading-[15px] font-normal text-[#808B96]">
         Price: <span className="font-bold text-[#141617]">{priceRange}</span>
       </p>
 
-      <div className="my-[7px] border-t border-[#00000014]" />
+      <div className="my-[6px] border-t border-[#00000014]" />
 
       {/* GMV */}
-      <div className="flex items-center justify-between text-[12px] min-[1660px]:text-[14px] leading-[20px] font-normal">
+      <div className="flex items-center justify-between text-[10.5px] min-[1660px]:text-[12px] leading-[15px] font-normal">
         <span className="text-[#808B96]">
           GMV <span className="font-bold text-[#38CA6E]">{gmv}</span>
         </span>
-        <span className="text-slate-500">
+        <span className="text-[#808B96]">
           Total GMV: <span className="font-bold text-[#141617]">{totalGmv}</span>
         </span>
       </div>
 
-      <div className="my-2 border-t border-[#00000014]" />
+      <div className="my-[6px] border-t border-[#00000014]" />
 
       {/* Daily range + growth */}
       <div className="flex items-center justify-between">
-        <p className="text-[18px] min-[1660px]:text-[20px] leading-[26px] font-medium text-[#141617]">{dailyRange}</p>
-        <span className="flex items-center gap-0.5 text-[14px] leading-[20px] font-normal text-[#38CA6E]">
+        <p className="text-[15px] min-[1660px]:text-[18px] leading-[20px] min-[1660px]:leading-[24px] font-medium text-[#141617]">{dailyRange}</p>
+        <span className="flex items-center gap-0.5 text-[10.5px] leading-[15px] font-normal text-[#38CA6E]">
           <FaCaretUp size={14} />
           {growthPercent}
         </span>
       </div>
 
       {/* Country */}
-      <div className="mt-[3px] flex items-center gap-[11px] text-sm text-slate-600">
-        <span className="relative h-4 w-4 overflow-hidden rounded-full">
+      <div className="mt-[3px] flex items-center gap-[10px] text-sm text-slate-600">
+        <span className="relative h-3 w-3 overflow-hidden rounded-full">
           <Image src={usLogo} alt="USA" fill sizes="100%" className="object-cover" />
         </span>
-        <span className="text-[14px] leading-[20px] font-normal text-[#808B96]">{country}</span>
+        <span className="text-[10.5px] leading-[15px] font-normal text-[#808B96]">{country}</span>
       </div>
 
-      <div className="mt-2 mb-2 border-t border-[#00000014]" />
+      <div className="mt-3 mb-2 border-t border-[#00000014]" />
 
       {/* Platform metrics */}
       <div className="grid grid-cols-3 gap-2 min-[1660px]:gap-3">
@@ -223,23 +223,23 @@ export default function TrendingProductCard({
                   className="object-contain p-1"
                 />
               </span>
-              <span className="text-[10px] min-[1660px]:text-[10px] leading-none font-normal text-[#808B96]">
+              <span className="text-[9px] min-[1660px]:text-[11px] leading-none font-normal text-[#808B96]">
                 {platformLabel[metric.platform]}
               </span>
             </div>
-            <p className="mt-[2px] text-[9px] min-[1660px]:text-[12px] leading-[12px] font-normal tracking-[3%] text-[#808B96]">
-              <span className="font-bold text-[11px] min-[1660px]:text-[14px] leading-[20px] text-[#141617]">{metric.value}</span>
+            <p className="mt-[2px] text-[9px] leading-[9px] font-normal tracking-[3%] text-[#808B96]">
+              <span className="font-bold text-[10.5px] min-[1660px]:text-[12px] leading-[15px] text-[#141617]">{metric.value}</span>
               /{metric.total}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-[30px] min-[1660px]:mt-[40px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
+      <div className="mt-[29px] flex items-center justify-between min-[1660px]:w-[260px] ms-auto gap-2 min-[1660px]:gap-3">
 
         <button
           type="button"
-          className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[13px] font-medium text-[#141617] transition"
+          className="inline-flex items-center justify-center gap-2 rounded-[12px] border-0  py-2 text-[10px] font-medium text-[#141617] transition"
         >
 
           <Bookmark size={16} />
@@ -253,7 +253,7 @@ export default function TrendingProductCard({
 
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-[7px] rounded-[10px] min-[1660px]:w-[108px] min-[1660px]:h-[39px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[13px] font-medium text-[#141617] transition hover:bg-slate-200"
+            className="inline-flex items-center justify-center gap-[7px] rounded-[7.5px] min-[1660px]:w-[108px] h-[29.25px] bg-[#F1F1F1] px-2 min-[1660px]:px-4 py-[6px] min-[1660px]:py-[9.5px] text-[10px] font-medium text-[#141617] transition hover:bg-slate-200"
           >
             <TbGraph />
             Analyze
