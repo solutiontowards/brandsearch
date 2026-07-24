@@ -13,14 +13,22 @@ export default function RecentlyViewedAds() {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 gap-[25px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-        {recentlyViewedAds.map((ad) => (
-          <RecentlyViewedCard
-            key={ad.id}
-            ad={ad}
-          />
-        ))}
-      </div>
+      <div className="grid grid-cols-4 min-[1500px]:grid-cols-6 gap-[25px] overflow-hidden">
+  {recentlyViewedAds.map((ad, index) => (
+    <div
+      key={ad.id}
+      className={
+        index < 4
+          ? "block"
+          : index < 6
+            ? "hidden min-[1500px]:block"
+            : "hidden"
+      }
+    >
+      <RecentlyViewedCard ad={ad} />
+    </div>
+  ))}
+</div>
     </section>
   );
 }

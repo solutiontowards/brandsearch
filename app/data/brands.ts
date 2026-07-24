@@ -121,4 +121,28 @@ export const brandCards: BrandCard[] = [
       { platform: "google", value: "328", total: "4.1k" },
     ],
   },
+  {
+    id: 5,
+    logoSrc: "/image/trending-logo.png",
+    brandName: "Solaré Studio",
+    industry: "Makeup",
+    traffic: "57.4k",
+    unitSold: "27.2K",
+    gmv: "$178k",
+    revenueRange: "$178k - $205k/day",
+    liveRevenue: "$178.8k",
+    activeProducts: "118",
+    influencerSales: "91.7K",
+    country: "Australia",
+    bestSellingProducts: [
+      "/image/trending-pro1.png",
+      "/image/trending-pro3.png",
+      "/image/trending-pro2.png",
+    ],
+    platformMetrics: [
+      { platform: "facebook", value: "512", total: "5.8k" },
+      { platform: "instagram", value: "476", total: "5.5k" },
+      { platform: "google", value: "328", total: "4.1k" },
+    ],
+  },
 ];

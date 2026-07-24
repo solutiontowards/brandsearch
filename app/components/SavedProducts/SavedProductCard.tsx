@@ -11,7 +11,7 @@ type Props = {
 
 export default function SavedProductCard({ product }: Props) {
   return (
-    <div className="w-[233px] h-[180px] relative flex items-end overflow-hidden shrink-0 rounded-[10px] bg-[#F5F5F5] px-[4px] py-[5px]">
+    <div className="w-full h-[180px] relative flex items-end overflow-hidden shrink-0 rounded-[10px] bg-[#F5F5F5] px-[4px] py-[5px]">
       {/* Product Image */}
       <div className="absolute top-0 left-0 h-[116px] w-full overflow-hidden rounded-[10px]">
         <Image

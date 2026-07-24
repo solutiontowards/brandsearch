@@ -60,4 +60,14 @@ export const recentlyViewedAds: RecentlyViewedAd[] = [
     link: "https://www.ryzesuperfoods.com",
     isVideo: false,
   },
+  {
+    id: 6,
+    brandName: "Tymo-Beauty",
+    logo: "/image/brand-logo.png",
+    image: "/image/recent1.png",
+    period: "Oct 3 - Present",
+    days: "30d",
+    link: "https://www.ryzesuperfoods.com",
+    isVideo: false,
+  },
 ];

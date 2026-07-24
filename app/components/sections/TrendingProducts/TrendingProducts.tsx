@@ -19,14 +19,30 @@ export default function TrendingProducts() {
         </button>
       </div>
 
-      <div className="grid gap-3 min-[1660px]:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      {/* <div className="grid gap-3 min-[1660px]:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {trendingProducts.map((product) => (
           <TrendingProductCard
             key={product.id}
             {...product}
           />
         ))}
-      </div>
+      </div> */}
+      <div className="grid grid-cols-4 min-[1500px]:grid-cols-5 gap-3 min-[1660px]:gap-[25px] overflow-hidden">
+  {trendingProducts.map((product, index) => (
+    <div
+      key={product.id}
+      className={
+        index < 4
+          ? "block"
+          : index === 4
+          ? "hidden min-[1500px]:block"
+          : "hidden"
+      }
+    >
+      <TrendingProductCard {...product} />
+    </div>
+  ))}
+</div>
     </section>
   );
 }

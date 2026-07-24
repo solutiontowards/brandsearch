@@ -112,4 +112,25 @@ export const tiktokAds: TikTokAd[] = [
     relatedAds: "13",
     roas: "3.21",
   },
+  {
+    id: 5,
+
+    brandName: "Luna Cosmetics",
+    logoSrc: "/image/brand-logo.png",
+
+    startDate: "Oct 2",
+    endDate: "Present",
+
+    title: "Flawless Makeup Routine",
+
+    description:
+      "Cute inflatable chair 💖 #babygirl #inflatablechair #tiktokshop #adorable ",
+
+    image: "/image/tiktok.png",
+
+    views: "7,112",
+    days: "6",
+    relatedAds: "13",
+    roas: "3.21",
+  },
 ];

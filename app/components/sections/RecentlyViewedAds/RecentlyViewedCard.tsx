@@ -11,9 +11,9 @@ export default function RecentlyViewedCard({
 
       {/* Image */}
 
-      <div className="relative h-[110px] w-[250px] overflow-hidden rounded-[10px]">
+      <div className="relative h-[110px] w-full overflow-hidden rounded-[10px]">
 
-        <div className="relative h-[110px] w-[250px]">
+        <div className="relative h-[110px] w-full">
 
           <Image
             src={ad.image}
