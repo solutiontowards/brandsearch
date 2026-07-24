@@ -18,16 +18,16 @@ const platformImages = {
 
 export default function BrandTableRow({ brand }: Props) {
   return (
-    <div className="grid grid-cols-[100px_270px_180px_110px_120px_170px_90px_95px_130px_110px_230px_100px] items-center border rounded-[20px] mt-[10px] border-[#00000014] px-[17px] py-5">
+    <div className="grid grid-cols-[60px_265px_140px_100px_120px_150px_100px_105px_130px_130px_230px_70px] items-center border rounded-[20px] mt-[7.5px] border-[#00000014] px-[17px] pt-2 pb-2">
 
       {/* Star + Rank */}
-      <div className="flex items-center justify-center gap-[10px]">
+      <div className="flex items-center justify-center gap-[8px]">
         <button
           type="button"
-          className="flex h-8 w-8 items-center"
+          className="flex h-[15px] w-[15px] items-center"
         >
           <Star
-            size={15}
+            size={12}
             strokeWidth={1.8}
             className="text-[#808B96]"
           />
