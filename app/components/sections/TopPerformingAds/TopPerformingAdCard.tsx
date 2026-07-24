@@ -52,7 +52,7 @@ export default function TopPerformingAdCard({
   };
 
   return (
-    <div className="w-full max-w-[360px] rounded-[10px] bg-white px-[25px] pt-[25px] pb min-[1660px]:px-[25px] min-[1660px]:pb-[20px] transition hover:-translate-y-0.5">
+    <div className="w-full rounded-[10px] bg-white px-[20px] min-[1660px]:px-[25px] pt-[20px] min-[1660px]:pt-[25px] pb-[15px] min-[1660px]:px-[25px] min-[1660px]:pb-[20px] transition hover:-translate-y-0.5">
 
       {/* ================= HEADER ================= */}
 
@@ -67,7 +67,7 @@ export default function TopPerformingAdCard({
               alt={ad.brandName}
               fill
               sizes="38px"
-              className="object-cover h-[38px] w-[38px] rounded-full"
+              className="object-cover h-[28.5px] w-[28.5px] rounded-full"
             />
 
           </div>
@@ -76,7 +76,7 @@ export default function TopPerformingAdCard({
 
             <div className="flex items-center gap-0.5 min-[1660px]:gap-2">
 
-              <h3 className="text-[12px] min-[1660px]:text-[18px] font-medium leading-6 text-[#141617]">
+              <h3 className="text-[12px] min-[1660px]:text-[13.5px] font-medium leading-[18px] text-[#141617]">
                 {ad.brandName}
               </h3>
 
@@ -92,11 +92,11 @@ export default function TopPerformingAdCard({
 
             </div>
 
-            <div className="mt-[6px] flex items-center gap-2">
+            <div className="mt-[0px] flex items-center gap-2">
 
               {variant === "default" ? (
                 <>
-                  <span className="text-[12px] min-[1660px]:text-[14px] leading-5 tracking-[0.03em] text-[#141617]">
+                  <span className="text-[12px] min-[1660px]:text-[10.5px] leading-5 tracking-[0.03em] text-[#141617]">
                     {ad.period}
                   </span>
 
@@ -106,15 +106,15 @@ export default function TopPerformingAdCard({
                 </>
               ) : (
                 <>
-                  <span className="text-[14px] font-bold leading-5 text-[#38CA6E]">
+                  <span className="text-[12px] min-[1660px]:text-[10.5px] font-bold leading-5 text-[#38CA6E]">
                     253
                   </span>
 
-                  <span className="text-[14px] font-normal leading-5 text-[#141617]">
+                  <span className="text-[12px] min-[1660px]:text-[10.5px] font-normal leading-5 text-[#141617]">
                     of 414 Ads
                   </span>
 
-                  <span className="rounded-[40px] bg-[#F5F5F5] px-[8px] py-[6px] text-[10px] font-medium text-[#3C3D51]">
+                  <span className="rounded-[40px] bg-[#F5F5F5] px-[8px] py-[6px] text-[7.5px] font-medium text-[#3C3D51]">
                     30d
                   </span>
                 </>
@@ -161,7 +161,7 @@ export default function TopPerformingAdCard({
 
       {/* ================= FIRST ROW ================= */}
 
-      <div className="mb-[7px] mt-[16px] border-t border-[#00000014]" />
+      <div className="mb-[5px] mt-[12px] border-t border-[#00000014]" />
 
       {variant === "default" ? (
 
@@ -221,7 +221,7 @@ export default function TopPerformingAdCard({
               className="text-[#38CA6E]"
             />
 
-            <span className="font-medium text-[14px] leading-5 text-[#38CA6E]">
+            <span className="font-medium text-[10.5px] leading-[15px] text-[#38CA6E]">
 
               6692
 
@@ -236,7 +236,7 @@ export default function TopPerformingAdCard({
               className="text-[#56565A]"
             />
 
-            <span className="font-medium text-[14px] leading-5 text-[#56565A]">
+            <span className="font-medium text-[10.5px] leading-[15px] text-[#56565A]">
 
               210€-9€/d
 
@@ -249,12 +249,12 @@ export default function TopPerformingAdCard({
             <Image
               src="/image/us-logo.png"
               alt=""
-              width={23}
-              height={14}
-              className="object-contain w-[23px] h-[14px] rounded-0"
+              width={17}
+              height={10}
+              className="object-contain w-[17px] h-[10px] rounded-0"
             />
 
-            <span className="font-medium text-[14px] leading-5 text-[#060317]">
+            <span className="font-medium text-[10.5px] leading-[15px] text-[#060317]">
 
               100%
 
@@ -305,16 +305,16 @@ export default function TopPerformingAdCard({
 
       ) : (
 
-        <div className="mt-[7px] py-[9px] pe-[17px] ps-[12px] flex items-center justify-between rounded-[10px] border border-[#F234791A] bg-[#F234790D]">
+        <div className="h-[28.5px] mt-[5px] py-[7px] pe-[14px] ps-[10px] flex items-center justify-between rounded-[7.5px] border border-[#F234791A] bg-[#F234790D]">
 
           <div className="mt-1 flex items-center gap-2">
 
             <FaChartLine
-              size={16}
+              size={12}
               className="text-[#F23479]"
             />
 
-            <span className="text-[18px] font-normal text-[#B20000]">
+            <span className="text-[10.5px] font-normal text-[#B20000]">
 
               Dropping Fast
 
@@ -324,7 +324,7 @@ export default function TopPerformingAdCard({
 
           <div className="text-right">
 
-            <p className="mt-1 text-[14px] leading-5 font-medium text-[#B20000]">
+            <p className="mt-1 text-[11px] leading-[15px] font-medium text-[#B20000]">
 
               44
 
@@ -338,7 +338,7 @@ export default function TopPerformingAdCard({
 
       {/* ================= IMAGE ================= */}
       <div className="relative">
-        <div className="relative mt-5  min-[1660px]:mt-5 min-[1660px]:mb-5 overflow-hidden rounded-[10px] border border-[#0000001A]">
+        <div className="relative mt-[15px] mb-[12px] min-[1660px]:mt-[17px] min-[1660px]:mb-[15px] overflow-hidden rounded-[10px] border border-[#0000001A]">
 
           {variant === "default" ? (
 
@@ -395,7 +395,7 @@ width={22}
 
                   <div
                     key={index}
-                    className="relative h-[288px] min-w-full"
+                    className="relative h-[216px] min-w-full"
                   >
 
                     <Image
@@ -514,13 +514,13 @@ width={22}
       ) : (
 
         <>
-          <h4 className="mt-5 text-[14px] font-normal mb-[9px] leading-[20px] text-[#141617]">
+          <h4 className="text-[10.5px] min-[1660px]:text-[14px] font-normal mb-[7px] leading-[15px] text-[#141617]">
 
             The New Standard for Elite Recovery
 
           </h4>
 
-          <p className="text-[12px] leading-4 font-normal text-[#808B96]">
+          <p className="text-[9px] min-[1660px]:text-[12px] leading-3 font-normal text-[#808B96]">
 
             Recovery has entered a new era. Hyperice's latest innovation delivers elite performance for athletes and everyday users.
 
@@ -539,11 +539,11 @@ width={22}
 
       {/* ================= LINK BOX ================= */}
 
-      <div className="mt-5 rounded-[10px] h-[38px] border border-[#F234791A] bg-[#F234790D] ps-[17px] pe-[12px] py-[11px]">
+      <div className="mt-5 rounded-[7.5px] h-[28.5px] border border-[#F234791A] bg-[#F234790D] ps-[17px] pe-[12px] py-[8px]">
 
         <div className="flex items-center justify-between">
 
-          <span className="truncate font-normal text-[15px] leading-4 text-[#141617]">
+          <span className="truncate font-normal text-[11px] leading-3 text-[#141617]">
 
             {ad.link}
 
@@ -554,7 +554,7 @@ width={22}
             <button>
 
               <ClipboardCopy
-                size={16}
+                size={11}
                 className="text-[#141617]"
               />
 
@@ -563,7 +563,7 @@ width={22}
             <button>
 
               <FaRegShareFromSquare
-                size={16}
+                size={11}
                 className="text-[#141617]"
               />
 
@@ -579,11 +579,11 @@ width={22}
 
       {variant === "default" ? (
 
-        <div className="mt-[30px] flex items-center justify-between gap-[10px] h-[39px]">
+        <div className="mt-[22.5px] flex items-center justify-between gap-[10px] h-[29.25px]">
 
           <button
             type="button"
-            className="flex w-[192px] h-[39px]  items-center justify-center gap-[6.8px] rounded-[10px] bg-[#3C3D51] text-[13.6px] leading-[19.43px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
+            className="flex w-[192px] h-[29.25px]  items-center justify-center gap-[6.8px] rounded-[7.5px] bg-[#3C3D51] text-[11px] leading-[12px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
           >
             <TbListDetails size={16} />
             Details
@@ -591,7 +591,7 @@ width={22}
 
           <button
             type="button"
-            className="flex h-[39px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[10px]  text-[13.6px] leading-[19.43px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
+            className="flex h-[29.25px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[7.5px]  text-[13.6px] leading-[19.43px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
           >
             Analyze
           </button>
@@ -600,19 +600,19 @@ width={22}
 
       ) : (
 
-        <div className="mt-[30px] flex items-center justify-between gap-[10px] h-[39px]">
+        <div className="mt-[22.5px] flex items-center justify-between gap-[10px] h-[29.25px]">
 
           <button
             type="button"
-            className="flex w-[192px] h-[39px]  items-center justify-center gap-[6.8px] rounded-[10px] bg-[#3C3D51] text-[13.6px] leading-[19.43px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
+            className="flex w-[175px] h-[29.25px]  items-center justify-center gap-[6.8px] rounded-[7.5px] bg-[#3C3D51] text-[10.2px] leading-[14.6px] font-medium border border-[#F1F1F1] bg-white transition hover:bg-[#F8F8F8]"
           >
-            <TbListDetails size={16} />
+            <TbListDetails size={11} />
             Details
           </button>
 
           <button
             type="button"
-            className="flex h-[39px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[10px]  text-[13.6px] leading-[19.43px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
+            className="flex h-[29.25px] w-[108px]  items-center justify-center gap-[6.8px] rounded-[7.5px]  text-[10.2px] leading-[14.6px] font-medium bg-[#F1F1F1] transition hover:bg-[#EAEAEA]"
           >
             Analyze
           </button>

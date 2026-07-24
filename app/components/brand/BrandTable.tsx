@@ -7,10 +7,10 @@ import BrandPagination from "./BrandPagination";
 
 export default function BrandTable() {
   return (
-    <div className="overflow-hidden">
+    <div className="w-full overflow-x-auto overflow-hidden">
       <BrandTableHeader />
 
-      <div>
+      <div className="w-full min-w-[1680px]">
         {brandCards.map((brand) => (
           <BrandTableRow key={brand.id} brand={brand} />
         ))}

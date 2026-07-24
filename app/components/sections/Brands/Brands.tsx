@@ -17,11 +17,27 @@ export default function Brands() {
         </button>
       </div>
 
-      <div className="grid gap-[25px] min-[1660px]:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      {/* <div className="grid gap-[25px] min-[1660px]:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {brandCards.map((brand) => (
           <BrandCard key={brand.id} {...brand} />
         ))}
-      </div>
+      </div> */}
+      <div className="grid grid-cols-4 min-[1500px]:grid-cols-5 gap-[25px] overflow-hidden">
+  {brandCards.map((brand, index) => (
+    <div
+      key={brand.id}
+      className={
+        index < 4
+          ? "block"
+          : index === 4
+          ? "hidden min-[1500px]:block"
+          : "hidden"
+      }
+    >
+      <BrandCard {...brand} />
+    </div>
+  ))}
+</div>
     </section>
   );
 }

@@ -40,4 +40,12 @@ export const savedProducts: SavedProduct[] = [
     trendImage: "/image/green_graph.png",
     favorite: true,
   },
+  {
+    id: 5,
+    title: "PDRN Pink Collag...",
+    date: "Oct 3, 2026",
+    image: "/image/saved4.png",
+    trendImage: "/image/green_graph.png",
+    favorite: true,
+  },
 ];

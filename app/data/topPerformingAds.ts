@@ -134,4 +134,32 @@ export const topPerformingAds: TopPerformingAd[] = [
       "My pin striaght hair is going to see this tool ALOT😂#hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights #ttsbeautybesties",
     link: "https://www.byomabeauty.com",
   },
+  {
+    id: 5,
+    brandName: "BYOMA BEAUTY",
+    logoSrc: "/image/brand-logo.png",
+    category: "Face Serum",
+    period: "Oct 5 - Present",
+    days: "27d",
+    statusTags: ["Scaling", "Winning"],
+    revenueLabel: "Revenue",
+    revenueValue: "$14k-24k",
+    totalAdsLabel: "Total Ads",
+    totalAdsValue: "11",
+    sparkline: [14, 19, 23, 27, 33, 36, 39],
+
+    images: [
+      "/image/topPerforming-2.png",
+      "/image/topPerforming-2.png",
+      "/image/topPerforming-1.png",
+      "/image/topPerforming-1.png",
+    ],
+
+    presentedBy: "Presented By",
+    country: "United States",
+    publishDate: "2026-04-08",
+    description:
+      "My pin striaght hair is going to see this tool ALOT😂#hairtok #hairwaver #hairtools #wavyhair #volumehair #creatorsearchinsights #ttsbeautybesties",
+    link: "https://www.byomabeauty.com",
+  },
 ];

@@ -25,16 +25,22 @@ export default function TikTokAds() {
 
       {/* Cards */}
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-        {tiktokAds.map((ad) => (
-          <TikTokAdCard
-            key={ad.id}
-            ad={ad}
-          />
-        ))}
-
-      </div>
+      <div className="grid grid-cols-4 min-[1500px]:grid-cols-5 gap-6 overflow-hidden">
+  {tiktokAds.map((ad, index) => (
+    <div
+      key={ad.id}
+      className={
+        index < 4
+          ? "block"
+          : index < 5
+          ? "hidden min-[1500px]:block"
+          : "hidden"
+      }
+    >
+      <TikTokAdCard ad={ad} />
+    </div>
+  ))}
+</div>
 
     </section>
   );

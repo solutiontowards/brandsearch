@@ -6,7 +6,7 @@ import {
 export default function ProductHeader() {
   return (
     <div className="rounded-[10px] border border-[#ECECEC] bg-[#FFFFFF] py-[13px] ps-[15px] min-[1660px]:ps-[34px] pe-[13px] max-h-[277px]">
-      <div className="flex gap-8">
+      <div className="flex gap-4 min-[1660px]:gap-8">
         {/* Left */}
         <div className="flex-1">
           {/* Title */}
@@ -51,12 +51,12 @@ export default function ProductHeader() {
         </div>
 
         {/* Right Card */}
-        <div className="w-[250px] min-[1660px]:w-[318px] h-[220px] min-[1660px]:h-[250px] rounded-[10px] border border-[#E4E4E4] bg-[#FAFAFA] pt-[12px] min-[1660px]:pt-[18px] ps-[20px] min-[1660px]:ps-[29px] pb-[15px] min-[1660px]:pb-[24px] pe-[20px] min-[1660px]:pe-[23px]">
+        <div className="w-[200px] min-[1660px]:w-[318px] h-[220px] min-[1660px]:h-[250px] rounded-[10px] border border-[#E4E4E4] bg-[#FAFAFA] pt-[12px] min-[1660px]:pt-[18px] ps-[15px] min-[1660px]:ps-[29px] pb-[15px] min-[1660px]:pb-[24px] pe-[15px] min-[1660px]:pe-[23px]">
           <h3 className="text-[18px] leading-10 font-medium text-[#141617]">
             Shop Info
           </h3>
 
-          <div className="mt-[16px] flex gap-[17px]">
+          <div className="mt-[16px] flex gap-[12px] min-[1660px]:gap-[17px]">
             <div className="flex h-[60px] w-[60px] min-[1660px]:h-[80px] min-[1660px]:w-[80px] items-center justify-center rounded-[10px] border border-[#00000033]">
               <Image
                 src="/image/product-logo.png"
@@ -83,7 +83,7 @@ export default function ProductHeader() {
               />
                 </span>
 
-                <span className="text-[14px] min-[1660px]:text-[17.34px] leading-[21.15px] text-[#141617]">
+                <span className="text-[12px] min-[1660px]:text-[17.34px] leading-[21.15px] text-[#141617]">
                   United States
                 </span>
               </div>
@@ -114,12 +114,13 @@ function LinkButton({
   text: string;
 }) {
   return (
-    <button className="flex h-[40px] items-center gap-[9px] rounded-[10px] bg-[#F5F5F7] px-4 py-3 transition hover:bg-[#EEEEF0]">
+    <button className="flex h-[40px] items-center gap-[5px] min-[1660px]:gap-[9px] rounded-[10px] bg-[#F5F5F7] px-2 min-[1660px]:px-4 py-3 transition hover:bg-[#EEEEF0]">
       <Image
         src={icon}
         alt=""
         width={28}
         height={28}
+        className="w-[15px] h-[15px] min-[1660px]:h-[28px] min-[1660px]:w-[28px]"
       />
 
       <span className="text-[12px] min-[1660px]:text-[16px] font-medium text-[#060317]">
@@ -129,6 +130,7 @@ function LinkButton({
       <ExternalLink
         size={24}
         strokeWidth={2}
+        className="w-[14px] h-[14px] min-[1660px]:h-[24px] min-[1660px]:w-[24px]"
       />
     </button>
   );
